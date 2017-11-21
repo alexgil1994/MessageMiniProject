@@ -32,7 +32,7 @@ class ScannerImport {
         while (true){
             try{
                 chosenActivity = scanner.nextInt();
-                if (chosenActivity >=0 & chosenActivity <= 9) {
+                if (chosenActivity >=0 & chosenActivity <= 10) {
                     return chosenActivity;
                 }
             }catch (InputMismatchException e){
