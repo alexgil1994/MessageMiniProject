@@ -5,7 +5,7 @@ import java.util.Date;
 
 class Controller {
 
-    void showInstructions(){
+    private void showInstructions(){
         System.out.println("\nHello there!\n");
         System.out.println("Instructions : \n" +
                 "Press 1 and then Enter to add a new message in your list.\n" +
@@ -20,17 +20,8 @@ class Controller {
                 "Press 0 and then Enter if you want to exit from the program.\n");
     }
     void handleRequestedActivity(){
-        // repositoryInMemory object ftiaxnetai mono me kathe arxh tou programmatos.
+        // repositoryInMemory object ftiaxnetai mono me kathe arxh tou programmatos edw sthn handleRequestedActivity. H Action to dexetai apo edw.
         RepositoryInMemory repositoryInMemory = new RepositoryInMemory();
-
-        // TODO Start for the future database.
-//        try {
-//            Connection conn = DriverManager.getConnection("jdbc:sqlite:C:\\Users\\amarkovits\\IdeaProjects\\Test\\repositoryDb.db");
-//            Statement statement = conn.createStatement();
-//            statement.execute("CREATE TABLE event ()");
-//        }catch (SQLException e){
-//            System.out.println("Something went wrong. The connection with the db couldnt be established." + e.getMessage());
-//        }
 
         boolean quit = false;
         while (!quit){
@@ -40,88 +31,17 @@ class Controller {
             scanner.readActivity();
             int numPressed = scanner.getReadActivity();
 
-            switch (numPressed){
-                case 1: {
-                    this.showInstructions(numPressed);
-
-                    scanner.readNewMessage();
-                    String messageOfEvent = scanner.getNewMessage();
-
-                    long timeOfEvent = calcNewTime();
-
-                    Event event = new Event(messageOfEvent , timeOfEvent);
-                    event.newEvent(messageOfEvent , timeOfEvent);
-
-                    repositoryInMemory.addMessage(event.getMessage() , event.getTime());
-
-                    this.showCongratulations();
-                    break;
-                }
-                case 2: {
-                    this.showInstructions(numPressed);
-
-                    int numOfMessages = scanner.readNumOfMessages();
-                    showCongratulationsInner(numPressed,numOfMessages);
-
-                    this.printData(repositoryInMemory.getLatestMessages(numOfMessages));
-
-                    break;
-                }
-                case 3: {
-                    this.showInstructions(numPressed);
-
-                    ScannerImport scannerNumOfMessages = new ScannerImport();
-                    int numOfMessages = scannerNumOfMessages.readNumOfMessages();
-                    showCongratulationsInner(numPressed,numOfMessages);
-
-                    this.printData(repositoryInMemory.getOldestMessages(numOfMessages));
-
-                    break;
-                }
-                case 4: {
-                    this.showInstructions(numPressed);
-                    this.printData(repositoryInMemory.getLastHourMessages());
-                    break;
-                }
-                case 5: {
-                    this.showInstructions(numPressed);
-                    this.printData(repositoryInMemory.getLastThreeHoursMessages());
-                    break;
-                }
-                case 6: {
-                    this.showInstructions(numPressed);
-                    this.printData(repositoryInMemory.getLastOneDayMessages());
-                    break;
-                }
-                case 7: {
-                    this.showInstructions(numPressed);
-                    this.printData(repositoryInMemory.getLastThreeDaysMessages());
-                    break;
-                }
-                case 8: {
-                    this.showInstructions(numPressed);
-                    this.printData(repositoryInMemory.getLastTenDaysMessages());
-                    break;
-                }
-                case 9: {
-                    this.showInstructions(numPressed);
-                    this.printData(repositoryInMemory.getLastMonthMessages());
-                    break;
-                }
-                case 10: {
-                    this.showInstructions(numPressed);
-                    printData(repositoryInMemory.getAllTheMessages());
-                    break;
-                }
-                case 0: {
-                    this.showInstructions(numPressed);
-                    quit = true;
-                    break;
-                }
+            if (numPressed > 0 && numPressed <= 10){
+                Action action = new Action(numPressed , repositoryInMemory);
+                action.setActionMethod(numPressed);
+                action.runAction(action.getActionMethod());
+            } else if (numPressed == 0){
+                this.showInstructions(numPressed);
+                quit = true;
             }
         }
     }
-    private void showInstructions(int numPressed){
+    void showInstructions(int numPressed){
         switch (numPressed){
             case 1: {
                 System.out.println("Type the message you want to insert and then press Enter\n");
@@ -169,14 +89,13 @@ class Controller {
             }
         }
     }
-    public long calcNewTime(){
+    long calcNewTime(){
         //Initializing Callendar and passing in the String with the full time.
         Calendar calendar = Calendar.getInstance();
-        long timeEvent = calendar.getTimeInMillis();
-        return timeEvent;
+        return calendar.getTimeInMillis();
     }
     //Formats and prints the data that are given from the repositoryInMem to the controller's handleRequestedActivity.
-    private void printData(ArrayList<Event> tempRepoList) {
+    void printData(ArrayList<Event> tempRepoList) {
         int i = 0;
         for (Event event: tempRepoList){
             i = i + 1;
@@ -187,12 +106,12 @@ class Controller {
 
             // Preparing the String for print.
             StringBuilder builder = new StringBuilder();
-            builder.append("Message " + i + " : " + event.getMessage() + "   || Time of message : " + formatAs.format(eventTimeFormatted));
+            builder.append("Message ").append(i).append(" : ").append(event.getMessage()).append("   || Time of message : ").append(formatAs.format(eventTimeFormatted));
 
             System.out.println(builder);
         }
     }
-    private void showCongratulationsInner(int numPressed,int numOfMessages){
+    void showCongratulationsInner(int numPressed, int numOfMessages){
         switch (numPressed){
             case 2: {
                 System.out.println("\nThe latest amount of " + numOfMessages + " messages is : \n");
@@ -208,7 +127,7 @@ class Controller {
             }
         }
     }
-    private void showCongratulations(){
+    void showCongratulations(){
         System.out.println("\nThe new message has been inserted.");
     }
 }
