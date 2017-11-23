@@ -24,6 +24,7 @@ public class RepositoryDb implements IRepository {
     public static final String INDEX_EVENT_MESSAGE = "2";
     public static final String INDEX_EVENT_TIME_MILLIS = "3";
 
+    // Constants for order
     public static final int ORDER_BY_TIME_NONE = 1;
     public static final int ORDER_BY_TIME_ASC = 2;
     public static final int ORDER_BY_TIME_DESC = 3;
@@ -52,6 +53,8 @@ public class RepositoryDb implements IRepository {
 
     // Method that loads the ArrayList from the db.
     public ArrayList<Event> queryAddAllEventDb() {
+
+        // Statement and ResultSet inside the try to ensure that they will close after the query is finished, in order to not use a "finally" after the catch.
         try (Statement statement = connection.createStatement();
              ResultSet resultSet = statement.executeQuery("SELECT * FROM " + TABLE_EVENTS)) {
 
@@ -83,7 +86,7 @@ public class RepositoryDb implements IRepository {
     /*
       TODO
       TODO
-      TODO  -->  NA SYNDETHOUN ME QUERIES ME CONSTANTS AP THN DB OLES OI METHODOUS POU EPISTREFOUN DATA.
+      TODO  -->  NA SYNDETHOUN TA QUERIES ME CONSTANTS AP THN DB OLES OI METHODOI POU EPISTREFOUN DATA.
       TODO  --> !!! NA RWTHSW AN THELOUME NA GINONTAI OLA MESW SQL H AN THA ZHTAW ME SQL TA EVENTS KAI META SE LISTA THA TA XEIRIZOMAI OPWS PRIN!...
       TODO
      */

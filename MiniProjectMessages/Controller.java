@@ -26,15 +26,27 @@ class Controller {
         boolean quit = false;
         while (!quit){
 
+            // Starting of the loop by showing the menu of requests.
             showInstructions();
+
+            // Reading the user's request.
             ScannerImport scanner = new ScannerImport();
             scanner.readActivity();
             int numPressed = scanner.getReadActivity();
 
             if (numPressed > 0 && numPressed <= 10){
+
+                // Creating a new Action object for the new request from the user.
                 Action action = new Action(numPressed , repositoryInMemory);
-                action.setActionMethod(numPressed);
-                action.runAction(action.getActionMethod());
+                action.newAction(numPressed , repositoryInMemory);
+
+                // Creating a new ActionsToRun object that gets the new action object that was created for the new request.
+                ActionsToRun actionsToRun = new ActionsToRun(action);
+
+                // Running the action that was requested by getting the action object to analyze what method to run inside the ActionsToRun class.
+                actionsToRun.runAction();
+
+                // When the user presses 0 the program exits from the loop -> program closes.
             } else if (numPressed == 0){
                 this.showInstructions(numPressed);
                 quit = true;
