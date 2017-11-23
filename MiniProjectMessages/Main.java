@@ -14,7 +14,7 @@ public class Main {
         repositoryDb.open();
 
         // Calling the method that loads the Events from the DB.
-        repositoryDb.queryAddAllEventDb();
+        repositoryDb.queryLoadDb();
 
         // Closing the Connection with the DB since i finished with the query that loads the Events.
         repositoryDb.close();

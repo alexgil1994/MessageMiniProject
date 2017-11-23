@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Calendar;
 
 /*
     addMessage : insert enos new Event sthn repositoryList.
@@ -19,10 +18,13 @@ import java.util.Calendar;
 public interface IRepository {
     void addMessage(String messageEvent , long timeEvent);
 
-    ArrayList<Event> getTempListBasedOnQuantity(int readNumberOfMessages);
+    // Mallon den to xreiazomai gt h RepositoryDb to pairnei me query opote den xrhsimopoiei thn methodo. Tha meinei mono sthn RepositoryInMemory ws methodos.
+    // ArrayList<Event> getTempListBasedOnQuantity(int readNumberOfMessages);
     ArrayList<Event> getLatestMessages(int readNumberOfMessages);
     ArrayList<Event> getOldestMessages(int readNumberOfMessages);
-    ArrayList<Event> getTempListBasedOnTime(Calendar calendarRequest);
+
+    // Mallon den to xreiazomai gt h RepositoryDb to pairnei me query opote den xrhsimopoiei thn methodo. Tha meinei mono sthn RepositoryInMemory ws methodos.
+    // ArrayList<Event> getTempListBasedOnTime(Calendar calendarRequest);
     ArrayList<Event> getLastHourMessages();
     ArrayList<Event> getLastThreeHoursMessages();
     ArrayList<Event> getLastOneDayMessages();

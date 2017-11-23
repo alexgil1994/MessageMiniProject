@@ -33,7 +33,6 @@ public class RepositoryInMemory implements IRepository {
         repositoryInMemList.add(new Event(messageEvent , timeEvent));
     }
 
-    @Override
     public ArrayList<Event> getTempListBasedOnQuantity(int readNumberOfMessages) {
         ArrayList<Event> tempMessageList = new ArrayList<>();
         for (Event event : repositoryInMemList) {
@@ -72,7 +71,7 @@ public class RepositoryInMemory implements IRepository {
         return tempMessageList;
     }
 
-    @Override
+//    @Override
     public ArrayList<Event> getTempListBasedOnTime(Calendar calendarRequest) {
 
         ArrayList<Event> tempMessageList = new ArrayList<>();
