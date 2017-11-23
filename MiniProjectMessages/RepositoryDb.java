@@ -111,6 +111,7 @@ public class RepositoryDb implements IRepository {
       TODO  -->  NA SYNDETHOUN TA QUERIES ME CONSTANTS AP THN DB OLES OI METHODOI POU EPISTREFOUN DATA.
       TODO  --> !!! NA RWTHSW AN THELOUME NA GINONTAI OLA MESW SQL H AN THA ZHTAW ME SQL TA EVENTS KAI META SE LISTA THA TA XEIRIZOMAI OPWS PRIN!...
       TODO
+      TODO
      */
 
 
@@ -242,6 +243,7 @@ public class RepositoryDb implements IRepository {
 
         ArrayList<Event> tempMessageList = new ArrayList<>();
         tempMessageList = getTempListBasedOnTime(calendarRequest , loadMessageList);
+
         return tempMessageList;
     }
 
@@ -261,6 +263,7 @@ public class RepositoryDb implements IRepository {
 
         ArrayList<Event> tempMessageList = new ArrayList<>();
         tempMessageList = getTempListBasedOnTime(calendarRequest , loadMessageList);
+
         return tempMessageList;
     }
 
@@ -279,6 +282,7 @@ public class RepositoryDb implements IRepository {
 
         ArrayList<Event> tempMessageList = new ArrayList<>();
         tempMessageList = getTempListBasedOnTime(calendarRequest , loadMessageList);
+
         return tempMessageList;
     }
 
@@ -298,6 +302,7 @@ public class RepositoryDb implements IRepository {
 
         ArrayList<Event> tempMessageList = new ArrayList<>();
         tempMessageList = getTempListBasedOnTime(calendarRequest , loadMessageList);
+
         return tempMessageList;
     }
 
@@ -317,40 +322,16 @@ public class RepositoryDb implements IRepository {
 
         ArrayList<Event> tempMessageList = new ArrayList<>();
         tempMessageList = getTempListBasedOnTime(calendarRequest , loadMessageList);
+
         return tempMessageList;
     }
 
     @Override
     public ArrayList<Event> getAllTheMessages() {
-        StringBuilder stringBuilder = new StringBuilder("SELECT * FROM ");
-        stringBuilder.append(TABLE_EVENTS);
-        stringBuilder.append(" ORDER BY ");
-        stringBuilder.append(ORDER_BY_TIME_ASC);
 
+        ArrayList<Event> loadMessageList = new ArrayList<>();
+        loadMessageList = queryLoadDb();
 
-        try(Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery(stringBuilder.toString())) {
-
-            // Creating a new repositoryDbList ArrayList<Event>.
-            ArrayList<Event> repositoryDbList = new ArrayList<>();
-
-            while (resultSet.next()){
-                // Storing the values that come from the DB in variables.
-                String eventMessage;
-                long eventTime;
-                Event event = new Event(eventMessage = resultSet.getString(COLUMN_EVENT_MESSAGE), eventTime = resultSet.getLong(COLUMN_EVENT_TIME_MILLIS));
-
-                // Creating a new Event object passing those values.
-                event.newEvent(eventMessage , eventTime);
-
-                // Adding the event objects in the repositoryDbList.
-                repositoryDbList.add(event);
-            }
-
-            return repositoryDbList;
-        }catch (SQLException e){
-            System.out.println("Could not load the events from the DB." + e.getMessage());
-            return null;
-        }
+        return loadMessageList;
     }
 }
