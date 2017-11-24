@@ -1,14 +1,13 @@
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Collections;
 
 public class RepositoryDb implements IRepository {
 
-    ArrayList<Event> repositoryDbList = new ArrayList<>();
+    private ArrayList<Event> repositoryDbList = new ArrayList<>();
     private Connection connection;
 
     public RepositoryDb() {
+        // Empty Constructor.
     }
 
     public static final String DB_NAME = "repositoryDb.db";
@@ -33,17 +32,38 @@ public class RepositoryDb implements IRepository {
             "SELECT * FROM " + TABLE_EVENTS;
 
     // TODO Vghke error eksaitias tou "=". Na dw pws mporei na mpei.
-//    public static final String QUERY_LOAD_DB_PREP =
-//            "SELECT * FROM " + TABLE_EVENTS + " = ?";
+    public static final String QUERY_LOAD_DB_PREP =
+            "SELECT * FROM " + TABLE_EVENTS + " = ?";
+
+    /*
+      TODO
+      TODO  -->  NA SYNDETHOUN TA QUERIES ME CONSTANTS AP THN DB OLES OI METHODOI POU EPISTREFOUN DATA.
+      TODO
+     */
+
+    // For a transaction.
+    public static final String  INSERT_EVENT_MESSAGE = "INSERT INTO " + TABLE_EVENTS + '(' + COLUMN_EVENT_MESSAGE + ") VALUES(?)";
+    public static final String  INSERT_EVENT_TIME = "INSERT INTO " + TABLE_EVENTS + '(' + COLUMN_EVENT_TIME_MILLIS + ") VALUES(?)";
 
     private PreparedStatement queryLoadDb;
+    private PreparedStatement insertEventMessage;
+    private PreparedStatement insertEventTime;
 
     // Opens the Connection with the DB.
     public boolean open() {
         try {
-            connection = DriverManager.getConnection(CONNECTION_STRING);
-            // Prepared statemnt for queryLoadDb
+            //TODO fix the problem with prepared statements
+//            // Prepared statement for queryLoadDb
 //            queryLoadDb = connection.prepareStatement(QUERY_LOAD_DB_PREP);
+//
+//            // Prepared statement for addMessage
+//            insertEventMessage = connection.prepareStatement(INSERT_EVENT_MESSAGE, Statement.RETURN_GENERATED_KEYS);
+//
+//            // Prepared statement for addMessage
+//            insertEventTime = connection.prepareStatement(INSERT_EVENT_TIME, Statement.RETURN_GENERATED_KEYS);
+
+            connection = DriverManager.getConnection(CONNECTION_STRING);
+
             return true;
         } catch (SQLException e) {
             System.out.println("Could not connect with the database " + e.getMessage());
@@ -54,6 +74,18 @@ public class RepositoryDb implements IRepository {
     // Closes the Connection with the DB.
     public void close() {
         try {
+            if (queryLoadDb != null) {
+                queryLoadDb.close();
+            }
+
+            if (insertEventMessage != null) {
+                insertEventMessage.close();
+            }
+
+            if (insertEventTime != null) {
+                insertEventTime.close();
+            }
+
             if (connection != null) {
                 connection.close();
             }
@@ -62,15 +94,8 @@ public class RepositoryDb implements IRepository {
         }
     }
 
-    // Method that loads the ArrayList from the db.
-    public ArrayList<Event> queryLoadDb() {
-        // Statement and ResultSet inside the try to ensure that they will close after the query is finished, in order to not use a "finally" after the catch.
-        try(Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery(QUERY_LOAD_DB)) {
-
-            // Creating a new repositoryDbList ArrayList<Event>.
-            ArrayList<Event> repositoryDbList = new ArrayList<>();
-
+    private ArrayList<Event> listFromQuery(ResultSet resultSet) throws SQLException{
+        try{
             while (resultSet.next()){
                 // Storing the values that come from the DB in variables.
                 String eventMessage;
@@ -83,6 +108,22 @@ public class RepositoryDb implements IRepository {
                 // Adding the event objects in the repositoryDbList.
                 repositoryDbList.add(event);
             }
+        }catch (SQLException e){
+            System.out.println("There was a problem when trying to save the data.");
+        }
+        return repositoryDbList;
+    }
+
+    // Method that loads the ArrayList from the db.
+    public ArrayList<Event> queryLoadDb() {
+        // Statement and ResultSet inside the try to ensure that they will close after the query is finished, in order to not use a "finally" after the catch.
+        try(Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(QUERY_LOAD_DB)) {
+
+            // Creating a new repositoryDbList ArrayList<Event>.
+            ArrayList<Event> repositoryDbList = new ArrayList<>();
+
+            repositoryDbList = listFromQuery(resultSet);
 
             return repositoryDbList;
         }catch (SQLException e){
@@ -91,130 +132,26 @@ public class RepositoryDb implements IRepository {
         }
     }
 
+    // TODO FIX Vazei mhnuma mono an einai arithmos, an tou dwthei string vgainei den mporei na to valei.
     // Method to add Events from the user, in the repositoryDbList.
     @Override
     public void addMessage(String messageEvent, long timeEvent) {
-//        repositoryDbList.add(new Event(messageEvent, timeEvent));
+        Controller controller = new Controller();
 
         // Adding an Event to the DB.
         try(Statement statement = connection.createStatement()){
-            statement.executeUpdate("INSERT INTO " + TABLE_EVENTS + (COLUMN_EVENT_MESSAGE + "," + COLUMN_EVENT_TIME_MILLIS) + " VALUES " + (messageEvent + "," + timeEvent));
+            statement.executeUpdate("INSERT INTO " + TABLE_EVENTS + "(" + COLUMN_EVENT_MESSAGE + "," + COLUMN_EVENT_TIME_MILLIS + ")" + " VALUES " + "(" + messageEvent + "," + timeEvent + ")");
+
+            // Showing to the user that the message was successfully added
+            controller.showCongratulations();
         }catch (SQLException e){
             System.out.println("Could not add the event to the DB" + e.getMessage());
         }
     }
 
+    // TODO Epishs mporw na allaksw thn apothhkeush na einai se DATE_TIME gia na xrhsimopoiw ta : SELECT DATEADD(Year,-1,GETDATE()).
 
-    /*
-      TODO
-      TODO
-      TODO  -->  NA SYNDETHOUN TA QUERIES ME CONSTANTS AP THN DB OLES OI METHODOI POU EPISTREFOUN DATA.
-      TODO  --> !!! NA RWTHSW AN THELOUME NA GINONTAI OLA MESW SQL H AN THA ZHTAW ME SQL TA EVENTS KAI META SE LISTA THA TA XEIRIZOMAI OPWS PRIN!...
-      TODO
-      TODO
-     */
-
-
-    public ArrayList<Event> getTempListBasedOnQuantity(int readNumberOfMessages , ArrayList<Event> loadMessageList) {
-        ArrayList<Event> tempMessageList = new ArrayList<>();
-        for (Event event : loadMessageList) {
-            if (tempMessageList.size() < readNumberOfMessages) {
-                try {
-                    tempMessageList.add(event);
-                } catch (Exception e) {
-                    System.out.println("There was an error trying to load the messages.");
-                }
-            }
-        }
-        return tempMessageList;
-    }
-
-    @Override
-    public ArrayList<Event> getLatestMessages(int readNumberOfMessages) {
-
-        ArrayList<Event> loadMessageList = new ArrayList<>();
-        loadMessageList = queryLoadDb();
-
-        // Kanw sort ths repositoryList me to comparator EARLIEST_ORDER pou exw ftiaksei.
-        Collections.sort(loadMessageList , RepositoryInMemory.LATEST_ORDER);
-
-
-        StringBuilder stringBuilder = new StringBuilder("SELECT * FROM ");
-        stringBuilder.append(TABLE_EVENTS);
-
-        ArrayList<Event> tempMessageList = new ArrayList<>();
-        tempMessageList = getTempListBasedOnQuantity(readNumberOfMessages , loadMessageList);
-
-        return tempMessageList;
-    }
-
-    @Override
-    public ArrayList<Event> getOldestMessages(int readNumberOfMessages) {
-
-        ArrayList<Event> loadMessageList = new ArrayList<>();
-        loadMessageList = queryLoadDb();
-
-        // Kanw sort ths repositoryList me to comparator EARLIEST_ORDER pou exw ftiaksei.
-        Collections.sort(loadMessageList , RepositoryInMemory.EARLIEST_ORDER);
-
-
-        StringBuilder stringBuilder = new StringBuilder("SELECT * FROM ");
-        stringBuilder.append(TABLE_EVENTS);
-
-        ArrayList<Event> tempMessageList = new ArrayList<>();
-        tempMessageList = getTempListBasedOnQuantity(readNumberOfMessages , loadMessageList);
-
-        return tempMessageList;
-    }
-
-    public ArrayList<Event> getTempListBasedOnTime(Calendar calendarRequest , ArrayList<Event> loadMessageList) {
-
-        ArrayList<Event> tempMessageList = new ArrayList<>();
-
-        for (Event event : repositoryDbList) {
-            Calendar calendarRepo = Calendar.getInstance();
-            calendarRepo.setTimeInMillis(event.getTime());
-            try {
-                if (calendarRequest.before(calendarRepo)) {
-                    try {
-                        tempMessageList.add(event);
-                    } catch (Exception e) {
-                        System.out.println("There was a problem when we tried to add the message.");
-                    }
-                }
-            } catch (ArithmeticException e) {
-                System.out.println("Something went wrong with the time calculation.");
-            }
-        }
-        return tempMessageList;
-    }
-
-    @Override
-    public ArrayList<Event> getLastHourMessages() {
-
-        ArrayList<Event> loadMessageList = new ArrayList<>();
-        loadMessageList = queryLoadDb();
-
-        Controller controller = new Controller();
-        long timeOfRequest = controller.calcNewTime();
-
-        Calendar calendarRequest = Calendar.getInstance();
-
-        calendarRequest.setTimeInMillis(timeOfRequest);
-        calendarRequest.add(Calendar.HOUR, -1);
-
-        StringBuilder stringBuilder = new StringBuilder("SELECT * FROM ");
-        stringBuilder.append(TABLE_EVENTS);
-
-        ArrayList<Event> tempMessageList = new ArrayList<>();
-        tempMessageList = getTempListBasedOnTime(calendarRequest , loadMessageList);
-
-        return tempMessageList;
-
-
-        // TODO Deuteros tropos pou isxuei gia kathe methodo ksexwrista:
-        // TODO Na to kanw olo me sql query h mporw na xrhsimopoihsw methodo eksw ap to query? An thelei olo sql tote tha prepei na
-        // TODO apothhkeuw DATE_TIME gia na mporesw na kanw SELECT DATEADD(Year,-1,GETDATE()).
+    // TODO Na dw an thelw na kanw ta queries strings, p.x. :
 //        StringBuilder stringBuilder = new StringBuilder("SELECT * FROM ");
 //        stringBuilder.append(TABLE_EVENTS);
 //        stringBuilder.append(" WHERE ");
@@ -223,115 +160,155 @@ public class RepositoryDb implements IRepository {
 //        stringBuilder.append(" INTERVAL ");
 //        stringBuilder.append(calendarRequest);
 
+    @Override
+    public ArrayList<Event> getLatestMessages(int readNumberOfMessages) {
+        ArrayList<Event> repositoryDbList = new ArrayList<>();
+
+        try(Statement statement = connection.createStatement();
+//            ResultSet resultSet = statement.executeQuery(" SELECT * FROM " + TABLE_EVENTS + " WHERE " + COLUMN_EVENT_ID + " >= ( SELECT MAX( " + COLUMN_EVENT_ID + " ) - " + readNumberOfMessages + " FROM " + TABLE_EVENTS  )) {
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM " + TABLE_EVENTS + " ORDER BY " + COLUMN_EVENT_TIME_MILLIS + " ASC " + " LIMIT " + readNumberOfMessages )) {
+
+            // Calling the listFromQuery method to store the data from the db in the list.
+            repositoryDbList = listFromQuery(resultSet);
+        }catch (SQLException e){
+            System.out.println("Could not load the latest " + readNumberOfMessages + " messages." + e.getMessage());
+        }
+
+        return repositoryDbList;
     }
 
-
-
-    // TODO Ta ekana comment gia na ginetai compile, tha ginoun sthn poreia.
     @Override
-    public ArrayList<Event> getLastThreeHoursMessages() {
-        ArrayList<Event> loadMessageList = new ArrayList<>();
-        loadMessageList = queryLoadDb();
+    public ArrayList<Event> getOldestMessages(int readNumberOfMessages) {
+
+        ArrayList<Event> repositoryDbList = new ArrayList<>();
+
+        try(Statement statement = connection.createStatement();
+//            ResultSet resultSet = statement.executeQuery(" SELECT * FROM " + TABLE_EVENTS + " WHERE " + COLUMN_EVENT_ID + " >= ( SELECT MAX( " + COLUMN_EVENT_ID + " ) - " + readNumberOfMessages + " FROM " + TABLE_EVENTS  )) {
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM " + TABLE_EVENTS + " ORDER BY " + COLUMN_EVENT_TIME_MILLIS + " DESC " + " LIMIT " + readNumberOfMessages)) {
+
+            // Calling the listFromQuery method to store the data from the db in the list.
+            repositoryDbList = listFromQuery(resultSet);
+        }catch (SQLException e){
+            System.out.println("Could not load the oldest " + readNumberOfMessages + " messages." + e.getMessage());
+        }
+
+        return repositoryDbList;
+    }
+
+    @Override
+    public ArrayList<Event> getLastHourMessages() {
+        ArrayList<Event> repositoryDbList = new ArrayList<>();
 
         Controller controller = new Controller();
         long timeOfRequest = controller.calcNewTime();
 
-        Calendar calendarRequest = Calendar.getInstance();
+        try(Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM " + TABLE_EVENTS + " WHERE " + COLUMN_EVENT_TIME_MILLIS + " >= " + timeOfRequest + "/1000/60/60")) {
 
-        calendarRequest.setTimeInMillis(timeOfRequest);
-        calendarRequest.add(Calendar.HOUR, -3);
+            repositoryDbList = listFromQuery(resultSet);
+        }catch (SQLException e){
+            System.out.println("Could not get the last hour messages from the db. " + e.getMessage());
+        }
 
-        ArrayList<Event> tempMessageList = new ArrayList<>();
-        tempMessageList = getTempListBasedOnTime(calendarRequest , loadMessageList);
+        return repositoryDbList;
+    }
 
-        return tempMessageList;
+    @Override
+    public ArrayList<Event> getLastThreeHoursMessages() {
+        ArrayList<Event> repositoryDbList = new ArrayList<>();
+
+        Controller controller = new Controller();
+        long timeOfRequest = controller.calcNewTime();
+
+        try(Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM " + TABLE_EVENTS + " WHERE " + COLUMN_EVENT_TIME_MILLIS + " >= " + timeOfRequest + "/1000/60/60/3")) {
+
+            repositoryDbList = listFromQuery(resultSet);
+        }catch (SQLException e){
+            System.out.println("Could not get the last hour messages from the db. " + e.getMessage());
+        }
+
+        return repositoryDbList;
     }
 
     @Override
     public ArrayList<Event> getLastOneDayMessages() {
-
-        ArrayList<Event> loadMessageList = new ArrayList<>();
-        loadMessageList = queryLoadDb();
+        ArrayList<Event> repositoryDbList = new ArrayList<>();
 
         Controller controller = new Controller();
         long timeOfRequest = controller.calcNewTime();
 
-        Calendar calendarRequest = Calendar.getInstance();
+        try(Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM " + TABLE_EVENTS + " WHERE " + COLUMN_EVENT_TIME_MILLIS + " >= " + timeOfRequest + "/1000/60/60/24")) {
 
-        calendarRequest.setTimeInMillis(timeOfRequest);
-        calendarRequest.add(Calendar.DAY_OF_MONTH, -1);
+            repositoryDbList = listFromQuery(resultSet);
+        }catch (SQLException e){
+            System.out.println("Could not get the last hour messages from the db. " + e.getMessage());
+        }
 
-        ArrayList<Event> tempMessageList = new ArrayList<>();
-        tempMessageList = getTempListBasedOnTime(calendarRequest , loadMessageList);
-
-        return tempMessageList;
+        return repositoryDbList;
     }
 
     @Override
     public ArrayList<Event> getLastThreeDaysMessages() {
-        ArrayList<Event> loadMessageList = new ArrayList<>();
-        loadMessageList = queryLoadDb();
+        ArrayList<Event> repositoryDbList = new ArrayList<>();
 
         Controller controller = new Controller();
         long timeOfRequest = controller.calcNewTime();
 
-        Calendar calendarRequest = Calendar.getInstance();
+        try(Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM " + TABLE_EVENTS + " WHERE " + COLUMN_EVENT_TIME_MILLIS + " >= " + timeOfRequest + "/1000/60/60/24/3")) {
 
-        calendarRequest.setTimeInMillis(timeOfRequest);
-        calendarRequest.add(Calendar.DAY_OF_MONTH, -3);
+            repositoryDbList = listFromQuery(resultSet);
+        }catch (SQLException e){
+            System.out.println("Could not get the last hour messages from the db. " + e.getMessage());
+        }
 
-        ArrayList<Event> tempMessageList = new ArrayList<>();
-        tempMessageList = getTempListBasedOnTime(calendarRequest , loadMessageList);
-
-        return tempMessageList;
+        return repositoryDbList;
     }
 
     @Override
     public ArrayList<Event> getLastTenDaysMessages() {
-
-        ArrayList<Event> loadMessageList = new ArrayList<>();
-        loadMessageList = queryLoadDb();
+        ArrayList<Event> repositoryDbList = new ArrayList<>();
 
         Controller controller = new Controller();
         long timeOfRequest = controller.calcNewTime();
 
-        Calendar calendarRequest = Calendar.getInstance();
+        try(Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM " + TABLE_EVENTS + " WHERE " + COLUMN_EVENT_TIME_MILLIS + " >= " + timeOfRequest + "/1000/60/60/24/10")) {
 
-        calendarRequest.setTimeInMillis(timeOfRequest);
-        calendarRequest.add(Calendar.DAY_OF_MONTH, -10);
+            repositoryDbList = listFromQuery(resultSet);
+        }catch (SQLException e){
+            System.out.println("Could not get the last hour messages from the db. " + e.getMessage());
+        }
 
-        ArrayList<Event> tempMessageList = new ArrayList<>();
-        tempMessageList = getTempListBasedOnTime(calendarRequest , loadMessageList);
-
-        return tempMessageList;
+        return repositoryDbList;
     }
 
     @Override
     public ArrayList<Event> getLastMonthMessages() {
-
-        ArrayList<Event> loadMessageList = new ArrayList<>();
-        loadMessageList = queryLoadDb();
+        ArrayList<Event> repositoryDbList = new ArrayList<>();
 
         Controller controller = new Controller();
         long timeOfRequest = controller.calcNewTime();
 
-        Calendar calendarRequest = Calendar.getInstance();
+        try(Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM " + TABLE_EVENTS + " WHERE " + COLUMN_EVENT_TIME_MILLIS + " >= " + timeOfRequest + "/1000/60/60/24/30")) {
 
-        calendarRequest.setTimeInMillis(timeOfRequest);
-        calendarRequest.add(Calendar.MONTH, -1);
+            repositoryDbList = listFromQuery(resultSet);
+        }catch (SQLException e){
+            System.out.println("Could not get the last hour messages from the db. " + e.getMessage());
+        }
 
-        ArrayList<Event> tempMessageList = new ArrayList<>();
-        tempMessageList = getTempListBasedOnTime(calendarRequest , loadMessageList);
-
-        return tempMessageList;
+        return repositoryDbList;
     }
 
     @Override
     public ArrayList<Event> getAllTheMessages() {
 
-        ArrayList<Event> loadMessageList = new ArrayList<>();
-        loadMessageList = queryLoadDb();
+        ArrayList<Event> repositoryDbList = new ArrayList<>();
+        repositoryDbList = queryLoadDb();
 
-        return loadMessageList;
+        return repositoryDbList;
     }
 }

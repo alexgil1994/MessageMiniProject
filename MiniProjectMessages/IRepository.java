@@ -17,14 +17,8 @@ import java.util.ArrayList;
 
 public interface IRepository {
     void addMessage(String messageEvent , long timeEvent);
-
-    // Mallon den to xreiazomai gt h RepositoryDb to pairnei me query opote den xrhsimopoiei thn methodo. Tha meinei mono sthn RepositoryInMemory ws methodos.
-    // ArrayList<Event> getTempListBasedOnQuantity(int readNumberOfMessages);
     ArrayList<Event> getLatestMessages(int readNumberOfMessages);
     ArrayList<Event> getOldestMessages(int readNumberOfMessages);
-
-    // Mallon den to xreiazomai gt h RepositoryDb to pairnei me query opote den xrhsimopoiei thn methodo. Tha meinei mono sthn RepositoryInMemory ws methodos.
-    // ArrayList<Event> getTempListBasedOnTime(Calendar calendarRequest);
     ArrayList<Event> getLastHourMessages();
     ArrayList<Event> getLastThreeHoursMessages();
     ArrayList<Event> getLastOneDayMessages();

@@ -36,15 +36,24 @@ class Controller {
 
             if (numPressed > 0 && numPressed <= 10){
 
+                // DONE : Sthn metavash se repository db tha prepei na allaksei to na pairnei ws parametro repository to action. tha kalei ekeinh thn stigmh apo thn db ta dedomena pou xreiazetai.
                 // Creating a new Action object for the new request from the user.
-                Action action = new Action(numPressed , repositoryInMemory);
-                action.newAction(numPressed , repositoryInMemory);
+//                Action action = new Action(numPressed , repositoryInMemory);
+//                action.newAction(numPressed , repositoryInMemory);
+//
+//                // Creating a new ActionsToRun object that gets the new action object that was created for the new request.
+//                ActionsToRun actionsToRun = new ActionsToRun(action);
+
+                // Creating a new Action object for the new request from the user.
+                Action action = new Action(numPressed);
+                action.newAction(numPressed);
 
                 // Creating a new ActionsToRun object that gets the new action object that was created for the new request.
                 ActionsToRun actionsToRun = new ActionsToRun(action);
 
                 // Running the action that was requested by getting the action object to analyze what method to run inside the ActionsToRun class.
                 actionsToRun.runAction();
+
 
                 // When the user presses 0 the program exits from the loop -> program closes.
             } else if (numPressed == 0){
@@ -53,6 +62,7 @@ class Controller {
             }
         }
     }
+
     void showInstructions(int numPressed){
         switch (numPressed){
             case 1: {
