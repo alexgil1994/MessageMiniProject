@@ -118,19 +118,26 @@ class Controller {
     }
     //Formats and prints the data that are given from the repositoryInMem to the controller's handleRequestedActivity.
     void printData(ArrayList<Event> tempRepoList) {
-        int i = 0;
-        for (Event event: tempRepoList){
-            i = i + 1;
 
-            // Formating the existed time in milliseconds.
-            SimpleDateFormat formatAs = new SimpleDateFormat("dd/MMM/yyyy - HH:mm");
-            Date eventTimeFormatted = new Date(event.getTime());
+        if (tempRepoList == null){
+            System.out.println("There were no messages to show.");
+        }else {
 
-            // Preparing the String for print.
-            StringBuilder builder = new StringBuilder();
-            builder.append("Message ").append(i).append(" : ").append(event.getMessage()).append("   || Time of message : ").append(formatAs.format(eventTimeFormatted));
 
-            System.out.println(builder);
+            int i = 0;
+            for (Event event : tempRepoList) {
+                i = i + 1;
+
+                // Formating the existed time in milliseconds.
+                SimpleDateFormat formatAs = new SimpleDateFormat("dd/MMM/yyyy - HH:mm");
+                Date eventTimeFormatted = new Date(event.getTime());
+
+                // Preparing the String for print.
+                StringBuilder builder = new StringBuilder();
+                builder.append("Message ").append(i).append(" : ").append(event.getMessage()).append("   || Time of message : ").append(formatAs.format(eventTimeFormatted));
+
+                System.out.println(builder);
+            }
         }
     }
     void showCongratulationsInner(int numPressed, int numOfMessages){

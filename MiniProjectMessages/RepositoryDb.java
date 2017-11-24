@@ -19,6 +19,8 @@ public class RepositoryDb implements IRepository {
     public static final String COLUMN_EVENT_TIME_MILLIS = "eventTimeMillis";
 
     // Tha mporousa na to aplopoihsw kai akomh perissotero me INDEX ws:
+
+    // Gia thn periptwsh pou thelw na mou dinei se metavlhth ti eidous sort na einai k na mporw na ta xrhsimopoihsw gia if mesa sto query opou tha dinei thn sort pou zhthse o xrhsths.
     public static final String INDEX_EVENT_ID = "1";
     public static final String INDEX_EVENT_MESSAGE = "2";
     public static final String INDEX_EVENT_TIME_MILLIS = "3";
@@ -140,7 +142,7 @@ public class RepositoryDb implements IRepository {
 
         // Adding an Event to the DB.
         try(Statement statement = connection.createStatement()){
-            statement.executeUpdate("INSERT INTO " + TABLE_EVENTS + "(" + COLUMN_EVENT_MESSAGE + "," + COLUMN_EVENT_TIME_MILLIS + ")" + " VALUES " + "(" + messageEvent + "," + timeEvent + ")");
+            statement.executeUpdate("INSERT INTO " + TABLE_EVENTS + "(" + COLUMN_EVENT_MESSAGE + "," + COLUMN_EVENT_TIME_MILLIS + ")" + " VALUES " + "('" + messageEvent + "'," + timeEvent + ")");
 
             // Showing to the user that the message was successfully added
             controller.showCongratulations();
@@ -165,7 +167,6 @@ public class RepositoryDb implements IRepository {
         ArrayList<Event> repositoryDbList = new ArrayList<>();
 
         try(Statement statement = connection.createStatement();
-//            ResultSet resultSet = statement.executeQuery(" SELECT * FROM " + TABLE_EVENTS + " WHERE " + COLUMN_EVENT_ID + " >= ( SELECT MAX( " + COLUMN_EVENT_ID + " ) - " + readNumberOfMessages + " FROM " + TABLE_EVENTS  )) {
             ResultSet resultSet = statement.executeQuery("SELECT * FROM " + TABLE_EVENTS + " ORDER BY " + COLUMN_EVENT_TIME_MILLIS + " ASC " + " LIMIT " + readNumberOfMessages )) {
 
             // Calling the listFromQuery method to store the data from the db in the list.
@@ -183,7 +184,6 @@ public class RepositoryDb implements IRepository {
         ArrayList<Event> repositoryDbList = new ArrayList<>();
 
         try(Statement statement = connection.createStatement();
-//            ResultSet resultSet = statement.executeQuery(" SELECT * FROM " + TABLE_EVENTS + " WHERE " + COLUMN_EVENT_ID + " >= ( SELECT MAX( " + COLUMN_EVENT_ID + " ) - " + readNumberOfMessages + " FROM " + TABLE_EVENTS  )) {
             ResultSet resultSet = statement.executeQuery("SELECT * FROM " + TABLE_EVENTS + " ORDER BY " + COLUMN_EVENT_TIME_MILLIS + " DESC " + " LIMIT " + readNumberOfMessages)) {
 
             // Calling the listFromQuery method to store the data from the db in the list.

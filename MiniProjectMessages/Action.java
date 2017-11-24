@@ -1,4 +1,5 @@
-// TA COMMENTS EINAI GIA THN RepositoryInMemory
+// TA COMMENTS EINAI GIA THN RepositoryInMemory. Sthn periptwsh xwris vash eprepe na pername kai to repository mesw tou Action dioti me thn dhmiourgia
+// kainouriou RepositoryInMemory object tha xanotan otidhpote apothhkeumeno sthn lista me apotelesma na mhn exei ti na ektupwsei g ton xrhsth.
 class Action {
     private int method;
 //    private RepositoryInMemory repositoryInMem;
