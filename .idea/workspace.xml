@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0813bfbc-3f02-42ca-8afe-45b61de01cbd" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/repositoryDb.db" afterPath="$PROJECT_DIR$/repositoryDb.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniProjectMessages/Action.java" afterPath="$PROJECT_DIR$/MiniProjectMessages/Action.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniProjectMessages/Controller.java" afterPath="$PROJECT_DIR$/MiniProjectMessages/Controller.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniProjectMessages/ActionsToRun.java" afterPath="$PROJECT_DIR$/MiniProjectMessages/ActionsToRun.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniProjectMessages/RepositoryDb.java" afterPath="$PROJECT_DIR$/MiniProjectMessages/RepositoryDb.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -53,7 +52,7 @@
         <entry file="file://$PROJECT_DIR$/MiniProjectMessages/Event.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="153">
-              <caret line="9" column="14" lean-forward="true" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
+              <caret line="9" column="14" lean-forward="false" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
               <folding>
                 <element signature="e#201#202#0" expanded="true" />
                 <element signature="e#231#232#0" expanded="true" />
@@ -65,7 +64,7 @@
       <file leaf-file-name="ScannerImport.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MiniProjectMessages/ScannerImport.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="354">
+            <state relative-caret-position="646">
               <caret line="43" column="16" lean-forward="false" selection-start-line="43" selection-start-column="16" selection-end-line="43" selection-end-column="16" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -87,7 +86,7 @@
       <file leaf-file-name="Controller.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MiniProjectMessages/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="337">
+            <state relative-caret-position="697">
               <caret line="41" column="66" lean-forward="false" selection-start-line="41" selection-start-column="48" selection-end-line="41" selection-end-column="66" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -101,8 +100,8 @@
       <file leaf-file-name="Action.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MiniProjectMessages/Action.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="3" lean-forward="false" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="3" />
+            <state relative-caret-position="289">
+              <caret line="21" column="7" lean-forward="false" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="7" />
               <folding>
                 <element signature="e#563#564#0" expanded="true" />
                 <element signature="e#599#600#0" expanded="true" />
@@ -116,11 +115,10 @@
       <file leaf-file-name="ActionsToRun.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MiniProjectMessages/ActionsToRun.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="32" column="47" lean-forward="true" selection-start-line="32" selection-start-column="47" selection-end-line="32" selection-end-column="47" />
+            <state relative-caret-position="170">
+              <caret line="10" column="26" lean-forward="false" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
               <folding>
-                <element signature="e#716#717#0" expanded="true" />
-                <element signature="e#770#771#0" expanded="true" />
+                <element signature="e#0#9126#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -129,46 +127,48 @@
       <file leaf-file-name="RepositoryDb.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/MiniProjectMessages/RepositoryDb.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="642">
-              <caret line="163" column="0" lean-forward="true" selection-start-line="163" selection-start-column="0" selection-end-line="163" selection-end-column="0" />
+            <state relative-caret-position="1530">
+              <caret line="90" column="36" lean-forward="true" selection-start-line="90" selection-start-column="36" selection-end-line="90" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1511526013737" expanded="true" signature="1382:1396" ph="SELECT * FRO... event" />
-                <marker date="1511526013737" expanded="true" signature="1382:1412" ph="SELECT * FRO... event" />
-                <marker date="1511526013737" expanded="true" signature="1549:1563" ph="SELECT * FRO... event" />
-                <marker date="1511526013737" expanded="true" signature="1549:1587" ph="SELECT * FRO... event" />
-                <marker date="1511526013737" expanded="true" signature="1815:1887" ph="INSERT INTO event... " />
-                <marker date="1511526013737" expanded="true" signature="1943:2019" ph="INSERT INTO event... " />
-                <marker date="1511526013737" expanded="true" signature="5736:5798" ph="INSERT INTO event... " />
-                <marker date="1511526013737" expanded="true" signature="5736:5873" ph="INSERT INTO eventeventMessage... " />
-                <marker date="1511526013737" expanded="true" signature="5736:5891" ph="INSERT INTO event... " />
-                <marker date="1511526013737" expanded="true" signature="5736:5893" ph="INSERT INTO event... " />
-                <marker date="1511526013737" expanded="true" signature="6982:6995" ph="SELECT * FRO... " />
-                <marker date="1511526013737" expanded="true" signature="6982:7017" ph="SELECT * FRO... event" />
-                <marker date="1511526013737" expanded="true" signature="6982:7025" ph="SELECT * FRO... event" />
-                <marker date="1511526013737" expanded="true" signature="6982:7026" ph="SELECT * FRO... event" />
-                <marker date="1511526013737" expanded="true" signature="6982:7062" ph="SELECT * FRO... event" />
-                <marker date="1511526013737" expanded="true" signature="6982:7063" ph="SELECT * FRO... eventmissingValue" />
-                <marker date="1511526013737" expanded="true" signature="6982:7064" ph="SELECT * FRO... event" />
-                <marker date="1511526013737" expanded="true" signature="6982:7075" ph="SELECT * FRO... event" />
-                <marker date="1511526013737" expanded="true" signature="6982:7102" ph="SELECT * FRO... event" />
-                <marker date="1511526013737" expanded="true" signature="7730:7811" ph="SELECT * FRO... event" />
-                <marker date="1511526013737" expanded="true" signature="7730:7815" ph="SELECT * FRO... event" />
-                <marker date="1511526013737" expanded="true" signature="7730:7824" ph="SELECT * FRO... event" />
-                <marker date="1511526013737" expanded="true" signature="8561:8602" ph="SELECT * FRO... event" />
-                <marker date="1511526013737" expanded="true" signature="8561:8633" ph="SELECT * FRO... event" />
-                <marker date="1511526013737" expanded="true" signature="8561:8637" ph="SELECT * FRO... event" />
-                <marker date="1511526013737" expanded="true" signature="8561:8638" ph="SELECT * FRO... event" />
-                <marker date="1511526013737" expanded="true" signature="8561:8639" ph="SELECT * FRO... event" />
-                <marker date="1511526013737" expanded="true" signature="8561:8670" ph="SELECT * FRO... event" />
-                <marker date="1511526013737" expanded="true" signature="9285:9394" ph="SELECT * FRO... event" />
-                <marker date="1511526013737" expanded="true" signature="9285:9396" ph="SELECT * FRO... event" />
-                <marker date="1511526013737" expanded="true" signature="10007:10119" ph="SELECT * FRO... event" />
-                <marker date="1511526013737" expanded="true" signature="10733:10845" ph="SELECT * FRO... event" />
-                <marker date="1511526013737" expanded="true" signature="10733:10847" ph="SELECT * FRO... event" />
-                <marker date="1511526013737" expanded="true" signature="11459:11571" ph="SELECT * FRO... event" />
-                <marker date="1511526013737" expanded="true" signature="11459:11574" ph="SELECT * FRO... event" />
-                <marker date="1511526013737" expanded="true" signature="12184:12299" ph="SELECT * FRO... event" />
+                <marker date="1511530755205" expanded="true" signature="1382:1396" ph="SELECT * FRO... event" />
+                <marker date="1511530755205" expanded="true" signature="1382:1412" ph="SELECT * FRO... event" />
+                <marker date="1511530755205" expanded="true" signature="1549:1563" ph="SELECT * FRO... event" />
+                <marker date="1511530755205" expanded="true" signature="1549:1587" ph="SELECT * FRO... event" />
+                <marker date="1511530755205" expanded="true" signature="1807:1915" ph="INSERT INTO event... " />
+                <marker date="1511530755205" expanded="true" signature="2008:2080" ph="INSERT INTO event... " />
+                <marker date="1511530755205" expanded="true" signature="2136:2212" ph="INSERT INTO event... " />
+                <marker date="1511530755205" expanded="true" signature="6314:6376" ph="INSERT INTO event... " />
+                <marker date="1511530755205" expanded="true" signature="6314:6451" ph="INSERT INTO eventeventMessage... " />
+                <marker date="1511530755205" expanded="true" signature="6314:6469" ph="INSERT INTO event... " />
+                <marker date="1511530755205" expanded="true" signature="6314:6470" ph="INSERT INTO event... " />
+                <marker date="1511530755205" expanded="true" signature="6314:6471" ph="INSERT INTO event... " />
+                <marker date="1511530755205" expanded="true" signature="7560:7573" ph="SELECT * FRO... " />
+                <marker date="1511530755205" expanded="true" signature="7560:7595" ph="SELECT * FRO... event" />
+                <marker date="1511530755205" expanded="true" signature="7560:7603" ph="SELECT * FRO... event" />
+                <marker date="1511530755205" expanded="true" signature="7560:7604" ph="SELECT * FRO... event" />
+                <marker date="1511530755205" expanded="true" signature="7560:7640" ph="SELECT * FRO... event" />
+                <marker date="1511530755205" expanded="true" signature="7560:7641" ph="SELECT * FRO... eventmissingValue" />
+                <marker date="1511530755205" expanded="true" signature="7560:7642" ph="SELECT * FRO... event" />
+                <marker date="1511530755205" expanded="true" signature="7560:7653" ph="SELECT * FRO... event" />
+                <marker date="1511530755205" expanded="true" signature="7560:7680" ph="SELECT * FRO... event" />
+                <marker date="1511530755205" expanded="true" signature="8308:8389" ph="SELECT * FRO... event" />
+                <marker date="1511530755205" expanded="true" signature="8308:8393" ph="SELECT * FRO... event" />
+                <marker date="1511530755205" expanded="true" signature="8308:8402" ph="SELECT * FRO... event" />
+                <marker date="1511530755205" expanded="true" signature="9139:9180" ph="SELECT * FRO... event" />
+                <marker date="1511530755205" expanded="true" signature="9139:9211" ph="SELECT * FRO... event" />
+                <marker date="1511530755205" expanded="true" signature="9139:9215" ph="SELECT * FRO... event" />
+                <marker date="1511530755205" expanded="true" signature="9139:9216" ph="SELECT * FRO... event" />
+                <marker date="1511530755205" expanded="true" signature="9139:9217" ph="SELECT * FRO... event" />
+                <marker date="1511530755205" expanded="true" signature="9139:9248" ph="SELECT * FRO... event" />
+                <marker date="1511530755205" expanded="true" signature="9863:9972" ph="SELECT * FRO... event" />
+                <marker date="1511530755205" expanded="true" signature="9863:9974" ph="SELECT * FRO... event" />
+                <marker date="1511530755205" expanded="true" signature="10585:10697" ph="SELECT * FRO... event" />
+                <marker date="1511530755205" expanded="true" signature="11311:11423" ph="SELECT * FRO... event" />
+                <marker date="1511530755205" expanded="true" signature="11311:11425" ph="SELECT * FRO... event" />
+                <marker date="1511530755205" expanded="true" signature="12037:12149" ph="SELECT * FRO... event" />
+                <marker date="1511530755205" expanded="true" signature="12037:12152" ph="SELECT * FRO... event" />
+                <marker date="1511530755205" expanded="true" signature="12762:12877" ph="SELECT * FRO... event" />
               </folding>
             </state>
           </provider>
@@ -177,8 +177,8 @@
       <file leaf-file-name="RepositoryInMemory.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MiniProjectMessages/RepositoryInMemory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="35" column="40" lean-forward="true" selection-start-line="35" selection-start-column="40" selection-end-line="35" selection-end-column="40" />
+            <state relative-caret-position="561">
+              <caret line="35" column="40" lean-forward="false" selection-start-line="35" selection-start-column="40" selection-end-line="35" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -283,9 +283,9 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-16" />
-    <option name="width" value="1940" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="1040" />
+    <option name="width" value="887" />
     <option name="height" value="1047" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -490,7 +490,8 @@
       <workItem from="1511244914203" duration="20907000" />
       <workItem from="1511331424491" duration="27134000" />
       <workItem from="1511418856552" duration="21441000" />
-      <workItem from="1511504692278" duration="21766000" />
+      <workItem from="1511504692278" duration="23394000" />
+      <workItem from="1511529278384" duration="2049000" />
     </task>
     <task id="LOCAL-00001" summary="Messages mini project version 0.1.0">
       <created>1510728206261</created>
@@ -503,10 +504,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="267144000" />
+    <option name="totallyTimeSpent" value="270821000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="1040" y="0" width="887" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -517,7 +518,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16012725" sideWeight="0.503125" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.51979166" sideWeight="0.496875" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5730689" sideWeight="0.496875" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.49791667" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -578,7 +579,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/MiniProjectMessages/RepositoryDb.java</url>
-          <line>144</line>
+          <line>156</line>
           <properties />
           <option name="timeStamp" value="39" />
         </line-breakpoint>
@@ -883,7 +884,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="151">
           <caret line="514" column="28" lean-forward="false" selection-start-line="514" selection-start-column="28" selection-end-line="514" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -926,7 +926,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/MiniProjectMessages/ScannerImport.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
+        <state relative-caret-position="646">
           <caret line="43" column="16" lean-forward="false" selection-start-line="43" selection-start-column="16" selection-end-line="43" selection-end-column="16" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -953,7 +953,7 @@
     <entry file="file://$PROJECT_DIR$/MiniProjectMessages/Event.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
-          <caret line="9" column="14" lean-forward="true" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
+          <caret line="9" column="14" lean-forward="false" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
           <folding>
             <element signature="e#201#202#0" expanded="true" />
             <element signature="e#231#232#0" expanded="true" />
@@ -961,22 +961,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MiniProjectMessages/Action.java">
+    <entry file="file://$PROJECT_DIR$/MiniProjectMessages/RepositoryInMemory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="3" lean-forward="false" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="3" />
-          <folding>
-            <element signature="e#563#564#0" expanded="true" />
-            <element signature="e#599#600#0" expanded="true" />
-            <element signature="e#1316#1317#0" expanded="true" />
-            <element signature="e#1352#1353#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="561">
+          <caret line="35" column="40" lean-forward="false" selection-start-line="35" selection-start-column="40" selection-end-line="35" selection-end-column="40" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/MiniProjectMessages/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
+        <state relative-caret-position="697">
           <caret line="41" column="66" lean-forward="false" selection-start-line="41" selection-start-column="48" selection-end-line="41" selection-end-column="66" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -986,67 +981,73 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MiniProjectMessages/ActionsToRun.java">
+    <entry file="file://$PROJECT_DIR$/MiniProjectMessages/Action.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="32" column="47" lean-forward="true" selection-start-line="32" selection-start-column="47" selection-end-line="32" selection-end-column="47" />
+        <state relative-caret-position="289">
+          <caret line="21" column="7" lean-forward="false" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="7" />
           <folding>
-            <element signature="e#716#717#0" expanded="true" />
-            <element signature="e#770#771#0" expanded="true" />
+            <element signature="e#563#564#0" expanded="true" />
+            <element signature="e#599#600#0" expanded="true" />
+            <element signature="e#1316#1317#0" expanded="true" />
+            <element signature="e#1352#1353#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MiniProjectMessages/RepositoryInMemory.java">
+    <entry file="file://$PROJECT_DIR$/MiniProjectMessages/ActionsToRun.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="35" column="40" lean-forward="true" selection-start-line="35" selection-start-column="40" selection-end-line="35" selection-end-column="40" />
-          <folding />
+        <state relative-caret-position="170">
+          <caret line="10" column="26" lean-forward="false" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#9126#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/MiniProjectMessages/RepositoryDb.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="642">
-          <caret line="163" column="0" lean-forward="true" selection-start-line="163" selection-start-column="0" selection-end-line="163" selection-end-column="0" />
+        <state relative-caret-position="1530">
+          <caret line="90" column="36" lean-forward="true" selection-start-line="90" selection-start-column="36" selection-end-line="90" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1511526013737" expanded="true" signature="1382:1396" ph="SELECT * FRO... event" />
-            <marker date="1511526013737" expanded="true" signature="1382:1412" ph="SELECT * FRO... event" />
-            <marker date="1511526013737" expanded="true" signature="1549:1563" ph="SELECT * FRO... event" />
-            <marker date="1511526013737" expanded="true" signature="1549:1587" ph="SELECT * FRO... event" />
-            <marker date="1511526013737" expanded="true" signature="1815:1887" ph="INSERT INTO event... " />
-            <marker date="1511526013737" expanded="true" signature="1943:2019" ph="INSERT INTO event... " />
-            <marker date="1511526013737" expanded="true" signature="5736:5798" ph="INSERT INTO event... " />
-            <marker date="1511526013737" expanded="true" signature="5736:5873" ph="INSERT INTO eventeventMessage... " />
-            <marker date="1511526013737" expanded="true" signature="5736:5891" ph="INSERT INTO event... " />
-            <marker date="1511526013737" expanded="true" signature="5736:5893" ph="INSERT INTO event... " />
-            <marker date="1511526013737" expanded="true" signature="6982:6995" ph="SELECT * FRO... " />
-            <marker date="1511526013737" expanded="true" signature="6982:7017" ph="SELECT * FRO... event" />
-            <marker date="1511526013737" expanded="true" signature="6982:7025" ph="SELECT * FRO... event" />
-            <marker date="1511526013737" expanded="true" signature="6982:7026" ph="SELECT * FRO... event" />
-            <marker date="1511526013737" expanded="true" signature="6982:7062" ph="SELECT * FRO... event" />
-            <marker date="1511526013737" expanded="true" signature="6982:7063" ph="SELECT * FRO... eventmissingValue" />
-            <marker date="1511526013737" expanded="true" signature="6982:7064" ph="SELECT * FRO... event" />
-            <marker date="1511526013737" expanded="true" signature="6982:7075" ph="SELECT * FRO... event" />
-            <marker date="1511526013737" expanded="true" signature="6982:7102" ph="SELECT * FRO... event" />
-            <marker date="1511526013737" expanded="true" signature="7730:7811" ph="SELECT * FRO... event" />
-            <marker date="1511526013737" expanded="true" signature="7730:7815" ph="SELECT * FRO... event" />
-            <marker date="1511526013737" expanded="true" signature="7730:7824" ph="SELECT * FRO... event" />
-            <marker date="1511526013737" expanded="true" signature="8561:8602" ph="SELECT * FRO... event" />
-            <marker date="1511526013737" expanded="true" signature="8561:8633" ph="SELECT * FRO... event" />
-            <marker date="1511526013737" expanded="true" signature="8561:8637" ph="SELECT * FRO... event" />
-            <marker date="1511526013737" expanded="true" signature="8561:8638" ph="SELECT * FRO... event" />
-            <marker date="1511526013737" expanded="true" signature="8561:8639" ph="SELECT * FRO... event" />
-            <marker date="1511526013737" expanded="true" signature="8561:8670" ph="SELECT * FRO... event" />
-            <marker date="1511526013737" expanded="true" signature="9285:9394" ph="SELECT * FRO... event" />
-            <marker date="1511526013737" expanded="true" signature="9285:9396" ph="SELECT * FRO... event" />
-            <marker date="1511526013737" expanded="true" signature="10007:10119" ph="SELECT * FRO... event" />
-            <marker date="1511526013737" expanded="true" signature="10733:10845" ph="SELECT * FRO... event" />
-            <marker date="1511526013737" expanded="true" signature="10733:10847" ph="SELECT * FRO... event" />
-            <marker date="1511526013737" expanded="true" signature="11459:11571" ph="SELECT * FRO... event" />
-            <marker date="1511526013737" expanded="true" signature="11459:11574" ph="SELECT * FRO... event" />
-            <marker date="1511526013737" expanded="true" signature="12184:12299" ph="SELECT * FRO... event" />
+            <marker date="1511530755205" expanded="true" signature="1382:1396" ph="SELECT * FRO... event" />
+            <marker date="1511530755205" expanded="true" signature="1382:1412" ph="SELECT * FRO... event" />
+            <marker date="1511530755205" expanded="true" signature="1549:1563" ph="SELECT * FRO... event" />
+            <marker date="1511530755205" expanded="true" signature="1549:1587" ph="SELECT * FRO... event" />
+            <marker date="1511530755205" expanded="true" signature="1807:1915" ph="INSERT INTO event... " />
+            <marker date="1511530755205" expanded="true" signature="2008:2080" ph="INSERT INTO event... " />
+            <marker date="1511530755205" expanded="true" signature="2136:2212" ph="INSERT INTO event... " />
+            <marker date="1511530755205" expanded="true" signature="6314:6376" ph="INSERT INTO event... " />
+            <marker date="1511530755205" expanded="true" signature="6314:6451" ph="INSERT INTO eventeventMessage... " />
+            <marker date="1511530755205" expanded="true" signature="6314:6469" ph="INSERT INTO event... " />
+            <marker date="1511530755205" expanded="true" signature="6314:6470" ph="INSERT INTO event... " />
+            <marker date="1511530755205" expanded="true" signature="6314:6471" ph="INSERT INTO event... " />
+            <marker date="1511530755205" expanded="true" signature="7560:7573" ph="SELECT * FRO... " />
+            <marker date="1511530755205" expanded="true" signature="7560:7595" ph="SELECT * FRO... event" />
+            <marker date="1511530755205" expanded="true" signature="7560:7603" ph="SELECT * FRO... event" />
+            <marker date="1511530755205" expanded="true" signature="7560:7604" ph="SELECT * FRO... event" />
+            <marker date="1511530755205" expanded="true" signature="7560:7640" ph="SELECT * FRO... event" />
+            <marker date="1511530755205" expanded="true" signature="7560:7641" ph="SELECT * FRO... eventmissingValue" />
+            <marker date="1511530755205" expanded="true" signature="7560:7642" ph="SELECT * FRO... event" />
+            <marker date="1511530755205" expanded="true" signature="7560:7653" ph="SELECT * FRO... event" />
+            <marker date="1511530755205" expanded="true" signature="7560:7680" ph="SELECT * FRO... event" />
+            <marker date="1511530755205" expanded="true" signature="8308:8389" ph="SELECT * FRO... event" />
+            <marker date="1511530755205" expanded="true" signature="8308:8393" ph="SELECT * FRO... event" />
+            <marker date="1511530755205" expanded="true" signature="8308:8402" ph="SELECT * FRO... event" />
+            <marker date="1511530755205" expanded="true" signature="9139:9180" ph="SELECT * FRO... event" />
+            <marker date="1511530755205" expanded="true" signature="9139:9211" ph="SELECT * FRO... event" />
+            <marker date="1511530755205" expanded="true" signature="9139:9215" ph="SELECT * FRO... event" />
+            <marker date="1511530755205" expanded="true" signature="9139:9216" ph="SELECT * FRO... event" />
+            <marker date="1511530755205" expanded="true" signature="9139:9217" ph="SELECT * FRO... event" />
+            <marker date="1511530755205" expanded="true" signature="9139:9248" ph="SELECT * FRO... event" />
+            <marker date="1511530755205" expanded="true" signature="9863:9972" ph="SELECT * FRO... event" />
+            <marker date="1511530755205" expanded="true" signature="9863:9974" ph="SELECT * FRO... event" />
+            <marker date="1511530755205" expanded="true" signature="10585:10697" ph="SELECT * FRO... event" />
+            <marker date="1511530755205" expanded="true" signature="11311:11423" ph="SELECT * FRO... event" />
+            <marker date="1511530755205" expanded="true" signature="11311:11425" ph="SELECT * FRO... event" />
+            <marker date="1511530755205" expanded="true" signature="12037:12149" ph="SELECT * FRO... event" />
+            <marker date="1511530755205" expanded="true" signature="12037:12152" ph="SELECT * FRO... event" />
+            <marker date="1511530755205" expanded="true" signature="12762:12877" ph="SELECT * FRO... event" />
           </folding>
         </state>
       </provider>

@@ -44,10 +44,14 @@ public class RepositoryDb implements IRepository {
      */
 
     // For a transaction.
+    public static final String  INSERT_EVENT = "INSERT INTO " + TABLE_EVENTS + '(' + COLUMN_EVENT_MESSAGE + ", " + COLUMN_EVENT_TIME_MILLIS + ") VALUES(?,?)";
+
+    // An xreiazetai ksexwrista.
     public static final String  INSERT_EVENT_MESSAGE = "INSERT INTO " + TABLE_EVENTS + '(' + COLUMN_EVENT_MESSAGE + ") VALUES(?)";
     public static final String  INSERT_EVENT_TIME = "INSERT INTO " + TABLE_EVENTS + '(' + COLUMN_EVENT_TIME_MILLIS + ") VALUES(?)";
 
     private PreparedStatement queryLoadDb;
+    private PreparedStatement insertEvent;
     private PreparedStatement insertEventMessage;
     private PreparedStatement insertEventTime;
 
@@ -57,6 +61,9 @@ public class RepositoryDb implements IRepository {
             //TODO fix the problem with prepared statements
 //            // Prepared statement for queryLoadDb
 //            queryLoadDb = connection.prepareStatement(QUERY_LOAD_DB_PREP);
+//
+//            // Prepared statement for both values of the addMessage method.
+//            insertEvent = connection.prepareStatement(INSERT_EVENT);
 //
 //            // Prepared statement for addMessage
 //            insertEventMessage = connection.prepareStatement(INSERT_EVENT_MESSAGE, Statement.RETURN_GENERATED_KEYS);
@@ -78,6 +85,10 @@ public class RepositoryDb implements IRepository {
         try {
             if (queryLoadDb != null) {
                 queryLoadDb.close();
+            }
+
+            if (insertEvent != null) {
+                insertEvent.close();
             }
 
             if (insertEventMessage != null) {
@@ -134,7 +145,8 @@ public class RepositoryDb implements IRepository {
         }
     }
 
-    // TODO FIX Vazei mhnuma mono an einai arithmos, an tou dwthei string vgainei den mporei na to valei.
+    // TODO FIX! Vazei mono thn prwth leksh apo thn protash tou String. EXEI NA KANEI ME TA PREPARED STATEMENTS
+    // TODO POU DEN MPORESA NA SUNDESW. Me ton tropo auto mporei na ginei kai sql injection.
     // Method to add Events from the user, in the repositoryDbList.
     @Override
     public void addMessage(String messageEvent, long timeEvent) {
