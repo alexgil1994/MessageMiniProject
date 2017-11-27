@@ -3,6 +3,7 @@ import java.util.ArrayList;
 
 public class RepositoryDb implements IRepository {
 
+    // Mesa stis methodous h repositoryDbList ginetai xwris to ArrayList<Event> mprosta alliws ginetai bug(parousiazei perissotera dedomena sta queries).
     private ArrayList<Event> repositoryDbList = new ArrayList<>();
     private Connection connection;
 
@@ -134,7 +135,7 @@ public class RepositoryDb implements IRepository {
             ResultSet resultSet = statement.executeQuery(QUERY_LOAD_DB)) {
 
             // Creating a new repositoryDbList ArrayList<Event>.
-            ArrayList<Event> repositoryDbList = new ArrayList<>();
+            repositoryDbList = new ArrayList<>();
 
             repositoryDbList = listFromQuery(resultSet);
 
@@ -176,7 +177,7 @@ public class RepositoryDb implements IRepository {
 
     @Override
     public ArrayList<Event> getLatestMessages(int readNumberOfMessages) {
-        ArrayList<Event> repositoryDbList = new ArrayList<>();
+        repositoryDbList = new ArrayList<>();
 
         try(Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery("SELECT * FROM " + TABLE_EVENTS + " ORDER BY " + COLUMN_EVENT_TIME_MILLIS + " ASC " + " LIMIT " + readNumberOfMessages )) {
@@ -192,8 +193,7 @@ public class RepositoryDb implements IRepository {
 
     @Override
     public ArrayList<Event> getOldestMessages(int readNumberOfMessages) {
-
-        ArrayList<Event> repositoryDbList = new ArrayList<>();
+        repositoryDbList = new ArrayList<>();
 
         try(Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery("SELECT * FROM " + TABLE_EVENTS + " ORDER BY " + COLUMN_EVENT_TIME_MILLIS + " DESC " + " LIMIT " + readNumberOfMessages)) {
@@ -209,7 +209,7 @@ public class RepositoryDb implements IRepository {
 
     @Override
     public ArrayList<Event> getLastHourMessages() {
-        ArrayList<Event> repositoryDbList = new ArrayList<>();
+        repositoryDbList = new ArrayList<>();
 
         Controller controller = new Controller();
         long timeOfRequest = controller.calcNewTime();
@@ -227,7 +227,7 @@ public class RepositoryDb implements IRepository {
 
     @Override
     public ArrayList<Event> getLastThreeHoursMessages() {
-        ArrayList<Event> repositoryDbList = new ArrayList<>();
+        repositoryDbList = new ArrayList<>();
 
         Controller controller = new Controller();
         long timeOfRequest = controller.calcNewTime();
@@ -245,7 +245,7 @@ public class RepositoryDb implements IRepository {
 
     @Override
     public ArrayList<Event> getLastOneDayMessages() {
-        ArrayList<Event> repositoryDbList = new ArrayList<>();
+        repositoryDbList = new ArrayList<>();
 
         Controller controller = new Controller();
         long timeOfRequest = controller.calcNewTime();
@@ -263,7 +263,7 @@ public class RepositoryDb implements IRepository {
 
     @Override
     public ArrayList<Event> getLastThreeDaysMessages() {
-        ArrayList<Event> repositoryDbList = new ArrayList<>();
+        repositoryDbList = new ArrayList<>();
 
         Controller controller = new Controller();
         long timeOfRequest = controller.calcNewTime();
@@ -281,7 +281,7 @@ public class RepositoryDb implements IRepository {
 
     @Override
     public ArrayList<Event> getLastTenDaysMessages() {
-        ArrayList<Event> repositoryDbList = new ArrayList<>();
+        repositoryDbList = new ArrayList<>();
 
         Controller controller = new Controller();
         long timeOfRequest = controller.calcNewTime();
@@ -299,7 +299,7 @@ public class RepositoryDb implements IRepository {
 
     @Override
     public ArrayList<Event> getLastMonthMessages() {
-        ArrayList<Event> repositoryDbList = new ArrayList<>();
+        repositoryDbList = new ArrayList<>();
 
         Controller controller = new Controller();
         long timeOfRequest = controller.calcNewTime();
@@ -317,8 +317,7 @@ public class RepositoryDb implements IRepository {
 
     @Override
     public ArrayList<Event> getAllTheMessages() {
-
-        ArrayList<Event> repositoryDbList = new ArrayList<>();
+        repositoryDbList = new ArrayList<>();
         repositoryDbList = queryLoadDb();
 
         return repositoryDbList;

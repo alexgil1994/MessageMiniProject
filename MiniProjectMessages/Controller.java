@@ -22,7 +22,21 @@ class Controller {
     }
     void handleRequestedActivity(){
         // repositoryInMemory object ftiaxnetai mono me kathe arxh tou programmatos edw sthn handleRequestedActivity. H Action to dexetai apo edw.
-        RepositoryInMemory repositoryInMemory = new RepositoryInMemory();
+//        RepositoryInMemory repositoryInMemory = new RepositoryInMemory();
+//        RepositoryDb repositoryDb = new RepositoryDb();
+
+        // TODO The user should be able to pick the implementation(Memory - DB).
+//        ScannerImport scannerImport = new ScannerImport();
+//        scannerImport.readActivity();
+//        int readImplementationMethod = scannerImport.getReadActivity();
+//
+//        if (readImplementationMethod == 1){
+//            IRepository iRepository = new RepositoryDb();
+//        }else if (readImplementationMethod == 2){
+//            IRepository iRepository = new RepositoryInMemory();
+//        }
+
+        IRepository iRepository = new RepositoryDb();
 
         boolean quit = false;
         while (!quit){
@@ -53,8 +67,7 @@ class Controller {
                 ActionsToRun actionsToRun = new ActionsToRun(action);
 
                 // Running the action that was requested by getting the action object to analyze what method to run inside the ActionsToRun class.
-                actionsToRun.runAction();
-
+                actionsToRun.runAction(iRepository);
 
                 // When the user presses 0 the program exits from the loop -> program closes.
             } else if (numPressed == 0){
@@ -112,18 +125,19 @@ class Controller {
             }
         }
     }
+
     long calcNewTime(){
         //Initializing Callendar and passing in the String with the full time.
         Calendar calendar = Calendar.getInstance();
         return calendar.getTimeInMillis();
     }
+
     //Formats and prints the data that are given from the repositoryInMem to the controller's handleRequestedActivity.
     void printData(ArrayList<Event> tempRepoList) {
 
         if (tempRepoList == null){
             System.out.println("There were no messages to show.");
         }else {
-
 
             int i = 0;
             for (Event event : tempRepoList) {

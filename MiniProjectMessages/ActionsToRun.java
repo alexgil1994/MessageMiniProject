@@ -8,7 +8,9 @@ public class ActionsToRun {
 
     private int actionMethod;
 //    private RepositoryInMemory repositoryInMemory;
-    private RepositoryDb repositoryDb = new RepositoryDb();
+//    private RepositoryDb repositoryDb = new RepositoryDb();
+//    private IRepository iRepository = new RepositoryDb();
+
     Controller controller = new Controller();
     ScannerImport scannerImport = new ScannerImport();
 
@@ -29,8 +31,20 @@ public class ActionsToRun {
         this.actionMethod = actionMethod;
     }
 
+    private void checkDb(RepositoryDb repositoryDb){
+        if (!repositoryDb.open()){
+            System.out.println("Cant open the repositoryDb");
+            return;
+        }
+    }
+
+    private void closeDb(RepositoryDb repositoryDb){
+        repositoryDb.close();
+    }
+
     // It gets the requested method to run by calling it through the new ActionsToRun object created before the call.
-    void runAction() {
+    void runAction(IRepository getIRepository) {
+        IRepository iRepository = getIRepository;
         switch (actionMethod) {
             case 1: {
                 controller.showInstructions(actionMethod);
@@ -43,15 +57,14 @@ public class ActionsToRun {
                 Event event = new Event(messageOfEvent, timeOfEvent);
                 event.newEvent(messageOfEvent, timeOfEvent);
 
-                if (!repositoryDb.open()){
-                    System.out.println("Cant open the repositoryDb");
-                    return;
-                }
+                // Opens the db connection.
+                ((RepositoryDb) iRepository).open();
 
-                repositoryDb.addMessage(event.getMessage(), event.getTime());
+                // Calling for data from the IRepository object that passed as an argument so that both implementations can work.
+                iRepository.addMessage(event.getMessage(), event.getTime());
 
-                repositoryDb.close();
-
+                // Closes the db connection.
+                ((RepositoryDb) iRepository).close();
                 break;
             }
             case 2: {
@@ -60,13 +73,12 @@ public class ActionsToRun {
                 int numOfMessages = scannerImport.readNumOfMessages();
                 controller.showCongratulationsInner(actionMethod, numOfMessages);
 
-                if (!repositoryDb.open()){
-                    System.out.println("Cant open the repositoryDb");
-                    return;
-                }
-                controller.printData(repositoryDb.getLatestMessages(numOfMessages));
-                repositoryDb.close();
+                ((RepositoryDb) iRepository).open();
 
+                // Calling for data from the IRepository object that passed as an argument so that both implementations can work.
+                controller.printData(iRepository.getLatestMessages(numOfMessages));
+
+                ((RepositoryDb) iRepository).close();
                 break;
             }
             case 3: {
@@ -76,83 +88,66 @@ public class ActionsToRun {
                 int numOfMessages = scannerNumOfMessages.readNumOfMessages();
                 controller.showCongratulationsInner(actionMethod, numOfMessages);
 
-                if (!repositoryDb.open()){
-                    System.out.println("Cant open the repositoryDb");
-                    return;
-                }
-                controller.printData(repositoryDb.getOldestMessages(numOfMessages));
-                repositoryDb.close();
+                ((RepositoryDb) iRepository).open();
+                controller.printData(iRepository.getOldestMessages(numOfMessages));
 
+                ((RepositoryDb) iRepository).close();
                 break;
             }
             case 4: {
                 controller.showInstructions(actionMethod);
-                if (!repositoryDb.open()){
-                    System.out.println("Cant open the repositoryDb");
-                    return;
-                }
-                controller.printData(repositoryDb.getLastHourMessages());
-                repositoryDb.close();
+
+                ((RepositoryDb) iRepository).open();
+                controller.printData(iRepository.getLastHourMessages());
+                ((RepositoryDb) iRepository).close();
                 break;
             }
             case 5: {
                 controller.showInstructions(actionMethod);
-                if (!repositoryDb.open()){
-                    System.out.println("Cant open the repositoryDb");
-                    return;
-                }
-                controller.printData(repositoryDb.getLastThreeHoursMessages());
-                repositoryDb.close();
+
+                ((RepositoryDb) iRepository).open();
+                controller.printData(iRepository.getLastThreeHoursMessages());
+                ((RepositoryDb) iRepository).close();
                 break;
             }
             case 6: {
                 controller.showInstructions(actionMethod);
-                if (!repositoryDb.open()){
-                    System.out.println("Cant open the repositoryDb");
-                    return;
-                }
-                controller.printData(repositoryDb.getLastOneDayMessages());
-                repositoryDb.close();
+
+                ((RepositoryDb) iRepository).open();
+                controller.printData(iRepository.getLastOneDayMessages());
+                ((RepositoryDb) iRepository).close();
                 break;
             }
             case 7: {
                 controller.showInstructions(actionMethod);
-                if (!repositoryDb.open()){
-                    System.out.println("Cant open the repositoryDb");
-                    return;
-                }
-                controller.printData(repositoryDb.getLastThreeDaysMessages());
-                repositoryDb.close();
+
+                ((RepositoryDb) iRepository).open();
+                controller.printData(iRepository.getLastThreeDaysMessages());
+                ((RepositoryDb) iRepository).close();
                 break;
             }
             case 8: {
                 controller.showInstructions(actionMethod);
-                if (!repositoryDb.open()){
-                    System.out.println("Cant open the repositoryDb");
-                    return;
-                }
-                controller.printData(repositoryDb.getLastTenDaysMessages());
-                repositoryDb.close();
+
+                ((RepositoryDb) iRepository).open();
+                controller.printData(iRepository.getLastTenDaysMessages());
+                ((RepositoryDb) iRepository).close();
                 break;
             }
             case 9: {
                 controller.showInstructions(actionMethod);
-                if (!repositoryDb.open()){
-                    System.out.println("Cant open the repositoryDb");
-                    return;
-                }
-                controller.printData(repositoryDb.getLastMonthMessages());
-                repositoryDb.close();
+
+                ((RepositoryDb) iRepository).open();
+                controller.printData(iRepository.getLastMonthMessages());
+                ((RepositoryDb) iRepository).close();
                 break;
             }
             case 10: {
                 controller.showInstructions(actionMethod);
-                if (!repositoryDb.open()){
-                    System.out.println("Cant open the repositoryDb");
-                    return;
-                }
-                controller.printData(repositoryDb.getAllTheMessages());
-                repositoryDb.close();
+//
+                ((RepositoryDb) iRepository).open();
+                controller.printData(iRepository.getAllTheMessages());
+                ((RepositoryDb) iRepository).close();
                 break;
             }
         }
