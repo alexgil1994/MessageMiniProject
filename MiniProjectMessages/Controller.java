@@ -9,14 +9,15 @@ class Controller {
         System.out.println("\nHello there!\n");
         System.out.println("Instructions : \n" +
                 "Press 1 and then Enter to add a new message in your list.\n" +
-                "Press 2 and then Enter to view the specific amount of messages you want.\n" +
-                "Press 3 and then Enter to view the messages of the last hour.\n" +
-                "Press 4 and then Enter to view the messages of the last 3 hours.\n" +
-                "Press 5 and then Enter to view the messages of the last 24 hours.\n" +
-                "Press 6 and then Enter to view the messages of the last 3 days.\n" +
-                "Press 7 and then Enter to view the messages of the last 10 days.\n" +
-                "Press 8 and then Enter to view the messages of the last 30 days.\n" +
-                "Press 9 and then Enter to view all the messages that have been stored.\n" +
+                "Press 2 and then Enter to view the specific amount of the latest messages you want.\n" +
+                "Press 3 and then Enter to view the specific amount of the oldest messages you want.\n" +
+                "Press 4 and then Enter to view the messages of the last hour.\n" +
+                "Press 5 and then Enter to view the messages of the last 3 hours.\n" +
+                "Press 6 and then Enter to view the messages of the last 24 hours.\n" +
+                "Press 7 and then Enter to view the messages of the last 3 days.\n" +
+                "Press 8 and then Enter to view the messages of the last 10 days.\n" +
+                "Press 9 and then Enter to view the messages of the last 30 days.\n" +
+                "Press 10 and then Enter to view all the messages that have been stored.\n" +
                 "Press 0 and then Enter if you want to exit from the program.\n");
     }
     void handleRequestedActivity(){

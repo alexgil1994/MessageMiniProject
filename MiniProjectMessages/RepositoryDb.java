@@ -215,7 +215,7 @@ public class RepositoryDb implements IRepository {
         long timeOfRequest = controller.calcNewTime();
 
         try(Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery("SELECT * FROM " + TABLE_EVENTS + " WHERE " + COLUMN_EVENT_TIME_MILLIS + " >= " + timeOfRequest + "/1000/60/60")) {
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM " + TABLE_EVENTS + " WHERE " + COLUMN_EVENT_TIME_MILLIS + " >= " + timeOfRequest + " - " + "1000*60*60")) {
 
             repositoryDbList = listFromQuery(resultSet);
         }catch (SQLException e){
@@ -233,7 +233,7 @@ public class RepositoryDb implements IRepository {
         long timeOfRequest = controller.calcNewTime();
 
         try(Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery("SELECT * FROM " + TABLE_EVENTS + " WHERE " + COLUMN_EVENT_TIME_MILLIS + " >= " + timeOfRequest + "/1000/60/60/3")) {
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM " + TABLE_EVENTS + " WHERE " + COLUMN_EVENT_TIME_MILLIS + " >= " + timeOfRequest + " - " + "1000*60*60*3")) {
 
             repositoryDbList = listFromQuery(resultSet);
         }catch (SQLException e){
@@ -251,7 +251,7 @@ public class RepositoryDb implements IRepository {
         long timeOfRequest = controller.calcNewTime();
 
         try(Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery("SELECT * FROM " + TABLE_EVENTS + " WHERE " + COLUMN_EVENT_TIME_MILLIS + " >= " + timeOfRequest + "/1000/60/60/24")) {
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM " + TABLE_EVENTS + " WHERE " + COLUMN_EVENT_TIME_MILLIS + " >= " + timeOfRequest + " - " + "1000*60*60*24")) {
 
             repositoryDbList = listFromQuery(resultSet);
         }catch (SQLException e){
@@ -269,7 +269,7 @@ public class RepositoryDb implements IRepository {
         long timeOfRequest = controller.calcNewTime();
 
         try(Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery("SELECT * FROM " + TABLE_EVENTS + " WHERE " + COLUMN_EVENT_TIME_MILLIS + " >= " + timeOfRequest + "/1000/60/60/24/3")) {
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM " + TABLE_EVENTS + " WHERE " + COLUMN_EVENT_TIME_MILLIS + " >= " + timeOfRequest + " - " + "1000*60*60*24*3")) {
 
             repositoryDbList = listFromQuery(resultSet);
         }catch (SQLException e){
@@ -287,7 +287,7 @@ public class RepositoryDb implements IRepository {
         long timeOfRequest = controller.calcNewTime();
 
         try(Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery("SELECT * FROM " + TABLE_EVENTS + " WHERE " + COLUMN_EVENT_TIME_MILLIS + " >= " + timeOfRequest + "/1000/60/60/24/10")) {
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM " + TABLE_EVENTS + " WHERE " + COLUMN_EVENT_TIME_MILLIS + " >= " + timeOfRequest + " - " + "1000*60*60*24*10")) {
 
             repositoryDbList = listFromQuery(resultSet);
         }catch (SQLException e){
@@ -305,7 +305,7 @@ public class RepositoryDb implements IRepository {
         long timeOfRequest = controller.calcNewTime();
 
         try(Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery("SELECT * FROM " + TABLE_EVENTS + " WHERE " + COLUMN_EVENT_TIME_MILLIS + " >= " + timeOfRequest + "/1000/60/60/24/30")) {
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM " + TABLE_EVENTS + " WHERE " + COLUMN_EVENT_TIME_MILLIS + " >= " + timeOfRequest + " - " + "1000*60*60*24*30")) {
 
             repositoryDbList = listFromQuery(resultSet);
         }catch (SQLException e){
