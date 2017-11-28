@@ -4,7 +4,7 @@ public class RepositoryInMemory implements IRepository {
 
     ArrayList<Event> repositoryInMemList = new ArrayList<>();
 
-    static final Comparator<Event> LATEST_ORDER = new Comparator<Event>() {
+    static final Comparator<Event> EARLIEST_ORDER = new Comparator<Event>() {
         @Override
         public int compare(Event e1, Event e2) {
             // Kanei ta 3 if gia 1 , -1, 0 se mia grammh.
@@ -12,7 +12,7 @@ public class RepositoryInMemory implements IRepository {
         }
     };
 
-    static final Comparator<Event> EARLIEST_ORDER = new Comparator<Event>() {
+    static final Comparator<Event> LATEST_ORDER = new Comparator<Event>() {
         @Override
         public int compare(Event e1, Event e2) {
             // Kanei ta 3 if gia 1 , -1, 0 se mia grammh.
@@ -29,8 +29,11 @@ public class RepositoryInMemory implements IRepository {
     }
 
     @Override
-    public void addMessage(String messageEvent, long timeEvent) {
-        repositoryInMemList.add(new Event(messageEvent , timeEvent));
+    public void addMessage(Event event) {
+
+        // TODO --> Care for a conflict! CHANGED IN BOTH RepositoryInMemory and RepositoryDb to get an argument of Event instead of calling the methods of Event to get string and long of it.
+
+        repositoryInMemList.add(event);
     }
 
     public ArrayList<Event> getTempListBasedOnQuantity(int readNumberOfMessages) {
@@ -71,7 +74,6 @@ public class RepositoryInMemory implements IRepository {
         return tempMessageList;
     }
 
-//    @Override
     public ArrayList<Event> getTempListBasedOnTime(Calendar calendarRequest) {
 
         ArrayList<Event> tempMessageList = new ArrayList<>();

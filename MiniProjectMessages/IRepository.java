@@ -16,7 +16,7 @@ import java.util.ArrayList;
 */
 
 public interface IRepository {
-    void addMessage(String messageEvent , long timeEvent);
+    void addMessage(Event event);
     ArrayList<Event> getLatestMessages(int readNumberOfMessages);
     ArrayList<Event> getOldestMessages(int readNumberOfMessages);
     ArrayList<Event> getLastHourMessages();

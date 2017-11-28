@@ -1,8 +1,8 @@
-class Event {
+public class Event {
     private String message;
     private long time;
 
-    Event(String message, long time) {
+    public Event(String message, long time) {
         this.message = message;
         this.time = time;
     }

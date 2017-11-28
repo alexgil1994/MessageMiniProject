@@ -61,7 +61,7 @@ public class ActionsToRun {
                 ((RepositoryDb) iRepository).open();
 
                 // Calling for data from the IRepository object that passed as an argument so that both implementations can work.
-                iRepository.addMessage(event.getMessage(), event.getTime());
+                iRepository.addMessage(event);
 
                 // Closes the db connection.
                 ((RepositoryDb) iRepository).close();
@@ -170,7 +170,7 @@ public class ActionsToRun {
 //                Event event = new Event(messageOfEvent, timeOfEvent);
 //                event.newEvent(messageOfEvent, timeOfEvent);
 //
-//                repositoryInMemory.addMessage(event.getMessage(), event.getTime());
+//                repositoryInMemory.addMessage(event);
 //
 //                controller.showCongratulations();
 //                break;

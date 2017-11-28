@@ -146,16 +146,16 @@ public class RepositoryDb implements IRepository {
         }
     }
 
-    // TODO FIX! Vazei mono thn prwth leksh apo thn protash tou String. EXEI NA KANEI ME TA PREPARED STATEMENTS
-    // TODO POU DEN MPORESA NA SUNDESW. Me ton tropo auto mporei na ginei kai sql injection.
+    // TODO Na dw an xreiazetai na ulopoihsw ta prepared statements pou den mporousa na sundesw. Xwris auta mporei na ginei kai sql injection.
+
     // Method to add Events from the user, in the repositoryDbList.
     @Override
-    public void addMessage(String messageEvent, long timeEvent) {
+    public void addMessage(Event event) {
         Controller controller = new Controller();
 
         // Adding an Event to the DB.
         try(Statement statement = connection.createStatement()){
-            statement.executeUpdate("INSERT INTO " + TABLE_EVENTS + "(" + COLUMN_EVENT_MESSAGE + "," + COLUMN_EVENT_TIME_MILLIS + ")" + " VALUES " + "('" + messageEvent + "'," + timeEvent + ")");
+            statement.executeUpdate("INSERT INTO " + TABLE_EVENTS + "(" + COLUMN_EVENT_MESSAGE + "," + COLUMN_EVENT_TIME_MILLIS + ")" + " VALUES " + "('" + event.getMessage() + "'," + event.getTime() + ")");
 
             // Showing to the user that the message was successfully added
             controller.showCongratulations();

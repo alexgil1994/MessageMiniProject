@@ -44,15 +44,8 @@ class ScannerImport {
         }
     }
     String readNewMessage(){
-        while (true){
-            try{
-                newMessage = scanner.next();
-                return newMessage;
-            }catch (InputMismatchException e){
-                System.out.println("You have typed the parameters wrong. Please try again to continue.\n");
-                scanner.nextLine();
-            }
-        }
+        newMessage = scanner.nextLine();
+        return newMessage;
     }
     public int readNumOfMessages(){
         while (true){
