@@ -21,9 +21,9 @@ class Controller {
                 "Press 0 and then Enter if you want to exit from the program.\n");
     }
     void handleRequestedActivity(){
-        // repositoryInMemory object ftiaxnetai mono me kathe arxh tou programmatos edw sthn handleRequestedActivity. H Action to dexetai apo edw.
-//        RepositoryInMemory repositoryInMemory = new RepositoryInMemory();
-//        RepositoryDb repositoryDb = new RepositoryDb();
+        // To repositoryInMemory object PREPEI na ftiaxnetai mono me kathe arxh tou programmatos. Edw sthn handleRequestedActivity h Action to dexetai.
+        IRepository iRepository = new RepositoryDb();
+        IRepository iRepository1 = new RepositoryInMemory();
 
         // TODO The user should be able to pick the implementation(Memory - DB).
 //        ScannerImport scannerImport = new ScannerImport();
@@ -35,8 +35,6 @@ class Controller {
 //        }else if (readImplementationMethod == 2){
 //            IRepository iRepository = new RepositoryInMemory();
 //        }
-
-        IRepository iRepository = new RepositoryDb();
 
         boolean quit = false;
         while (!quit){
@@ -50,18 +48,8 @@ class Controller {
             int numPressed = scanner.getReadActivity();
 
             if (numPressed > 0 && numPressed <= 10){
-
-                // DONE : Sthn metavash se repository db tha prepei na allaksei to na pairnei ws parametro repository to action. tha kalei ekeinh thn stigmh apo thn db ta dedomena pou xreiazetai.
-                // Creating a new Action object for the new request from the user.
-//                Action action = new Action(numPressed , repositoryInMemory);
-//                action.newAction(numPressed , repositoryInMemory);
-//
-//                // Creating a new ActionsToRun object that gets the new action object that was created for the new request.
-//                ActionsToRun actionsToRun = new ActionsToRun(action);
-
                 // Creating a new Action object for the new request from the user.
                 Action action = new Action(numPressed);
-                action.newAction(numPressed);
 
                 // Creating a new ActionsToRun object that gets the new action object that was created for the new request.
                 ActionsToRun actionsToRun = new ActionsToRun(action);

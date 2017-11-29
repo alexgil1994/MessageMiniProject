@@ -15,14 +15,4 @@ public class Event {
         return time;
     }
 
-    public void newEvent(String eventMessage, long eventTime) {
-        message = eventMessage;
-        time = eventTime;
-        setNewEvent(message , time);
-    }
-
-    private void setNewEvent(String message , long time){
-        this.time = time;
-        this.message = message;
-    }
 }

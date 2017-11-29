@@ -25,7 +25,7 @@ public class RepositoryInMemory implements IRepository {
     }
 
     public RepositoryInMemory() {
-        // Xreiazetai keno constructor gia na mporei na dhmiourgei to object repository pou den pairnei metavlhtes sthn Controller.
+        // Xreiazetai kenos constructor gia na mporei na dhmiourgei to object repository pou den pairnei metavlhtes sthn Controller.
     }
 
     @Override
@@ -197,7 +197,6 @@ public class RepositoryInMemory implements IRepository {
         tempMessageList = getTempListBasedOnTime(calendarRequest);
         return tempMessageList;
     }
-
 
     @Override
     public ArrayList<Event> getAllTheMessages() {

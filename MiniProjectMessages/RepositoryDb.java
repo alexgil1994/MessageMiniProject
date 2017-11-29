@@ -116,9 +116,6 @@ public class RepositoryDb implements IRepository {
                 long eventTime;
                 Event event = new Event(eventMessage = resultSet.getString(COLUMN_EVENT_MESSAGE), eventTime = resultSet.getLong(COLUMN_EVENT_TIME_MILLIS));
 
-                // Creating a new Event object passing those values.
-                event.newEvent(eventMessage , eventTime);
-
                 // Adding the event objects in the repositoryDbList.
                 repositoryDbList.add(event);
             }

@@ -16,7 +16,7 @@ class ScannerImport {
     }
 
     public ScannerImport() {
-        //Kenos constructor giati alliws vgazei sfalma sthn Controller pou kalei ScannerImport scanner = new ScannerImport(); epeidh to kalw keno.
+        // Kenos constructor giati alliws vgazei sfalma sthn Controller pou kalei ScannerImport scanner = new ScannerImport(); epeidh to kalw keno.
     }
 
     public int getReadActivity() {
@@ -27,7 +27,7 @@ class ScannerImport {
         return newMessage;
     }
 
-    //The use of while(true) in the methods is in order to navigate the client into another attempt in case he made a mistake.
+    // The use of while(true) in the methods is in order to navigate the client into another attempt in case he made a mistake.
     int readActivity(){
         while (true){
             try{

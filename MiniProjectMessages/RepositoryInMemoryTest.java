@@ -84,16 +84,18 @@ public class RepositoryInMemoryTest {
     @Test
     void addMessage() {
         // TODO... Problem is that this method is a void so there is no return to compare.
-//
+
 //        RepositoryInMemory repositoryInMemory = new RepositoryInMemory();
 //        ArrayList<Event> repositoryInMemList = new ArrayList<>();
 //
-//        repositoryInMemory.addMessage("Hello", 1000000000);
+//        Event event = new Event("Hello", 1000000000);
+//
+//        repositoryInMemory.addMessage(event);
 //
 //        // Isws prepei k edw na to valw prwta se Event k meta mesa?
-//        ArrayList<Event> arrayList = new ArrayList<>(Arrays.asList(new Event({"Hello", 1000000000})));
+//        ArrayList<Event> arrayList = new ArrayList<>(Arrays.asList(event));
 //        // To 10000 to xw san metavlhth delta gia tous duo xronous.
-//        assertEquals(arrayList , repositoryInMemory,"addMessage method in RepositoryInMemory didn't work correctly");
+//        assertEquals(arrayList , repositoryInMemory,"addMessage method in RepositoryInMemory Class didn't work correctly");
     }
 
     @Test
@@ -112,7 +114,7 @@ public class RepositoryInMemoryTest {
         repositoryInMemory.addMessage(event3);
         repositoryInMemory.addMessage(event4);
 
-        assertEquals(arrayList, repositoryInMemory.getTempListBasedOnQuantity(4),"getTempListBasedOnQuantity method in RepositoryInMemory didnt work correctly.");
+        assertEquals(arrayList, repositoryInMemory.getTempListBasedOnQuantity(4),"getTempListBasedOnQuantity method in RepositoryInMemory Class didnt work correctly.");
     }
 
     @Test
@@ -133,7 +135,7 @@ public class RepositoryInMemoryTest {
         repositoryInMemory.addMessage(event3);
         repositoryInMemory.addMessage(event4);
 
-        assertEquals(arrayList, repositoryInMemory.getLatestMessages(4),"getLatestMessages method in RepositoryInMemory didnt work correctly.");
+        assertEquals(arrayList, repositoryInMemory.getLatestMessages(4),"getLatestMessages method in RepositoryInMemory Class didnt work correctly.");
     }
 
     @Test
@@ -154,7 +156,7 @@ public class RepositoryInMemoryTest {
         repositoryInMemory.addMessage(event3);
         repositoryInMemory.addMessage(event4);
 
-        assertEquals(arrayList, repositoryInMemory.getOldestMessages(4),"getOldestMessages method in RepositoryInMemory didnt work correctly.");
+        assertEquals(arrayList, repositoryInMemory.getOldestMessages(4),"getOldestMessages method in RepositoryInMemory Class didnt work correctly.");
     }
 
     // Prepei na vgei iso gia ta event2,event3,event4. To event kai event1 einai mikrotera tou calendarRequest pou thetw pio katw, opote den prepei na eisaxthoun sthn lista.
@@ -178,7 +180,7 @@ public class RepositoryInMemoryTest {
         Calendar calendarRequest = Calendar.getInstance();
         calendarRequest.setTimeInMillis(1555555555);
 
-        assertEquals(arrayList, repositoryInMemory.getTempListBasedOnTime(calendarRequest),"getLastTempListBasedOnTime method in RepositoryInMemory didnt work correctly.");
+        assertEquals(arrayList, repositoryInMemory.getTempListBasedOnTime(calendarRequest),"getLastTempListBasedOnTime method in RepositoryInMemory Class didnt work correctly.");
     }
 
     @Test
@@ -225,7 +227,7 @@ public class RepositoryInMemoryTest {
         repositoryInMemory.addMessage(event14);
         repositoryInMemory.addMessage(event15);
 
-        assertEquals(arrayList, repositoryInMemory.getLastHourMessages(),"getLastHourMessages method in RepositoryInMemory didn't work correctly.");
+        assertEquals(arrayList, repositoryInMemory.getLastHourMessages(),"getLastHourMessages method in RepositoryInMemory Class didn't work correctly.");
     }
 
     @Test
@@ -273,7 +275,7 @@ public class RepositoryInMemoryTest {
         repositoryInMemory.addMessage(event14);
         repositoryInMemory.addMessage(event15);
 
-        assertEquals(arrayList, repositoryInMemory.getLastThreeHoursMessages(),"getLastThreeHoursMessages method in RepositoryInMemory didn't work correctly.");
+        assertEquals(arrayList, repositoryInMemory.getLastThreeHoursMessages(),"getLastThreeHoursMessages method in RepositoryInMemory Class didn't work correctly.");
     }
 
     @Test
@@ -321,7 +323,7 @@ public class RepositoryInMemoryTest {
         repositoryInMemory.addMessage(event14);
         repositoryInMemory.addMessage(event15);
 
-        assertEquals(arrayList, repositoryInMemory.getLastOneDayMessages(),"getLastOneDayMessages method in RepositoryInMemory didn't work correctly.");
+        assertEquals(arrayList, repositoryInMemory.getLastOneDayMessages(),"getLastOneDayMessages method in RepositoryInMemory Class didn't work correctly.");
     }
 
     @Test
@@ -369,7 +371,7 @@ public class RepositoryInMemoryTest {
         repositoryInMemory.addMessage(event14);
         repositoryInMemory.addMessage(event15);
 
-        assertEquals(arrayList, repositoryInMemory.getLastThreeDaysMessages(),"getLastThreeDaysMessages method in RepositoryInMemory didn't work correctly.");
+        assertEquals(arrayList, repositoryInMemory.getLastThreeDaysMessages(),"getLastThreeDaysMessages method in RepositoryInMemory Class didn't work correctly.");
     }
 
     @Test
@@ -417,7 +419,7 @@ public class RepositoryInMemoryTest {
         repositoryInMemory.addMessage(event14);
         repositoryInMemory.addMessage(event15);
 
-        assertEquals(arrayList, repositoryInMemory.getLastTenDaysMessages(),"getLastTenDaysMessages method in RepositoryInMemory didn't work correctly.");
+        assertEquals(arrayList, repositoryInMemory.getLastTenDaysMessages(),"getLastTenDaysMessages method in RepositoryInMemory Class didn't work correctly.");
     }
 
     @Test
@@ -465,7 +467,7 @@ public class RepositoryInMemoryTest {
         repositoryInMemory.addMessage(event14);
         repositoryInMemory.addMessage(event15);
 
-        assertEquals(arrayList, repositoryInMemory.getLastMonthMessages(),"getLatMonthMessages method in RepositoryInMemory didn't work correctly.");
+        assertEquals(arrayList, repositoryInMemory.getLastMonthMessages(),"getLatMonthMessages method in RepositoryInMemory Class didn't work correctly.");
     }
 
     @Test
@@ -486,7 +488,7 @@ public class RepositoryInMemoryTest {
         repositoryInMemory.addMessage(event3);
         repositoryInMemory.addMessage(event4);
 
-        assertEquals(arrayList, repositoryInMemory.getAllTheMessages(),"getAllTheMessages method in RepositoryInMemory didnt work correctly.");
+        assertEquals(arrayList, repositoryInMemory.getAllTheMessages(),"getAllTheMessages method in RepositoryInMemory Class didn't work correctly.");
     }
 
 }
