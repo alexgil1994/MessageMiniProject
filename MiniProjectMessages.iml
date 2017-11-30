@@ -7,8 +7,8 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="sqlite-jdbc-3.21.0" level="project" />
-    <orderEntry type="module-library">
+    <orderEntry type="library" exported="" name="sqlite-jdbc-3.21.0" level="project" />
+    <orderEntry type="module-library" exported="">
       <library name="JUnit5">
         <CLASSES>
           <root url="jar://$APPLICATION_HOME_DIR$/plugins/junit/lib/junit-jupiter-api-5.0.0.jar!/" />

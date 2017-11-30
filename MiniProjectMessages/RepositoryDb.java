@@ -59,26 +59,30 @@ public class RepositoryDb implements IRepository {
     // Opens the Connection with the DB.
     public boolean open() {
         try {
-            //TODO fix the problem with prepared statements
-//            // Prepared statement for queryLoadDb
-//            queryLoadDb = connection.prepareStatement(QUERY_LOAD_DB_PREP);
-//
-//            // Prepared statement for both values of the addMessage method.
-//            insertEvent = connection.prepareStatement(INSERT_EVENT);
-//
-//            // Prepared statement for addMessage
-//            insertEventMessage = connection.prepareStatement(INSERT_EVENT_MESSAGE, Statement.RETURN_GENERATED_KEYS);
-//
-//            // Prepared statement for addMessage
-//            insertEventTime = connection.prepareStatement(INSERT_EVENT_TIME, Statement.RETURN_GENERATED_KEYS);
-
+            // To connection to eixa teleutaio.
             connection = DriverManager.getConnection(CONNECTION_STRING);
+
+            // Prepared statement for queryLoadDb
+            queryLoadDb = connection.prepareStatement(QUERY_LOAD_DB_PREP);
+
+            // Prepared statement for both values of the addMessage method.
+            insertEvent = connection.prepareStatement(INSERT_EVENT);
+
+            // Prepared statement for addMessage
+            insertEventMessage = connection.prepareStatement(INSERT_EVENT_MESSAGE, Statement.RETURN_GENERATED_KEYS);
+
+            // Prepared statement for addMessage
+            insertEventTime = connection.prepareStatement(INSERT_EVENT_TIME, Statement.RETURN_GENERATED_KEYS);
 
             return true;
         } catch (SQLException e) {
             System.out.println("Could not connect with the database " + e.getMessage());
             return false;
         }
+    }
+
+    public Connection getConnection() {
+        return connection;
     }
 
     // Closes the Connection with the DB.
@@ -158,6 +162,7 @@ public class RepositoryDb implements IRepository {
             controller.showCongratulations();
         }catch (SQLException e){
             System.out.println("Could not add the event to the DB" + e.getMessage());
+            throw new RuntimeException(e);
         }
     }
 

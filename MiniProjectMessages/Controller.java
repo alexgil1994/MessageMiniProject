@@ -21,7 +21,7 @@ class Controller {
                 "Press 0 and then Enter if you want to exit from the program.\n");
     }
     void handleRequestedActivity(){
-        // To repositoryInMemory object PREPEI na ftiaxnetai mono me kathe arxh tou programmatos. Edw sthn handleRequestedActivity h Action to dexetai.
+        // To repositoryInMemory object PREPEI na ftiaxnetai mono me kathe arxh tou programmatos. To neo ActionsToRun object to dexetai apo thn edw (handleRequestedActivity).
         IRepository iRepository = new RepositoryDb();
         IRepository iRepository1 = new RepositoryInMemory();
 

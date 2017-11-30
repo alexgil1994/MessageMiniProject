@@ -30,9 +30,6 @@ public class RepositoryInMemory implements IRepository {
 
     @Override
     public void addMessage(Event event) {
-
-        // TODO --> Care for a conflict! CHANGED IN BOTH RepositoryInMemory and RepositoryDb to get an argument of Event instead of calling the methods of Event to get string and long of it.
-
         repositoryInMemList.add(event);
     }
 

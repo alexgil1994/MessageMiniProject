@@ -9,7 +9,11 @@ import java.util.Collections;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+
 public class RepositoryInMemoryTest {
+
+    private RepositoryInMemory repositoryInMemory = new RepositoryInMemory();
+    private RepositoryInMemory repositoryInMemory1 = new RepositoryInMemory();
 
     @BeforeEach
     void setUp(){
@@ -17,10 +21,10 @@ public class RepositoryInMemoryTest {
         // TODO Needs to be configured so that the Test methods can use the data.
 
         // --- For quantity Requests.
-        RepositoryInMemory repositoryInMemory = new RepositoryInMemory();
+        repositoryInMemory = new RepositoryInMemory();
 
         // --- For time Requests.
-        RepositoryInMemory repositoryInMemory1 = new RepositoryInMemory();
+        repositoryInMemory1 = new RepositoryInMemory();
 
         // --- For quantity Requests.
         Event eventA = new Event("A", 1000000000);
@@ -85,22 +89,21 @@ public class RepositoryInMemoryTest {
     void addMessage() {
         // TODO... Problem is that this method is a void so there is no return to compare.
 
-//        RepositoryInMemory repositoryInMemory = new RepositoryInMemory();
+//        repositoryInMemory = new RepositoryInMemory();
 //        ArrayList<Event> repositoryInMemList = new ArrayList<>();
 //
 //        Event event = new Event("Hello", 1000000000);
 //
 //        repositoryInMemory.addMessage(event);
 //
-//        // Isws prepei k edw na to valw prwta se Event k meta mesa?
 //        ArrayList<Event> arrayList = new ArrayList<>(Arrays.asList(event));
-//        // To 10000 to xw san metavlhth delta gia tous duo xronous.
+//
 //        assertEquals(arrayList , repositoryInMemory,"addMessage method in RepositoryInMemory Class didn't work correctly");
     }
 
     @Test
     void getTempListBasedOnQuantity() {
-        RepositoryInMemory repositoryInMemory = new RepositoryInMemory();
+        repositoryInMemory = new RepositoryInMemory();
         Event event = new Event("A", 1000000000);
         Event event1 = new Event("B", 1000000000);
         Event event2 = new Event("C", 1000000000);
@@ -114,12 +117,12 @@ public class RepositoryInMemoryTest {
         repositoryInMemory.addMessage(event3);
         repositoryInMemory.addMessage(event4);
 
-        assertEquals(arrayList, repositoryInMemory.getTempListBasedOnQuantity(4),"getTempListBasedOnQuantity method in RepositoryInMemory Class didnt work correctly.");
+        assertEquals(arrayList, repositoryInMemory.getTempListBasedOnQuantity(4),"getTempListBasedOnQuantity method in RepositoryInMemory Class didn't work correctly.");
     }
 
     @Test
     void getLatestMessages() {
-        RepositoryInMemory repositoryInMemory = new RepositoryInMemory();
+        repositoryInMemory = new RepositoryInMemory();
         Event event = new Event("A", 1000000000);
         Event event1 = new Event("B", 1000000000);
         Event event2 = new Event("C", 1000000000);
@@ -135,12 +138,12 @@ public class RepositoryInMemoryTest {
         repositoryInMemory.addMessage(event3);
         repositoryInMemory.addMessage(event4);
 
-        assertEquals(arrayList, repositoryInMemory.getLatestMessages(4),"getLatestMessages method in RepositoryInMemory Class didnt work correctly.");
+        assertEquals(arrayList, repositoryInMemory.getLatestMessages(4),"getLatestMessages method in RepositoryInMemory Class didn't work correctly.");
     }
 
     @Test
     void getOldestMessages() {
-        RepositoryInMemory repositoryInMemory = new RepositoryInMemory();
+        repositoryInMemory = new RepositoryInMemory();
         Event event = new Event("A", 1000000000);
         Event event1 = new Event("B", 1000000000);
         Event event2 = new Event("C", 1000000000);
@@ -156,13 +159,13 @@ public class RepositoryInMemoryTest {
         repositoryInMemory.addMessage(event3);
         repositoryInMemory.addMessage(event4);
 
-        assertEquals(arrayList, repositoryInMemory.getOldestMessages(4),"getOldestMessages method in RepositoryInMemory Class didnt work correctly.");
+        assertEquals(arrayList, repositoryInMemory.getOldestMessages(4),"getOldestMessages method in RepositoryInMemory Class didn't work correctly.");
     }
 
     // Prepei na vgei iso gia ta event2,event3,event4. To event kai event1 einai mikrotera tou calendarRequest pou thetw pio katw, opote den prepei na eisaxthoun sthn lista.
     @Test
     void getTempListBasedOnTime() {
-        RepositoryInMemory repositoryInMemory = new RepositoryInMemory();
+        repositoryInMemory = new RepositoryInMemory();
 
         Event event = new Event("A", 1000000000);
         Event event1 = new Event("B", 1000000000);
@@ -185,7 +188,7 @@ public class RepositoryInMemoryTest {
 
     @Test
     void getLastHourMessages() {
-        RepositoryInMemory repositoryInMemory = new RepositoryInMemory();
+        repositoryInMemory = new RepositoryInMemory();
 
         Controller controller = new Controller();
         long timeOfRequest = controller.calcNewTime();
@@ -232,7 +235,7 @@ public class RepositoryInMemoryTest {
 
     @Test
     void getLastThreeHoursMessages() {
-        RepositoryInMemory repositoryInMemory = new RepositoryInMemory();
+        repositoryInMemory = new RepositoryInMemory();
 
         Controller controller = new Controller();
         long timeOfRequest = controller.calcNewTime();
@@ -280,7 +283,7 @@ public class RepositoryInMemoryTest {
 
     @Test
     void getLastOneDayMessages() {
-        RepositoryInMemory repositoryInMemory = new RepositoryInMemory();
+        repositoryInMemory = new RepositoryInMemory();
 
         Controller controller = new Controller();
         long timeOfRequest = controller.calcNewTime();
@@ -328,7 +331,7 @@ public class RepositoryInMemoryTest {
 
     @Test
     void getLastThreeDaysMessages() {
-        RepositoryInMemory repositoryInMemory = new RepositoryInMemory();
+        repositoryInMemory = new RepositoryInMemory();
 
         Controller controller = new Controller();
         long timeOfRequest = controller.calcNewTime();
@@ -376,7 +379,7 @@ public class RepositoryInMemoryTest {
 
     @Test
     void getLastTenDaysMessages() {
-        RepositoryInMemory repositoryInMemory = new RepositoryInMemory();
+        repositoryInMemory = new RepositoryInMemory();
 
         Controller controller = new Controller();
         long timeOfRequest = controller.calcNewTime();
@@ -424,7 +427,7 @@ public class RepositoryInMemoryTest {
 
     @Test
     void getLastMonthMessages() {
-        RepositoryInMemory repositoryInMemory = new RepositoryInMemory();
+        repositoryInMemory = new RepositoryInMemory();
 
         Controller controller = new Controller();
         long timeOfRequest = controller.calcNewTime();
@@ -472,7 +475,7 @@ public class RepositoryInMemoryTest {
 
     @Test
     void getAllTheMessages() {
-        RepositoryInMemory repositoryInMemory = new RepositoryInMemory();
+        repositoryInMemory = new RepositoryInMemory();
         Event event = new Event("A", 1000000000);
         Event event1 = new Event("B", 1000000000);
         Event event2 = new Event("C", 1000000000);
