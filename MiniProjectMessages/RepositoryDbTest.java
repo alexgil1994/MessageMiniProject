@@ -1,17 +1,16 @@
 import org.junit.jupiter.api.*;
 
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
+import java.util.Objects;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class RepositoryDbTest {
-
-    final String DB_NAME = "repositoryDbTest.db";
-    final String CONNECTION_STRING = "jdbc:sqlite:C:\\Users\\amarkovits\\IdeaProjects\\Test\\" + DB_NAME;
 
     final String TABLE_EVENTS = "event";
     final String COLUMN_EVENT_ID = "_id";
@@ -49,19 +48,38 @@ class RepositoryDbTest {
     void close() {
     }
 
+    // TODO Na sundesw ta queries me string queries g na mikrhnoun.
+    // First of all loading the db values that interest me in every method in order to add them to the compare otherwise there will be conflicts when comparing the expected with the actual.
+    // After every test the test-values should be deleted.
+
     @Test
     void queryLoadDb() {
-        // TODO Find a way to use the openTest instead of the .open which is from the main class to connect to the main Database. I am trying to connect the tests with the dbTest while using the class methods from the class that i am testing.
+        // Initialising the expected arraylist.
+        // Loading the existed values in the db.
+        ArrayList<Event> arrayList = new ArrayList<>();
+        try(Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM " + TABLE_EVENTS)){
+            while (resultSet.next()){
+                arrayList.add(new Event(resultSet.getString(COLUMN_EVENT_MESSAGE),resultSet.getLong(COLUMN_EVENT_TIME_MILLIS)));
+//                repositoryDbTest.addMessage(new Event(resultSet.getString(COLUMN_EVENT_MESSAGE),resultSet.getLong(COLUMN_EVENT_TIME_MILLIS)));
+            }
+        } catch (SQLException e) {
+            System.out.println("There was an error when trying t load the db for the queryLoadDb test." + e.getMessage());
+        }
 
-        // Initialising an Event for the other db.
-        Event event = new Event("New message ", 10000000000L);
-        Event event1 = new Event("New message1 ", 20000000000L);
-        Event event2 = new Event("New message2 ", 30000000000L);
-        Event event3 = new Event("New message3 ", 40000000000L);
-        Event event4 = new Event("New message4 ", 50000000000L);
+        // Adding Events for the other db.
+        Event event = new Event("New message* ", 10000000000L);
+        Event event1 = new Event("New message1* ", 10000000001L);
+        Event event2 = new Event("New message2* ", 10000000002L);
+        Event event3 = new Event("New message3* ", 10000000003L);
+        Event event4 = new Event("New message4* ", 10000000004L);
 
-        // Adding 3 / 5 Events in the arraylist to test if the repositoryDbTest will bring us back only those asked (3) in the assertEquals.
-        ArrayList arrayList = new ArrayList<>(Arrays.asList(event,event1,event2,event3,event4));
+        // Adding 3 / 5 Events (other than those loaded and inserted already) in the arraylist to test if the repositoryDbTest will bring us back only those asked (3) in the assertEquals.
+        arrayList.add(event);
+        arrayList.add(event1);
+        arrayList.add(event2);
+        arrayList.add(event3);
+        arrayList.add(event4);
 
         // Adding all the Events (5 / 5) in the repositoryDbTest.
         repositoryDbTest.addMessage(event);
@@ -70,44 +88,80 @@ class RepositoryDbTest {
         repositoryDbTest.addMessage(event3);
         repositoryDbTest.addMessage(event4);
 
-        assertEquals(arrayList , repositoryDbTest.queryLoadDb(), "queryLoadDb method in RepositoryDb Class didn't work correctly.");
+        // Taking an array with only the messages from the db in order to compare.
+        ArrayList<String> arrayListCompare = new ArrayList<>();
+        for(Event object: repositoryDbTest.queryLoadDb()){
+            arrayListCompare.add(object.getMessage());
+        }
+
+        // Taking an array with only the messages from the db in order to compare.
+        ArrayList<String> repoList = new ArrayList<>();
+        for(Event object: repositoryDbTest.queryLoadDb()){
+            repoList.add(object.getMessage());
+        }
+
+        assertEquals(arrayListCompare , repoList, "queryLoadDb method in RepositoryDb Class didn't work correctly.");
+
+        // Deleting the created messages to test the db.
+        try(Statement statement = connection.createStatement()) {
+            statement.executeUpdate("DELETE FROM " + TABLE_EVENTS + " WHERE " + COLUMN_EVENT_MESSAGE + " IN ('New message* ','New message1* ','New message2* ','New message3* ','New message4* ')");
+        }catch (SQLException e){
+            System.out.println("There was an error trying to delete the test values that were inserted. " + e.getMessage());
+        }
     }
 
     @Test
     void addMessage() {
         // Initialising an Event for the other db.
-        Event eventExpected = new Event("Db Test", 10000000000000L);
-
-        Event event = new Event("Db Test", 1000000000000L);
+        Event event = new Event("Db Test", 10000000000000L);
         repositoryDbTest.addMessage(event);
 
+        // TODO Mallon den mporw an den to pairnw etoimo apo etoimh klash. An kai tha eprepe na douleuei pisteuw. Den anagnwrizei to lastNewMessage. EPISHS DEN DOULEPSE OUTE ME COUNT. ENW EPISTREFEI AUTO POU VAZW TO COUNT DEN GINETAI 1 MENEI 0.
 
-        // TODO Mallon den mporw an den to pairnw etoimo apo etoimh klash. An kai tha eprepe na douleuei pisteuw. Den anagnwrizei to lastNewMessage.
-//        ArrayList<Event> lastNewMessageList = repositoryDbTest.getLatestMessages(1);
-//        for(Event eventAdded: lastNewMessageList){
-//            Event lastNewMessage = new Event(eventAdded.getMessage(), eventAdded.getTime());
-//        }
-//
-//            assertEquals(eventExpected, lastNewMessage, "addMessage method in RepositoryDb Class didn't work correctly.");
+        int count = 0;
+        for(Event eventAdded: repositoryDbTest.getAllTheMessages()){
+            if (Objects.equals(eventAdded.getMessage(), "Db Test") && eventAdded.getTime() == 10000000000000L){
+                count = count + 1;
+            }
+        }
 
-        repositoryDbTest.close();
+        assertEquals(1, count, "addMessage method in RepositoryDb Class didn't work correctly.");
+
+        // Deleting the created messages to test the db.
+        try(Statement statement = connection.createStatement()) {
+            statement.executeUpdate("DELETE FROM " + TABLE_EVENTS + " WHERE " + COLUMN_EVENT_MESSAGE + " IN ('Db Test')");
+        }catch (SQLException e){
+            System.out.println("There was an error trying to delete the test values that were inserted. " + e.getMessage());
+        }
     }
 
     @Test
     void getLatestMessages() throws SQLException {
+        // Initialising the expected arraylist.
+        // Loading the existed values in the db.
+        ArrayList<Event> arrayList = new ArrayList<>();
+        try(Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM " + TABLE_EVENTS)){
+            while (resultSet.next()){
+                arrayList.add(new Event(resultSet.getString(COLUMN_EVENT_MESSAGE),resultSet.getLong(COLUMN_EVENT_TIME_MILLIS)));
+//                repositoryDbTest.addMessage(new Event(resultSet.getString(COLUMN_EVENT_MESSAGE),resultSet.getLong(COLUMN_EVENT_TIME_MILLIS)));
+            }
+        } catch (SQLException e) {
+            System.out.println("There was an error when trying t load the db for the queryLoadDb test." + e.getMessage());
+        }
 
-        // Initialising an Event for the other db.
-        Event event = new Event("New message ", 10000000000L);
-        Event event1 = new Event("New message1 ", 20000000000L);
-        Event event2 = new Event("New message2 ", 30000000000L);
-        Event event3 = new Event("New message3 ", 40000000000L);
-        Event event4 = new Event("New message4 ", 50000000000L);
+        // Oi xronoi einai ligo diaforetikoi gt alliws to order by xanei logikh kai taksinomei me to onoma afou exoun idio xrono akrivws.
+        // Initialising an Events
+        Event event = new Event("New message- ", 10000000000000L);
+        Event event1 = new Event("New message1- ", 10000000000001L);
+        Event event2 = new Event("New message2- ", 10000000000002L);
+        Event event3 = new Event("New message3- ", 10000000000003L);
+        Event event4 = new Event("New message4- ", 10000000000004L);
 
         // Adding 3 / 5 Events in the arraylist to test if the repositoryDb will bring us back only those asked (3) in the assertEquals.
-        ArrayList<Event> arrayList = new ArrayList<>(Arrays.asList(event,event1,event2));
-
-        // Because the repositoryDbTest WILL do a sort before it brings the data so we need to do as well.
-        Collections.sort(arrayList,RepositoryInMemory.LATEST_ORDER);
+        arrayList.add(event4);
+        arrayList.add(event3);
+        arrayList.add(event2);
 
         // Adding all the Events (5 / 5) in the repositoryDbTest.
         repositoryDbTest.addMessage(event);
@@ -116,35 +170,57 @@ class RepositoryDbTest {
         repositoryDbTest.addMessage(event3);
         repositoryDbTest.addMessage(event4);
 
-        // TODO Provlhma, den mporw na sugkrinw arrays apo events gt h getLatest dhmiourgei nea events meta to load  twn data.
-        // TODO Prospatheia na parw ta events apo thn DB kai na sugkrinw duo arrays mono me ta messages. Den petuxe.
-//        ArrayList<Event> loadList = repositoryDbTest.getLatestMessages(3);
-//        ArrayList<String> repoList = new ArrayList<>();
-//        for(Event object: loadList){
-//            repoList.add(object.getMessage());
-//        }
-//        ArrayList<String> test = new ArrayList<>();
-//        test.add(event.getMessage());
-//        test.add(event1.getMessage());
-//        test.add(event2.getMessage());
-//
-//        assertEquals(test , repoList, "getLatestMessages method in RepositoryDb Class didn't work correctly.");
+        // Taking an array with only the messages from the db in order to compare.
+        ArrayList<String> arrayListCompare = new ArrayList<>();
+        for(Event object: repositoryDbTest.getLatestMessages(3)){
+            arrayListCompare.add(object.getMessage());
+        }
+
+        // Taking an array with only the messages from the db in order to compare.
+        ArrayList<String> repoList = new ArrayList<>();
+        for(Event object: repositoryDbTest.getLatestMessages(3)){
+            repoList.add(object.getMessage());
+        }
+
+        assertEquals(arrayListCompare , repoList, "getLatestMessages method in RepositoryDb Class didn't work correctly.");
+
+        // Deleting the created messages to test the db.
+        try(Statement statement = connection.createStatement()) {
+            statement.executeUpdate("DELETE FROM " + TABLE_EVENTS + " WHERE " + COLUMN_EVENT_MESSAGE + " IN ('New message- ','New message1- ','New message2- ','New message3- ','New message4- ')");
+        }catch (SQLException e){
+            System.out.println("There was an error trying to delete the test values that were inserted. " + e.getMessage());
+        }
     }
 
     @Test
     void getOldestMessages() throws SQLException {
+        // Initialising the expected arraylist.
+        // Loading the existed values in the db.
+        ArrayList<Event> arrayList = new ArrayList<>();
+        try(Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM " + TABLE_EVENTS)){
+            while (resultSet.next()){
+                arrayList.add(new Event(resultSet.getString(COLUMN_EVENT_MESSAGE),resultSet.getLong(COLUMN_EVENT_TIME_MILLIS)));
+//                repositoryDbTest.addMessage(new Event(resultSet.getString(COLUMN_EVENT_MESSAGE),resultSet.getLong(COLUMN_EVENT_TIME_MILLIS)));
+            }
+        } catch (SQLException e) {
+            System.out.println("There was an error when trying t load the db for the queryLoadDb test." + e.getMessage());
+        }
+
         // Initialising an Event for the other db.
-        Event event = new Event("New message ", 10000000000L);
-        Event event1 = new Event("New message1 ", 20000000000L);
-        Event event2 = new Event("New message2 ", 30000000000L);
-        Event event3 = new Event("New message3 ", 40000000000L);
-        Event event4 = new Event("New message4 ", 50000000000L);
+        Event event = new Event("New message+ ", 10000000000000L);
+        Event event1 = new Event("New message1+ ", 10000000000001L);
+        Event event2 = new Event("New message2+ ", 10000000000002L);
+        Event event3 = new Event("New message3+ ", 10000000000003L);
+        Event event4 = new Event("New message4+ ", 10000000000004L);
 
         // Adding 3 / 5 Events in the arraylist to test if the repositoryDbTest will bring us back only those asked (3) in the assertEquals.
-        ArrayList<Event> arrayList = new ArrayList<>(Arrays.asList(event4,event3,event2));
+        arrayList.add(event);
+        arrayList.add(event1);
+        arrayList.add(event2);
 
-        // Because the repositoryDbTest WILL do a sort before it brings the data so we need to do as well.
-        Collections.sort(arrayList,RepositoryInMemory.EARLIEST_ORDER);
+        // For Deleting test-values after the test finishes.
+        ArrayList<Event> deleteList = new ArrayList<>(Arrays.asList(event,event1,event2,event3,event4));
 
         // Adding all the Events (5 / 5) in the repositoryDbTest.
         repositoryDbTest.addMessage(event);
@@ -153,34 +229,70 @@ class RepositoryDbTest {
         repositoryDbTest.addMessage(event3);
         repositoryDbTest.addMessage(event4);
 
-        assertEquals(arrayList , repositoryDbTest.getLatestMessages(3), "getOldestMessages method in RepositoryDb Class didn't work correctly.");
+        // Taking an array with only the messages from the db in order to compare.
+        ArrayList<String> arrayListCompare = new ArrayList<>();
+        for(Event object: repositoryDbTest.getOldestMessages(3)){
+        arrayListCompare.add(object.getMessage());
+       }
+
+        // Taking an array with only the messages from the db in order to compare. We use this because the repositoryDb methods return NEW Events so they cant be compared.
+        ArrayList<String> repoList = new ArrayList<>();
+        for(Event object: repositoryDbTest.getOldestMessages(3)){
+            repoList.add(object.getMessage());
+        }
+
+        assertEquals(arrayListCompare , repoList, "getOldestMessages method in RepositoryDb Class didn't work correctly.");
+
+        // Deleting the created messages to test the db.
+        try(Statement statement = connection.createStatement()) {
+            statement.executeUpdate("DELETE FROM " + TABLE_EVENTS + " WHERE " + COLUMN_EVENT_MESSAGE + " IN ('New message+ ','New message1+ ','New message2+ ','New message3+ ','New message4+ ')");
+        }catch (SQLException e){
+            System.out.println("There was an error trying to delete the test values that were inserted. " + e.getMessage());
+        }
     }
 
     @Test
     void getLastHourMessages() throws SQLException {
+        // Initialising the expected arraylist.
+        // Loading the existed values in the db.
+        ArrayList<Event> arrayList = new ArrayList<>();
+
         Controller controller = new Controller();
         long timeOfRequest = controller.calcNewTime();
 
+        try(Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM " + TABLE_EVENTS + " WHERE " + COLUMN_EVENT_TIME_MILLIS + " >= " + timeOfRequest + " - " + "1000*60*60")) {
+            while (resultSet.next()){
+                arrayList.add(new Event(resultSet.getString(COLUMN_EVENT_MESSAGE),resultSet.getLong(COLUMN_EVENT_TIME_MILLIS)));
+//                repositoryDbTest.addMessage(new Event(resultSet.getString(COLUMN_EVENT_MESSAGE),resultSet.getLong(COLUMN_EVENT_TIME_MILLIS)));
+            }
+        } catch (SQLException e) {
+            System.out.println("There was an error when trying t load the db for the queryLoadDb test." + e.getMessage());
+        }
+
         // Initialising Events for the other db.
-        Event event0 = new Event("A", timeOfRequest - (1000 * 20));
-        Event event1 = new Event("B", timeOfRequest - (1000 * 60 * 30));
-        Event event2 = new Event("B", timeOfRequest - (1000 * 60 * 45));
-        Event event3 = new Event("B", timeOfRequest - (1000 * 60 * 55));
-        Event event4 = new Event("C", timeOfRequest - (1000 * 60 * 65));
-        Event event5 = new Event("D", timeOfRequest - (1000 * 60 * 100));
-        Event event6 = new Event("F", timeOfRequest - (1000 * 60 * 150));
-        Event event7 = new Event("G", timeOfRequest - (1000 * 60 * 170));
-        Event event8 = new Event("H", timeOfRequest - (1000 * 60 * 60 * 18));
-        Event event9 = new Event("I", timeOfRequest - (1000 * 60 * 60 * 26));
-        Event event10 = new Event("J", timeOfRequest - (1000 * 60 * 60 * 70));
-        Event event11 = new Event("K", timeOfRequest - (1000 * 60 * 60 * 80));
-        Event event12 = new Event("L", timeOfRequest - (1000 * 60 * 60 * 220));
-        Event event13 = new Event("M", timeOfRequest - (1000 * 60 * 60 * 260));
-        Event event14 = new Event("N", timeOfRequest - (1000L * 60 * 60 * 24 * 25));
-        Event event15 = new Event("O", timeOfRequest - (1000L * 60 * 60 * 24 * 35));
+        Event event0 = new Event("A!", timeOfRequest - (1000 * 20));
+        Event event1 = new Event("B!", timeOfRequest - (1000 * 60 * 30));
+        Event event2 = new Event("C!", timeOfRequest - (1000 * 60 * 45));
+        Event event3 = new Event("D!", timeOfRequest - (1000 * 60 * 55));
+        Event event4 = new Event("E!", timeOfRequest - (1000 * 60 * 65));
+        Event event5 = new Event("F!", timeOfRequest - (1000 * 60 * 100));
+        Event event6 = new Event("G!", timeOfRequest - (1000 * 60 * 150));
+        Event event7 = new Event("H!", timeOfRequest - (1000 * 60 * 170));
+        Event event8 = new Event("I!", timeOfRequest - (1000 * 60 * 60 * 18));
+        Event event9 = new Event("J!", timeOfRequest - (1000 * 60 * 60 * 26));
+        Event event10 = new Event("K!", timeOfRequest - (1000 * 60 * 60 * 70));
+        Event event11 = new Event("L!", timeOfRequest - (1000 * 60 * 60 * 80));
+        Event event12 = new Event("M!", timeOfRequest - (1000 * 60 * 60 * 220));
+        Event event13 = new Event("N!", timeOfRequest - (1000 * 60 * 60 * 260));
+        Event event14 = new Event("O!", timeOfRequest - (1000L * 60 * 60 * 24 * 25));
+        Event event15 = new Event("P!", timeOfRequest - (1000L * 60 * 60 * 24 * 35));
 
         // Adding 4 / 16 Events in the arraylist to test if the repositoryDbTest will bring us back only those asked (3) in the assertEquals.
-        ArrayList<Event> arrayList = new ArrayList<>(Arrays.asList(event0,event1,event2,event3));
+        arrayList.add(event0);
+        arrayList.add(event1);
+        arrayList.add(event2);
+        arrayList.add(event3);
 
         // Adding all the Events (16 / 16) in the repositoryDbTest.
         repositoryDbTest.addMessage(event0);
@@ -200,34 +312,74 @@ class RepositoryDbTest {
         repositoryDbTest.addMessage(event14);
         repositoryDbTest.addMessage(event15);
 
-        assertEquals(arrayList , repositoryDbTest.getLastHourMessages(), "getLastHourMesages method in RepositoryDb Class didn't work correctly.");
+        // Taking an array with only the messages from the db in order to compare.
+        ArrayList<String> arrayListCompare = new ArrayList<>();
+        for(Event object: repositoryDbTest.getLastHourMessages()){
+            arrayListCompare.add(object.getMessage());
+        }
+
+        // Taking an array with only the messages from the db in order to compare.We use this because the repositoryDb methods return NEW Events so they cant be compared.
+        ArrayList<String> repoList = new ArrayList<>();
+        for(Event object: repositoryDbTest.getLastHourMessages()){
+            repoList.add(object.getMessage());
+        }
+
+        assertEquals(arrayListCompare , repoList, "getLastHourMesages method in RepositoryDb Class didn't work correctly.");
+
+        // Deleting the created messages to test the db.
+        try(Statement statement = connection.createStatement()) {
+            statement.executeUpdate("DELETE FROM " + TABLE_EVENTS + " WHERE " + COLUMN_EVENT_MESSAGE + " IN ('A!','B!','C!','D!','E!','F!','G!','H!','I!','J!','K!','L!','M!','N!','O!','P!')");
+        }catch (SQLException e){
+            System.out.println("There was an error trying to delete the test values that were inserted. " + e.getMessage());
+        }
     }
 
     @Test
     void getLastThreeHoursMessages() throws SQLException {
+        // Initialising the expected arraylist.
+        // Loading the existed values in the db.
+        ArrayList<Event> arrayList = new ArrayList<>();
+
         Controller controller = new Controller();
         long timeOfRequest = controller.calcNewTime();
 
+        try(Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM " + TABLE_EVENTS + " WHERE " + COLUMN_EVENT_TIME_MILLIS + " >= " + timeOfRequest + " - " + "1000*60*60*3")) {
+            while (resultSet.next()){
+                arrayList.add(new Event(resultSet.getString(COLUMN_EVENT_MESSAGE),resultSet.getLong(COLUMN_EVENT_TIME_MILLIS)));
+//                repositoryDbTest.addMessage(new Event(resultSet.getString(COLUMN_EVENT_MESSAGE),resultSet.getLong(COLUMN_EVENT_TIME_MILLIS)));
+            }
+        } catch (SQLException e) {
+            System.out.println("There was an error when trying t load the db for the queryLoadDb test." + e.getMessage());
+        }
+
         // Initialising Events for the other db.
-        Event event0 = new Event("A", timeOfRequest - (1000 * 20));
-        Event event1 = new Event("B", timeOfRequest - (1000 * 60 * 30));
-        Event event2 = new Event("B", timeOfRequest - (1000 * 60 * 45));
-        Event event3 = new Event("B", timeOfRequest - (1000 * 60 * 55));
-        Event event4 = new Event("C", timeOfRequest - (1000 * 60 * 65));
-        Event event5 = new Event("D", timeOfRequest - (1000 * 60 * 100));
-        Event event6 = new Event("F", timeOfRequest - (1000 * 60 * 150));
-        Event event7 = new Event("G", timeOfRequest - (1000 * 60 * 170));
-        Event event8 = new Event("H", timeOfRequest - (1000 * 60 * 60 * 18));
-        Event event9 = new Event("I", timeOfRequest - (1000 * 60 * 60 * 26));
-        Event event10 = new Event("J", timeOfRequest - (1000 * 60 * 60 * 70));
-        Event event11 = new Event("K", timeOfRequest - (1000 * 60 * 60 * 80));
-        Event event12 = new Event("L", timeOfRequest - (1000 * 60 * 60 * 220));
-        Event event13 = new Event("M", timeOfRequest - (1000 * 60 * 60 * 260));
-        Event event14 = new Event("N", timeOfRequest - (1000L * 60 * 60 * 24 * 25));
-        Event event15 = new Event("O", timeOfRequest - (1000L * 60 * 60 * 24 * 35));
+        Event event0 = new Event("A@", timeOfRequest - (1000 * 20));
+        Event event1 = new Event("B@", timeOfRequest - (1000 * 60 * 30));
+        Event event2 = new Event("C@", timeOfRequest - (1000 * 60 * 45));
+        Event event3 = new Event("D@", timeOfRequest - (1000 * 60 * 55));
+        Event event4 = new Event("E@", timeOfRequest - (1000 * 60 * 65));
+        Event event5 = new Event("F@", timeOfRequest - (1000 * 60 * 100));
+        Event event6 = new Event("G@", timeOfRequest - (1000 * 60 * 150));
+        Event event7 = new Event("H@", timeOfRequest - (1000 * 60 * 170));
+        Event event8 = new Event("I@", timeOfRequest - (1000 * 60 * 60 * 18));
+        Event event9 = new Event("J@", timeOfRequest - (1000 * 60 * 60 * 26));
+        Event event10 = new Event("K@", timeOfRequest - (1000 * 60 * 60 * 70));
+        Event event11 = new Event("L@", timeOfRequest - (1000 * 60 * 60 * 80));
+        Event event12 = new Event("M@", timeOfRequest - (1000 * 60 * 60 * 220));
+        Event event13 = new Event("N@", timeOfRequest - (1000 * 60 * 60 * 260));
+        Event event14 = new Event("O@", timeOfRequest - (1000L * 60 * 60 * 24 * 25));
+        Event event15 = new Event("P@", timeOfRequest - (1000L * 60 * 60 * 24 * 35));
 
         // Adding 8 / 16 Events in the arraylist to test if the repositoryDbTest will bring us back only those asked (3) in the assertEquals.
-        ArrayList<Event> arrayList = new ArrayList<>(Arrays.asList(event0,event1,event2,event3,event4,event5,event6,event7));
+        arrayList.add(event0);
+        arrayList.add(event1);
+        arrayList.add(event2);
+        arrayList.add(event3);
+        arrayList.add(event4);
+        arrayList.add(event5);
+        arrayList.add(event6);
+        arrayList.add(event7);
 
         // Adding all the Events (16 / 16) in the repositoryDbTest.
         repositoryDbTest.addMessage(event0);
@@ -247,34 +399,74 @@ class RepositoryDbTest {
         repositoryDbTest.addMessage(event14);
         repositoryDbTest.addMessage(event15);
 
-        assertEquals(arrayList , repositoryDbTest.getLastThreeDaysMessages(), "getLastThreeHoursMesages method in RepositoryDb Class didn't work correctly.");
+        // Taking an array with only the messages from the db in order to compare.
+        ArrayList<String> arrayListCompare = new ArrayList<>();
+        for(Event object: repositoryDbTest.getLastThreeHoursMessages()){
+            arrayListCompare.add(object.getMessage());
+        }
+
+        // Taking an array with only the messages from the db in order to compare. We use this because the repositoryDb methods return NEW Events so they cant be compared.
+        ArrayList<String> repoList = new ArrayList<>();
+        for(Event object: repositoryDbTest.getLastThreeHoursMessages()){
+            repoList.add(object.getMessage());
+        }
+
+        assertEquals(arrayListCompare , repoList, "getLastThreeHoursMesages method in RepositoryDb Class didn't work correctly.");
+
+        // Deleting the created messages to test the db.
+        try(Statement statement = connection.createStatement()) {
+            statement.executeUpdate("DELETE FROM " + TABLE_EVENTS + " WHERE " + COLUMN_EVENT_MESSAGE + " IN ('A@','B@','C@','D@','E@','F@','G@','H@','I@','J@','K@','L@','M@','N@','O@','P@')");
+        }catch (SQLException e){
+            System.out.println("There was an error trying to delete the test values that were inserted. " + e.getMessage());
+        }
     }
 
     @Test
     void getLastOneDayMessages() throws SQLException {
+        // Initialising the expected arraylist.
+        // Loading the existed values in the db.
+        ArrayList<Event> arrayList = new ArrayList<>();
+
         Controller controller = new Controller();
         long timeOfRequest = controller.calcNewTime();
+
+        try(Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM " + TABLE_EVENTS + " WHERE " + COLUMN_EVENT_TIME_MILLIS + " >= " + timeOfRequest + " - " + "1000*60*60*24")) {
+            while (resultSet.next()){
+                arrayList.add(new Event(resultSet.getString(COLUMN_EVENT_MESSAGE),resultSet.getLong(COLUMN_EVENT_TIME_MILLIS)));
+//                repositoryDbTest.addMessage(new Event(resultSet.getString(COLUMN_EVENT_MESSAGE),resultSet.getLong(COLUMN_EVENT_TIME_MILLIS)));
+            }
+        } catch (SQLException e) {
+            System.out.println("There was an error when trying t load the db for the queryLoadDb test." + e.getMessage());
+        }
 
         // Initialising Events for the other db.
         Event event0 = new Event("A", timeOfRequest - (1000 * 20));
         Event event1 = new Event("B", timeOfRequest - (1000 * 60 * 30));
-        Event event2 = new Event("B", timeOfRequest - (1000 * 60 * 45));
-        Event event3 = new Event("B", timeOfRequest - (1000 * 60 * 55));
-        Event event4 = new Event("C", timeOfRequest - (1000 * 60 * 65));
-        Event event5 = new Event("D", timeOfRequest - (1000 * 60 * 100));
-        Event event6 = new Event("F", timeOfRequest - (1000 * 60 * 150));
-        Event event7 = new Event("G", timeOfRequest - (1000 * 60 * 170));
-        Event event8 = new Event("H", timeOfRequest - (1000 * 60 * 60 * 18));
-        Event event9 = new Event("I", timeOfRequest - (1000 * 60 * 60 * 26));
-        Event event10 = new Event("J", timeOfRequest - (1000 * 60 * 60 * 70));
-        Event event11 = new Event("K", timeOfRequest - (1000 * 60 * 60 * 80));
-        Event event12 = new Event("L", timeOfRequest - (1000 * 60 * 60 * 220));
-        Event event13 = new Event("M", timeOfRequest - (1000 * 60 * 60 * 260));
-        Event event14 = new Event("N", timeOfRequest - (1000L * 60 * 60 * 24 * 25));
-        Event event15 = new Event("O", timeOfRequest - (1000L * 60 * 60 * 24 * 35));
+        Event event2 = new Event("C", timeOfRequest - (1000 * 60 * 45));
+        Event event3 = new Event("D", timeOfRequest - (1000 * 60 * 55));
+        Event event4 = new Event("E", timeOfRequest - (1000 * 60 * 65));
+        Event event5 = new Event("F", timeOfRequest - (1000 * 60 * 100));
+        Event event6 = new Event("G", timeOfRequest - (1000 * 60 * 150));
+        Event event7 = new Event("H", timeOfRequest - (1000 * 60 * 170));
+        Event event8 = new Event("I", timeOfRequest - (1000 * 60 * 60 * 18));
+        Event event9 = new Event("J", timeOfRequest - (1000 * 60 * 60 * 26));
+        Event event10 = new Event("K", timeOfRequest - (1000 * 60 * 60 * 70));
+        Event event11 = new Event("L", timeOfRequest - (1000 * 60 * 60 * 80));
+        Event event12 = new Event("M", timeOfRequest - (1000 * 60 * 60 * 220));
+        Event event13 = new Event("N", timeOfRequest - (1000 * 60 * 60 * 260));
+        Event event14 = new Event("O", timeOfRequest - (1000L * 60 * 60 * 24 * 25));
+        Event event15 = new Event("P", timeOfRequest - (1000L * 60 * 60 * 24 * 35));
 
         // Adding 9 / 16 Events in the arraylist to test if the repositoryDbTest will bring us back only those asked (3) in the assertEquals.
-        ArrayList<Event> arrayList = new ArrayList<>(Arrays.asList(event0,event1,event2,event3,event4,event5,event6,event7,event8));
+        arrayList.add(event0);
+        arrayList.add(event1);
+        arrayList.add(event2);
+        arrayList.add(event3);
+        arrayList.add(event4);
+        arrayList.add(event5);
+        arrayList.add(event6);
+        arrayList.add(event7);
 
         // Adding all the Events (16 / 16) in the repositoryDbTest.
         repositoryDbTest.addMessage(event0);
@@ -294,34 +486,77 @@ class RepositoryDbTest {
         repositoryDbTest.addMessage(event14);
         repositoryDbTest.addMessage(event15);
 
-        assertEquals(arrayList , repositoryDbTest.getLastOneDayMessages(), "getLastOneDayMessages method in RepositoryDb Class didn't work correctly.");
+        // Taking an array with only the messages from the db in order to compare.
+        ArrayList<String> arrayListCompare = new ArrayList<>();
+        for(Event object: repositoryDbTest.getLastOneDayMessages()){
+            arrayListCompare.add(object.getMessage());
+        }
+
+        // Taking an array with only the messages from the db in order to compare. We use this because the repositoryDb methods return NEW Events so they cant be compared.
+        ArrayList<String> repoList = new ArrayList<>();
+        for(Event object: repositoryDbTest.getLastOneDayMessages()){
+            repoList.add(object.getMessage());
+        }
+
+        assertEquals(arrayListCompare , repoList, "getLastOneDayMessages method in RepositoryDb Class didn't work correctly.");
+
+        // Deleting the created messages to test the db.
+        try(Statement statement = connection.createStatement()) {
+            statement.executeUpdate("DELETE FROM " + TABLE_EVENTS + " WHERE " + COLUMN_EVENT_MESSAGE + " IN ('A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P')");
+        }catch (SQLException e){
+            System.out.println("There was an error trying to delete the test values that were inserted. " + e.getMessage());
+        }
     }
 
     @Test
     void getLastThreeDaysMessages() throws SQLException {
+        // Initialising the expected arraylist.
+        // Loading the existed values in the db.
+        ArrayList<Event> arrayList = new ArrayList<>();
+
         Controller controller = new Controller();
         long timeOfRequest = controller.calcNewTime();
 
+        try(Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM " + TABLE_EVENTS + " WHERE " + COLUMN_EVENT_TIME_MILLIS + " >= " + timeOfRequest + " - " + "1000*60*60*24*3")) {
+            while (resultSet.next()){
+                arrayList.add(new Event(resultSet.getString(COLUMN_EVENT_MESSAGE),resultSet.getLong(COLUMN_EVENT_TIME_MILLIS)));
+//                repositoryDbTest.addMessage(new Event(resultSet.getString(COLUMN_EVENT_MESSAGE),resultSet.getLong(COLUMN_EVENT_TIME_MILLIS)));
+            }
+        } catch (SQLException e) {
+            System.out.println("There was an error when trying t load the db for the queryLoadDb test." + e.getMessage());
+        }
+
         // Initialising Events for the other db.
-        Event event0 = new Event("A", timeOfRequest - (1000 * 20));
-        Event event1 = new Event("B", timeOfRequest - (1000 * 60 * 30));
-        Event event2 = new Event("B", timeOfRequest - (1000 * 60 * 45));
-        Event event3 = new Event("B", timeOfRequest - (1000 * 60 * 55));
-        Event event4 = new Event("C", timeOfRequest - (1000 * 60 * 65));
-        Event event5 = new Event("D", timeOfRequest - (1000 * 60 * 100));
-        Event event6 = new Event("F", timeOfRequest - (1000 * 60 * 150));
-        Event event7 = new Event("G", timeOfRequest - (1000 * 60 * 170));
-        Event event8 = new Event("H", timeOfRequest - (1000 * 60 * 60 * 18));
-        Event event9 = new Event("I", timeOfRequest - (1000 * 60 * 60 * 26));
-        Event event10 = new Event("J", timeOfRequest - (1000 * 60 * 60 * 70));
-        Event event11 = new Event("K", timeOfRequest - (1000 * 60 * 60 * 80));
-        Event event12 = new Event("L", timeOfRequest - (1000 * 60 * 60 * 220));
-        Event event13 = new Event("M", timeOfRequest - (1000 * 60 * 60 * 260));
-        Event event14 = new Event("N", timeOfRequest - (1000L * 60 * 60 * 24 * 25));
-        Event event15 = new Event("O", timeOfRequest - (1000L * 60 * 60 * 24 * 35));
+        Event event0 = new Event("A#", timeOfRequest - (1000 * 20));
+        Event event1 = new Event("B#", timeOfRequest - (1000 * 60 * 30));
+        Event event2 = new Event("C#", timeOfRequest - (1000 * 60 * 45));
+        Event event3 = new Event("D#", timeOfRequest - (1000 * 60 * 55));
+        Event event4 = new Event("E#", timeOfRequest - (1000 * 60 * 65));
+        Event event5 = new Event("F#", timeOfRequest - (1000 * 60 * 100));
+        Event event6 = new Event("G#", timeOfRequest - (1000 * 60 * 150));
+        Event event7 = new Event("H#", timeOfRequest - (1000 * 60 * 170));
+        Event event8 = new Event("I#", timeOfRequest - (1000 * 60 * 60 * 18));
+        Event event9 = new Event("J#", timeOfRequest - (1000 * 60 * 60 * 26));
+        Event event10 = new Event("K#", timeOfRequest - (1000 * 60 * 60 * 70));
+        Event event11 = new Event("L#", timeOfRequest - (1000 * 60 * 60 * 80));
+        Event event12 = new Event("M#", timeOfRequest - (1000 * 60 * 60 * 220));
+        Event event13 = new Event("N#", timeOfRequest - (1000 * 60 * 60 * 260));
+        Event event14 = new Event("O#", timeOfRequest - (1000L * 60 * 60 * 24 * 25));
+        Event event15 = new Event("P#", timeOfRequest - (1000L * 60 * 60 * 24 * 35));
 
         // Adding 11 / 16 Events in the arraylist to test if the repositoryDbTest will bring us back only those asked (3) in the assertEquals.
-        ArrayList<Event> arrayList = new ArrayList<>(Arrays.asList(event0,event1,event2,event3,event4,event5,event6,event7,event8,event9,event10));
+        arrayList.add(event0);
+        arrayList.add(event1);
+        arrayList.add(event2);
+        arrayList.add(event3);
+        arrayList.add(event4);
+        arrayList.add(event5);
+        arrayList.add(event6);
+        arrayList.add(event7);
+        arrayList.add(event8);
+        arrayList.add(event9);
+        arrayList.add(event10);
 
         // Adding all the Events (16 / 16) in the repositoryDbTest.
         repositoryDbTest.addMessage(event0);
@@ -341,34 +576,78 @@ class RepositoryDbTest {
         repositoryDbTest.addMessage(event14);
         repositoryDbTest.addMessage(event15);
 
-        assertEquals(arrayList , repositoryDbTest.getLastThreeDaysMessages(), "getLastThreeDaysMessages method in RepositoryDb Class didn't work correctly.");
+        // Taking an array with only the messages from the db in order to compare.
+        ArrayList<String> arrayListCompare = new ArrayList<>();
+        for(Event object: repositoryDbTest.getLastThreeDaysMessages()){
+        arrayListCompare.add(object.getMessage());
+        }
+
+        // Taking an array with only the messages from the db in order to compare. We use this because the repositoryDb methods return NEW Events so they cant be compared.
+        ArrayList<String> repoList = new ArrayList<>();
+        for (Event object: repositoryDbTest.getLastThreeDaysMessages()){
+            repoList.add(object.getMessage());
+        }
+
+        assertEquals(arrayListCompare , repoList, "getLastThreeDaysMessages method in RepositoryDb Class didn't work correctly.");
+
+        // Deleting the created messages to test the db.
+        try(Statement statement = connection.createStatement()) {
+            statement.executeUpdate("DELETE FROM " + TABLE_EVENTS + " WHERE " + COLUMN_EVENT_MESSAGE + " IN ('A#','B#','C#','D#','E#','F#','G#','H#','I#','J#','K#','L#','M#','N#','O#','P#')");
+        }catch (SQLException e){
+            System.out.println("There was an error trying to delete the test values that were inserted. " + e.getMessage());
+        }
     }
 
     @Test
     void getLastTenDaysMessages() throws SQLException {
+        // Initialising the expected arraylist.
+        // Loading the existed values in the db.
+        ArrayList<Event> arrayList = new ArrayList<>();
+
         Controller controller = new Controller();
         long timeOfRequest = controller.calcNewTime();
 
+        try(Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM " + TABLE_EVENTS + " WHERE " + COLUMN_EVENT_TIME_MILLIS + " >= " + timeOfRequest + " - " + "1000*60*60*24*10")) {
+            while (resultSet.next()){
+                arrayList.add(new Event(resultSet.getString(COLUMN_EVENT_MESSAGE),resultSet.getLong(COLUMN_EVENT_TIME_MILLIS)));
+//                repositoryDbTest.addMessage(new Event(resultSet.getString(COLUMN_EVENT_MESSAGE),resultSet.getLong(COLUMN_EVENT_TIME_MILLIS)));
+            }
+        } catch (SQLException e) {
+            System.out.println("There was an error when trying t load the db for the queryLoadDb test." + e.getMessage());
+        }
+
         // Initialising Events for the other db.
-        Event event0 = new Event("A", timeOfRequest - (1000 * 20));
-        Event event1 = new Event("B", timeOfRequest - (1000 * 60 * 30));
-        Event event2 = new Event("B", timeOfRequest - (1000 * 60 * 45));
-        Event event3 = new Event("B", timeOfRequest - (1000 * 60 * 55));
-        Event event4 = new Event("C", timeOfRequest - (1000 * 60 * 65));
-        Event event5 = new Event("D", timeOfRequest - (1000 * 60 * 100));
-        Event event6 = new Event("F", timeOfRequest - (1000 * 60 * 150));
-        Event event7 = new Event("G", timeOfRequest - (1000 * 60 * 170));
-        Event event8 = new Event("H", timeOfRequest - (1000 * 60 * 60 * 18));
-        Event event9 = new Event("I", timeOfRequest - (1000 * 60 * 60 * 26));
-        Event event10 = new Event("J", timeOfRequest - (1000 * 60 * 60 * 70));
-        Event event11 = new Event("K", timeOfRequest - (1000 * 60 * 60 * 80));
-        Event event12 = new Event("L", timeOfRequest - (1000 * 60 * 60 * 220));
-        Event event13 = new Event("M", timeOfRequest - (1000 * 60 * 60 * 260));
-        Event event14 = new Event("N", timeOfRequest - (1000L * 60 * 60 * 24 * 25));
-        Event event15 = new Event("O", timeOfRequest - (1000L * 60 * 60 * 24 * 35));
+        Event event0 = new Event("A$", timeOfRequest - (1000 * 20));
+        Event event1 = new Event("B$", timeOfRequest - (1000 * 60 * 30));
+        Event event2 = new Event("C$", timeOfRequest - (1000 * 60 * 45));
+        Event event3 = new Event("D$", timeOfRequest - (1000 * 60 * 55));
+        Event event4 = new Event("E$", timeOfRequest - (1000 * 60 * 65));
+        Event event5 = new Event("F$", timeOfRequest - (1000 * 60 * 100));
+        Event event6 = new Event("G$", timeOfRequest - (1000 * 60 * 150));
+        Event event7 = new Event("H$", timeOfRequest - (1000 * 60 * 170));
+        Event event8 = new Event("I$", timeOfRequest - (1000 * 60 * 60 * 18));
+        Event event9 = new Event("J$", timeOfRequest - (1000 * 60 * 60 * 26));
+        Event event10 = new Event("K$", timeOfRequest - (1000 * 60 * 60 * 70));
+        Event event11 = new Event("L$", timeOfRequest - (1000 * 60 * 60 * 80));
+        Event event12 = new Event("M$", timeOfRequest - (1000 * 60 * 60 * 220));
+        Event event13 = new Event("N$", timeOfRequest - (1000 * 60 * 60 * 260));
+        Event event14 = new Event("O$", timeOfRequest - (1000L * 60 * 60 * 24 * 25));
+        Event event15 = new Event("P$", timeOfRequest - (1000L * 60 * 60 * 24 * 35));
 
         // Adding 13 / 16 Events in the arraylist to test if the repositoryDbTest will bring us back only those asked (3) in the assertEquals.
-        ArrayList<Event> arrayList = new ArrayList<>(Arrays.asList(event0,event1,event2,event3,event4,event5,event6,event7,event8,event9,event10,event11,event12));
+        arrayList.add(event0);
+        arrayList.add(event1);
+        arrayList.add(event2);
+        arrayList.add(event3);
+        arrayList.add(event4);
+        arrayList.add(event5);
+        arrayList.add(event6);
+        arrayList.add(event7);
+        arrayList.add(event8);
+        arrayList.add(event9);
+        arrayList.add(event10);
+        arrayList.add(event11);
 
         // Adding all the Events (16 / 16) in the repositoryDbTest.
         repositoryDbTest.addMessage(event0);
@@ -388,34 +667,81 @@ class RepositoryDbTest {
         repositoryDbTest.addMessage(event14);
         repositoryDbTest.addMessage(event15);
 
-        assertEquals(arrayList , repositoryDbTest.getLastTenDaysMessages(), "getLastTenDaysMessages method in RepositoryDb Class didn't work correctly.");
+        // Taking an array with only the messages from the db in order to compare.
+        ArrayList<String> arrayListCompare = new ArrayList<>();
+        for(Event object: repositoryDbTest.getLastTenDaysMessages()){
+        arrayListCompare.add(object.getMessage());
+        }
+
+        // Taking an array with only the messages from the db in order to compare. We use this because the repositoryDb methods return NEW Events so they cant be compared.
+        ArrayList<String> repoList = new ArrayList<>();
+        for (Event object: repositoryDbTest.getLastTenDaysMessages()){
+            repoList.add(object.getMessage());
+        }
+
+        assertEquals(arrayListCompare , repoList, "getLastTenDaysMessages method in RepositoryDb Class didn't work correctly.");
+
+        // Deleting the created messages to test the db.
+        try(Statement statement = connection.createStatement()) {
+            statement.executeUpdate("DELETE FROM " + TABLE_EVENTS + " WHERE " + COLUMN_EVENT_MESSAGE + " IN ('A$','B$','C$','D$','E$','F$','G$','H$','I$','J$','K$','L$','M$','N$','O$','P$')");
+        }catch (SQLException e){
+            System.out.println("There was an error trying to delete the test values that were inserted. " + e.getMessage());
+        }
     }
 
     @Test
     void getLastMonthMessages() throws SQLException {
+        // Initialising the expected arraylist.
+        // Loading the existed values in the db.
+        ArrayList<Event> arrayList = new ArrayList<>();
+
         Controller controller = new Controller();
         long timeOfRequest = controller.calcNewTime();
 
+        try(Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM " + TABLE_EVENTS + " WHERE " + COLUMN_EVENT_TIME_MILLIS + " >= " + timeOfRequest + " - " + "1000*60*60*24*30")) {
+            while (resultSet.next()){
+                arrayList.add(new Event(resultSet.getString(COLUMN_EVENT_MESSAGE),resultSet.getLong(COLUMN_EVENT_TIME_MILLIS)));
+//                repositoryDbTest.addMessage(new Event(resultSet.getString(COLUMN_EVENT_MESSAGE),resultSet.getLong(COLUMN_EVENT_TIME_MILLIS)));
+            }
+        } catch (SQLException e) {
+            System.out.println("There was an error when trying t load the db for the queryLoadDb test." + e.getMessage());
+        }
+
         // Initialising Events for the other db.
-        Event event0 = new Event("A", timeOfRequest - (1000 * 20));
-        Event event1 = new Event("B", timeOfRequest - (1000 * 60 * 30));
-        Event event2 = new Event("B", timeOfRequest - (1000 * 60 * 45));
-        Event event3 = new Event("B", timeOfRequest - (1000 * 60 * 55));
-        Event event4 = new Event("C", timeOfRequest - (1000 * 60 * 65));
-        Event event5 = new Event("D", timeOfRequest - (1000 * 60 * 100));
-        Event event6 = new Event("F", timeOfRequest - (1000 * 60 * 150));
-        Event event7 = new Event("G", timeOfRequest - (1000 * 60 * 170));
-        Event event8 = new Event("H", timeOfRequest - (1000 * 60 * 60 * 18));
-        Event event9 = new Event("I", timeOfRequest - (1000 * 60 * 60 * 26));
-        Event event10 = new Event("J", timeOfRequest - (1000 * 60 * 60 * 70));
-        Event event11 = new Event("K", timeOfRequest - (1000 * 60 * 60 * 80));
-        Event event12 = new Event("L", timeOfRequest - (1000 * 60 * 60 * 220));
-        Event event13 = new Event("M", timeOfRequest - (1000 * 60 * 60 * 260));
-        Event event14 = new Event("N", timeOfRequest - (1000L * 60 * 60 * 24 * 25));
-        Event event15 = new Event("O", timeOfRequest - (1000L * 60 * 60 * 24 * 35));
+        Event event0 = new Event("A^", timeOfRequest - (1000 * 20));
+        Event event1 = new Event("B^", timeOfRequest - (1000 * 60 * 30));
+        Event event2 = new Event("C^", timeOfRequest - (1000 * 60 * 45));
+        Event event3 = new Event("D^", timeOfRequest - (1000 * 60 * 55));
+        Event event4 = new Event("E^", timeOfRequest - (1000 * 60 * 65));
+        Event event5 = new Event("F^", timeOfRequest - (1000 * 60 * 100));
+        Event event6 = new Event("G^", timeOfRequest - (1000 * 60 * 150));
+        Event event7 = new Event("H^", timeOfRequest - (1000 * 60 * 170));
+        Event event8 = new Event("I^", timeOfRequest - (1000 * 60 * 60 * 18));
+        Event event9 = new Event("J^", timeOfRequest - (1000 * 60 * 60 * 26));
+        Event event10 = new Event("K^", timeOfRequest - (1000 * 60 * 60 * 70));
+        Event event11 = new Event("L^", timeOfRequest - (1000 * 60 * 60 * 80));
+        Event event12 = new Event("M^", timeOfRequest - (1000 * 60 * 60 * 220));
+        Event event13 = new Event("N^", timeOfRequest - (1000 * 60 * 60 * 260));
+        Event event14 = new Event("O^", timeOfRequest - (1000L * 60 * 60 * 24 * 25));
+        Event event15 = new Event("P^", timeOfRequest - (1000L * 60 * 60 * 24 * 35));
 
         // Adding 15 / 16 Events in the arraylist to test if the repositoryDbTest will bring us back only those asked (3) in the assertEquals.
-        ArrayList<Event> arrayList = new ArrayList<>(Arrays.asList(event0,event1,event2,event3,event4,event5,event6,event7,event8,event9,event10,event11,event12,event13,event14));
+        arrayList.add(event0);
+        arrayList.add(event1);
+        arrayList.add(event2);
+        arrayList.add(event3);
+        arrayList.add(event4);
+        arrayList.add(event5);
+        arrayList.add(event6);
+        arrayList.add(event7);
+        arrayList.add(event8);
+        arrayList.add(event9);
+        arrayList.add(event10);
+        arrayList.add(event11);
+        arrayList.add(event12);
+        arrayList.add(event13);
+        arrayList.add(event14);
 
         // Adding all the Events (16 / 16) in the repositoryDbTest.
         repositoryDbTest.addMessage(event0);
@@ -435,23 +761,57 @@ class RepositoryDbTest {
         repositoryDbTest.addMessage(event14);
         repositoryDbTest.addMessage(event15);
 
-        assertEquals(arrayList , repositoryDbTest.getLastMonthMessages(), "getLastMonthMessages method in RepositoryDb Class didn't work correctly.");
+        // Taking an array with only the messages from the db in order to compare.
+        ArrayList<String> arrayListCompare = new ArrayList<>();
+        for(Event object: repositoryDbTest.getLastMonthMessages()){
+        arrayListCompare.add(object.getMessage());
+        }
+
+        // Taking an array with only the messages from the db in order to compare.
+        ArrayList<String> repoList = new ArrayList<>();
+        for (Event object: repositoryDbTest.getLastMonthMessages()){
+            repoList.add(object.getMessage());
+        }
+
+        assertEquals(arrayListCompare , repoList, "getLastMonthMessages method in RepositoryDb Class didn't work correctly.");
+
+        // Deleting the created messages to test the db.
+        try(Statement statement = connection.createStatement()) {
+            statement.executeUpdate("DELETE FROM " + TABLE_EVENTS + " WHERE " + COLUMN_EVENT_MESSAGE + " IN ('A^','B^','C^','D^','E^','F^','G^','H^','I^','J^','K^','L^','M^','N^','O^','P^')");
+        }catch (SQLException e){
+            System.out.println("There was an error trying to delete the test values that were inserted. " + e.getMessage());
+        }
     }
 
     @Test
     void getAllTheMessages() throws SQLException {
+        // Initialising the expected arraylist.
+        // Loading the existed values in the db.
+        ArrayList<Event> arrayList = new ArrayList<>();
+
+        try(Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM " + TABLE_EVENTS)){
+            while (resultSet.next()){
+                arrayList.add(new Event(resultSet.getString(COLUMN_EVENT_MESSAGE),resultSet.getLong(COLUMN_EVENT_TIME_MILLIS)));
+//                repositoryDbTest.addMessage(new Event(resultSet.getString(COLUMN_EVENT_MESSAGE),resultSet.getLong(COLUMN_EVENT_TIME_MILLIS)));
+            }
+        } catch (SQLException e) {
+            System.out.println("There was an error when trying t load the db for the queryLoadDb test." + e.getMessage());
+        }
+
         // Initialising an Event for the other db.
-        Event event = new Event("New message ", 10000000000L);
-        Event event1 = new Event("New message1 ", 20000000000L);
-        Event event2 = new Event("New message2 ", 30000000000L);
-        Event event3 = new Event("New message3 ", 40000000000L);
-        Event event4 = new Event("New message4 ", 50000000000L);
+        Event event = new Event("New message& ", 10000000000L);
+        Event event1 = new Event("New message1& ", 20000000000L);
+        Event event2 = new Event("New message2& ", 30000000000L);
+        Event event3 = new Event("New message3& ", 40000000000L);
+        Event event4 = new Event("New message4& ", 50000000000L);
 
         // Adding 3 / 5 Events in the arraylist to test if the repositoryDbTest will bring us back only those asked (3) in the assertEquals.
-        ArrayList<Event> arrayList = new ArrayList<>(Arrays.asList(event,event1,event2,event3,event4));
-
-        // Because the repositoryDbTest WILL do a sort before it brings the data so we need to do as well.
-        Collections.sort(arrayList,RepositoryInMemory.EARLIEST_ORDER);
+        arrayList.add(event);
+        arrayList.add(event1);
+        arrayList.add(event2);
+        arrayList.add(event3);
+        arrayList.add(event4);
 
         // Adding all the Events (5 / 5) in the repositoryDbTest.
         repositoryDbTest.addMessage(event);
@@ -460,6 +820,25 @@ class RepositoryDbTest {
         repositoryDbTest.addMessage(event3);
         repositoryDbTest.addMessage(event4);
 
-        assertEquals(arrayList , repositoryDbTest.getAllTheMessages(), "getOldestMessages method in RepositoryDb Class didn't work correctly.");
+        //        // Taking an array with only the messages from the db in order to compare.
+        ArrayList<String> arrayListCompare = new ArrayList<>();
+        for(Event object: repositoryDbTest.getAllTheMessages()){
+        arrayListCompare.add(object.getMessage());
+        }
+
+        // Taking an array with only the messages from the db in order to compare. We use this because the repositoryDb methods return NEW Events so they cant be compared.
+        ArrayList<String> repoList = new ArrayList<>();
+        for(Event object: repositoryDbTest.getAllTheMessages()){
+            repoList.add(object.getMessage());
+        }
+
+        assertEquals(arrayListCompare , repoList, "getOldestMessages method in RepositoryDb Class didn't work correctly.");
+
+        // Deleting the created messages to test the db.
+        try(Statement statement = connection.createStatement()) {
+            statement.executeUpdate("DELETE FROM " + TABLE_EVENTS + " WHERE " + COLUMN_EVENT_MESSAGE + " IN ('New message& ','New message1& ','New message2& ','New message3& ','New message4& ')");
+        }catch (SQLException e){
+            System.out.println("There was an error trying to delete the test values that were inserted. " + e.getMessage());
+        }
     }
 }

@@ -35,8 +35,8 @@ public class RepositoryDb implements IRepository {
             "SELECT * FROM " + TABLE_EVENTS;
 
     // TODO Vghke error eksaitias tou "=". Na dw pws mporei na mpei.
-    public static final String QUERY_LOAD_DB_PREP =
-            "SELECT * FROM " + TABLE_EVENTS + " = ?";
+//    public static final String QUERY_LOAD_DB_PREP =
+//            "SELECT * FROM " + TABLE_EVENTS + " = ?";
 
     /*
       TODO
@@ -63,7 +63,7 @@ public class RepositoryDb implements IRepository {
             connection = DriverManager.getConnection(CONNECTION_STRING);
 
             // Prepared statement for queryLoadDb
-            queryLoadDb = connection.prepareStatement(QUERY_LOAD_DB_PREP);
+//            queryLoadDb = connection.prepareStatement(QUERY_LOAD_DB_PREP);
 
             // Prepared statement for both values of the addMessage method.
             insertEvent = connection.prepareStatement(INSERT_EVENT);
@@ -178,7 +178,7 @@ public class RepositoryDb implements IRepository {
 //        stringBuilder.append(calendarRequest);
 
     @Override
-    public ArrayList<Event> getLatestMessages(int readNumberOfMessages) {
+    public ArrayList<Event> getOldestMessages(int readNumberOfMessages) {
         repositoryDbList = new ArrayList<>();
 
         try(Statement statement = connection.createStatement();
@@ -194,7 +194,7 @@ public class RepositoryDb implements IRepository {
     }
 
     @Override
-    public ArrayList<Event> getOldestMessages(int readNumberOfMessages) {
+    public ArrayList<Event> getLatestMessages(int readNumberOfMessages) {
         repositoryDbList = new ArrayList<>();
 
         try(Statement statement = connection.createStatement();

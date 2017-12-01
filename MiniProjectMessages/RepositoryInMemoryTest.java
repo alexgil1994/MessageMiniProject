@@ -2,21 +2,18 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Calendar;
-import java.util.Collections;
+import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 public class RepositoryInMemoryTest {
 
-    private RepositoryInMemory repositoryInMemory = new RepositoryInMemory();
-    private RepositoryInMemory repositoryInMemory1 = new RepositoryInMemory();
+    public RepositoryInMemory repositoryInMemory = new RepositoryInMemory();
+    public RepositoryInMemory repositoryInMemory1 = new RepositoryInMemory();
 
     @BeforeEach
-    void setUp(){
+    public void setUp(){
 
         // TODO Needs to be configured so that the Test methods can use the data.
 
@@ -87,18 +84,18 @@ public class RepositoryInMemoryTest {
 
     @Test
     void addMessage() {
-        // TODO... Problem is that this method is a void so there is no return to compare.
+        // Initialising an Event for the other db.
+        Event event = new Event("Db Test", 10000000000000L);
+        repositoryInMemory.addMessage(event);
 
-//        repositoryInMemory = new RepositoryInMemory();
-//        ArrayList<Event> repositoryInMemList = new ArrayList<>();
-//
-//        Event event = new Event("Hello", 1000000000);
-//
-//        repositoryInMemory.addMessage(event);
-//
-//        ArrayList<Event> arrayList = new ArrayList<>(Arrays.asList(event));
-//
-//        assertEquals(arrayList , repositoryInMemory,"addMessage method in RepositoryInMemory Class didn't work correctly");
+        int count = 0;
+        for(Event eventAdded: repositoryInMemory.getAllTheMessages()){
+            if (Objects.equals(eventAdded.getMessage(), "Db Test") && eventAdded.getTime() == 10000000000000L){
+                count = count + 1;
+            }
+        }
+
+        assertEquals(1, count, "addMessage method in RepositoryDb Class didn't work correctly.");
     }
 
     @Test
