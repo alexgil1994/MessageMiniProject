@@ -5,7 +5,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.Collections;
 import java.util.Objects;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -90,7 +90,7 @@ class RepositoryDbTest {
 
         // Taking an array with only the messages from the db in order to compare.
         ArrayList<String> arrayListCompare = new ArrayList<>();
-        for(Event object: repositoryDbTest.queryLoadDb()){
+        for(Event object: arrayList){
             arrayListCompare.add(object.getMessage());
         }
 
@@ -100,14 +100,14 @@ class RepositoryDbTest {
             repoList.add(object.getMessage());
         }
 
-        assertEquals(arrayListCompare , repoList, "queryLoadDb method in RepositoryDb Class didn't work correctly.");
-
         // Deleting the created messages to test the db.
         try(Statement statement = connection.createStatement()) {
             statement.executeUpdate("DELETE FROM " + TABLE_EVENTS + " WHERE " + COLUMN_EVENT_MESSAGE + " IN ('New message* ','New message1* ','New message2* ','New message3* ','New message4* ')");
         }catch (SQLException e){
             System.out.println("There was an error trying to delete the test values that were inserted. " + e.getMessage());
         }
+
+        assertEquals(arrayListCompare , repoList, "queryLoadDb method in RepositoryDb Class didn't work correctly.");
     }
 
     @Test
@@ -125,14 +125,14 @@ class RepositoryDbTest {
             }
         }
 
-        assertEquals(1, count, "addMessage method in RepositoryDb Class didn't work correctly.");
-
         // Deleting the created messages to test the db.
         try(Statement statement = connection.createStatement()) {
             statement.executeUpdate("DELETE FROM " + TABLE_EVENTS + " WHERE " + COLUMN_EVENT_MESSAGE + " IN ('Db Test')");
         }catch (SQLException e){
             System.out.println("There was an error trying to delete the test values that were inserted. " + e.getMessage());
         }
+
+        assertEquals(1, count, "addMessage method in RepositoryDb Class didn't work correctly.");
     }
 
     @Test
@@ -172,8 +172,10 @@ class RepositoryDbTest {
 
         // Taking an array with only the messages from the db in order to compare.
         ArrayList<String> arrayListCompare = new ArrayList<>();
-        for(Event object: repositoryDbTest.getLatestMessages(3)){
-            arrayListCompare.add(object.getMessage());
+        if (arrayList.size()>=3) {
+            arrayListCompare.add(arrayList.get(arrayList.size() - 3).getMessage());
+            arrayListCompare.add(arrayList.get(arrayList.size() - 2).getMessage());
+            arrayListCompare.add(arrayList.get(arrayList.size() - 1).getMessage());
         }
 
         // Taking an array with only the messages from the db in order to compare.
@@ -182,14 +184,14 @@ class RepositoryDbTest {
             repoList.add(object.getMessage());
         }
 
-        assertEquals(arrayListCompare , repoList, "getLatestMessages method in RepositoryDb Class didn't work correctly.");
-
         // Deleting the created messages to test the db.
         try(Statement statement = connection.createStatement()) {
             statement.executeUpdate("DELETE FROM " + TABLE_EVENTS + " WHERE " + COLUMN_EVENT_MESSAGE + " IN ('New message- ','New message1- ','New message2- ','New message3- ','New message4- ')");
         }catch (SQLException e){
             System.out.println("There was an error trying to delete the test values that were inserted. " + e.getMessage());
         }
+
+        assertEquals(arrayListCompare , repoList, "getLatestMessages method in RepositoryDb Class didn't work correctly.");
     }
 
     @Test
@@ -219,9 +221,6 @@ class RepositoryDbTest {
         arrayList.add(event1);
         arrayList.add(event2);
 
-        // For Deleting test-values after the test finishes.
-        ArrayList<Event> deleteList = new ArrayList<>(Arrays.asList(event,event1,event2,event3,event4));
-
         // Adding all the Events (5 / 5) in the repositoryDbTest.
         repositoryDbTest.addMessage(event);
         repositoryDbTest.addMessage(event1);
@@ -229,11 +228,16 @@ class RepositoryDbTest {
         repositoryDbTest.addMessage(event3);
         repositoryDbTest.addMessage(event4);
 
+        // Sorting the list based on a class in the RepositoryInMemory i have in order to make the correct expected list.
+        Collections.sort(arrayList,RepositoryInMemory.EARLIEST_ORDER);
+
         // Taking an array with only the messages from the db in order to compare.
         ArrayList<String> arrayListCompare = new ArrayList<>();
-        for(Event object: repositoryDbTest.getOldestMessages(3)){
-        arrayListCompare.add(object.getMessage());
-       }
+        if (arrayList.size()>=3) {
+            arrayListCompare.add(arrayList.get(arrayList.size() - 1).getMessage());
+            arrayListCompare.add(arrayList.get(arrayList.size() - 2).getMessage());
+            arrayListCompare.add(arrayList.get(arrayList.size() - 3).getMessage());
+        }
 
         // Taking an array with only the messages from the db in order to compare. We use this because the repositoryDb methods return NEW Events so they cant be compared.
         ArrayList<String> repoList = new ArrayList<>();
@@ -241,14 +245,14 @@ class RepositoryDbTest {
             repoList.add(object.getMessage());
         }
 
-        assertEquals(arrayListCompare , repoList, "getOldestMessages method in RepositoryDb Class didn't work correctly.");
-
         // Deleting the created messages to test the db.
         try(Statement statement = connection.createStatement()) {
             statement.executeUpdate("DELETE FROM " + TABLE_EVENTS + " WHERE " + COLUMN_EVENT_MESSAGE + " IN ('New message+ ','New message1+ ','New message2+ ','New message3+ ','New message4+ ')");
         }catch (SQLException e){
             System.out.println("There was an error trying to delete the test values that were inserted. " + e.getMessage());
         }
+
+        assertEquals(arrayListCompare , repoList, "getOldestMessages method in RepositoryDb Class didn't work correctly.");
     }
 
     @Test
@@ -320,11 +324,9 @@ class RepositoryDbTest {
 
         // Taking an array with only the messages from the db in order to compare.We use this because the repositoryDb methods return NEW Events so they cant be compared.
         ArrayList<String> repoList = new ArrayList<>();
-        for(Event object: repositoryDbTest.getLastHourMessages()){
+        for(Event object: arrayList){
             repoList.add(object.getMessage());
         }
-
-        assertEquals(arrayListCompare , repoList, "getLastHourMesages method in RepositoryDb Class didn't work correctly.");
 
         // Deleting the created messages to test the db.
         try(Statement statement = connection.createStatement()) {
@@ -332,6 +334,8 @@ class RepositoryDbTest {
         }catch (SQLException e){
             System.out.println("There was an error trying to delete the test values that were inserted. " + e.getMessage());
         }
+
+        assertEquals(arrayListCompare , repoList, "getLastHourMesages method in RepositoryDb Class didn't work correctly.");
     }
 
     @Test
@@ -401,7 +405,7 @@ class RepositoryDbTest {
 
         // Taking an array with only the messages from the db in order to compare.
         ArrayList<String> arrayListCompare = new ArrayList<>();
-        for(Event object: repositoryDbTest.getLastThreeHoursMessages()){
+        for(Event object: arrayList){
             arrayListCompare.add(object.getMessage());
         }
 
@@ -411,14 +415,14 @@ class RepositoryDbTest {
             repoList.add(object.getMessage());
         }
 
-        assertEquals(arrayListCompare , repoList, "getLastThreeHoursMesages method in RepositoryDb Class didn't work correctly.");
-
         // Deleting the created messages to test the db.
         try(Statement statement = connection.createStatement()) {
             statement.executeUpdate("DELETE FROM " + TABLE_EVENTS + " WHERE " + COLUMN_EVENT_MESSAGE + " IN ('A@','B@','C@','D@','E@','F@','G@','H@','I@','J@','K@','L@','M@','N@','O@','P@')");
         }catch (SQLException e){
             System.out.println("There was an error trying to delete the test values that were inserted. " + e.getMessage());
         }
+
+        assertEquals(arrayListCompare , repoList, "getLastThreeHoursMesages method in RepositoryDb Class didn't work correctly.");
     }
 
     @Test
@@ -467,6 +471,7 @@ class RepositoryDbTest {
         arrayList.add(event5);
         arrayList.add(event6);
         arrayList.add(event7);
+        arrayList.add(event8);
 
         // Adding all the Events (16 / 16) in the repositoryDbTest.
         repositoryDbTest.addMessage(event0);
@@ -488,7 +493,7 @@ class RepositoryDbTest {
 
         // Taking an array with only the messages from the db in order to compare.
         ArrayList<String> arrayListCompare = new ArrayList<>();
-        for(Event object: repositoryDbTest.getLastOneDayMessages()){
+        for(Event object: arrayList){
             arrayListCompare.add(object.getMessage());
         }
 
@@ -498,14 +503,14 @@ class RepositoryDbTest {
             repoList.add(object.getMessage());
         }
 
-        assertEquals(arrayListCompare , repoList, "getLastOneDayMessages method in RepositoryDb Class didn't work correctly.");
-
         // Deleting the created messages to test the db.
         try(Statement statement = connection.createStatement()) {
             statement.executeUpdate("DELETE FROM " + TABLE_EVENTS + " WHERE " + COLUMN_EVENT_MESSAGE + " IN ('A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P')");
         }catch (SQLException e){
             System.out.println("There was an error trying to delete the test values that were inserted. " + e.getMessage());
         }
+
+        assertEquals(arrayListCompare , repoList, "getLastOneDayMessages method in RepositoryDb Class didn't work correctly.");
     }
 
     @Test
@@ -578,7 +583,7 @@ class RepositoryDbTest {
 
         // Taking an array with only the messages from the db in order to compare.
         ArrayList<String> arrayListCompare = new ArrayList<>();
-        for(Event object: repositoryDbTest.getLastThreeDaysMessages()){
+        for(Event object: arrayList){
         arrayListCompare.add(object.getMessage());
         }
 
@@ -588,14 +593,14 @@ class RepositoryDbTest {
             repoList.add(object.getMessage());
         }
 
-        assertEquals(arrayListCompare , repoList, "getLastThreeDaysMessages method in RepositoryDb Class didn't work correctly.");
-
         // Deleting the created messages to test the db.
         try(Statement statement = connection.createStatement()) {
             statement.executeUpdate("DELETE FROM " + TABLE_EVENTS + " WHERE " + COLUMN_EVENT_MESSAGE + " IN ('A#','B#','C#','D#','E#','F#','G#','H#','I#','J#','K#','L#','M#','N#','O#','P#')");
         }catch (SQLException e){
             System.out.println("There was an error trying to delete the test values that were inserted. " + e.getMessage());
         }
+
+        assertEquals(arrayListCompare , repoList, "getLastThreeDaysMessages method in RepositoryDb Class didn't work correctly.");
     }
 
     @Test
@@ -648,6 +653,7 @@ class RepositoryDbTest {
         arrayList.add(event9);
         arrayList.add(event10);
         arrayList.add(event11);
+        arrayList.add(event12);
 
         // Adding all the Events (16 / 16) in the repositoryDbTest.
         repositoryDbTest.addMessage(event0);
@@ -669,7 +675,7 @@ class RepositoryDbTest {
 
         // Taking an array with only the messages from the db in order to compare.
         ArrayList<String> arrayListCompare = new ArrayList<>();
-        for(Event object: repositoryDbTest.getLastTenDaysMessages()){
+        for(Event object: arrayList){
         arrayListCompare.add(object.getMessage());
         }
 
@@ -679,14 +685,14 @@ class RepositoryDbTest {
             repoList.add(object.getMessage());
         }
 
-        assertEquals(arrayListCompare , repoList, "getLastTenDaysMessages method in RepositoryDb Class didn't work correctly.");
-
         // Deleting the created messages to test the db.
         try(Statement statement = connection.createStatement()) {
             statement.executeUpdate("DELETE FROM " + TABLE_EVENTS + " WHERE " + COLUMN_EVENT_MESSAGE + " IN ('A$','B$','C$','D$','E$','F$','G$','H$','I$','J$','K$','L$','M$','N$','O$','P$')");
         }catch (SQLException e){
             System.out.println("There was an error trying to delete the test values that were inserted. " + e.getMessage());
         }
+
+        assertEquals(arrayListCompare , repoList, "getLastTenDaysMessages method in RepositoryDb Class didn't work correctly.");
     }
 
     @Test
@@ -763,7 +769,7 @@ class RepositoryDbTest {
 
         // Taking an array with only the messages from the db in order to compare.
         ArrayList<String> arrayListCompare = new ArrayList<>();
-        for(Event object: repositoryDbTest.getLastMonthMessages()){
+        for(Event object: arrayList){
         arrayListCompare.add(object.getMessage());
         }
 
@@ -773,14 +779,14 @@ class RepositoryDbTest {
             repoList.add(object.getMessage());
         }
 
-        assertEquals(arrayListCompare , repoList, "getLastMonthMessages method in RepositoryDb Class didn't work correctly.");
-
         // Deleting the created messages to test the db.
         try(Statement statement = connection.createStatement()) {
             statement.executeUpdate("DELETE FROM " + TABLE_EVENTS + " WHERE " + COLUMN_EVENT_MESSAGE + " IN ('A^','B^','C^','D^','E^','F^','G^','H^','I^','J^','K^','L^','M^','N^','O^','P^')");
         }catch (SQLException e){
             System.out.println("There was an error trying to delete the test values that were inserted. " + e.getMessage());
         }
+
+        assertEquals(arrayListCompare , repoList, "getLastMonthMessages method in RepositoryDb Class didn't work correctly.");
     }
 
     @Test
@@ -822,7 +828,7 @@ class RepositoryDbTest {
 
         //        // Taking an array with only the messages from the db in order to compare.
         ArrayList<String> arrayListCompare = new ArrayList<>();
-        for(Event object: repositoryDbTest.getAllTheMessages()){
+        for(Event object: arrayList){
         arrayListCompare.add(object.getMessage());
         }
 
@@ -832,13 +838,13 @@ class RepositoryDbTest {
             repoList.add(object.getMessage());
         }
 
-        assertEquals(arrayListCompare , repoList, "getOldestMessages method in RepositoryDb Class didn't work correctly.");
-
         // Deleting the created messages to test the db.
         try(Statement statement = connection.createStatement()) {
             statement.executeUpdate("DELETE FROM " + TABLE_EVENTS + " WHERE " + COLUMN_EVENT_MESSAGE + " IN ('New message& ','New message1& ','New message2& ','New message3& ','New message4& ')");
         }catch (SQLException e){
             System.out.println("There was an error trying to delete the test values that were inserted. " + e.getMessage());
         }
+
+        assertEquals(arrayListCompare , repoList, "getOldestMessages method in RepositoryDb Class didn't work correctly.");
     }
 }
