@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0813bfbc-3f02-42ca-8afe-45b61de01cbd" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MiniProjectMessages/RepositoryInMemoryTest.class" afterPath="$PROJECT_DIR$/out/production/MiniProjectMessages/RepositoryInMemoryTest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/repositoryDb.db" afterPath="$PROJECT_DIR$/repositoryDb.db" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniProjectMessages/RepositoryDb.java" afterPath="$PROJECT_DIR$/MiniProjectMessages/RepositoryDb.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniProjectMessages/RepositoryDbTest.java" afterPath="$PROJECT_DIR$/MiniProjectMessages/RepositoryDbTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniProjectMessages/RepositoryInMemoryTest.java" afterPath="$PROJECT_DIR$/MiniProjectMessages/RepositoryInMemoryTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -40,11 +40,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="RepositoryInMemoryTest.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="RepositoryInMemoryTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MiniProjectMessages/RepositoryInMemoryTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="120" column="9" lean-forward="false" selection-start-line="120" selection-start-column="9" selection-end-line="120" selection-end-column="9" />
+            <state relative-caret-position="323">
+              <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -55,10 +55,9 @@
       <file leaf-file-name="RepositoryDbTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MiniProjectMessages/RepositoryDbTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+            <state relative-caret-position="51">
+              <caret line="3" column="26" lean-forward="true" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
               <folding>
-                <element signature="imports" expanded="true" />
                 <marker date="1512390547891" expanded="true" signature="1945:1958" ph="SELECT * FRO... " />
                 <marker date="1512390547891" expanded="true" signature="1945:1959" ph="SELECT * FRO... event" />
                 <marker date="1512390547891" expanded="true" signature="4002:4158" ph="DELETE FROM " />
@@ -182,11 +181,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RepositoryDb.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="RepositoryDb.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/MiniProjectMessages/RepositoryDb.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="284">
-              <caret line="182" column="28" lean-forward="false" selection-start-line="182" selection-start-column="28" selection-end-line="182" selection-end-column="28" />
+            <state relative-caret-position="136">
+              <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <marker date="1512383821274" expanded="true" signature="1536:1550" ph="SELECT * FRO... event" />
@@ -331,7 +330,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>readActivity</find>
       <find>timeEvent</find>
       <find>calcNew</find>
       <find>cal</find>
@@ -361,6 +359,7 @@
       <find>Could not connect with the database</find>
       <find>arrayList</find>
       <find>sort</find>
+      <find>requested100</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -406,10 +405,10 @@
         <option value="$PROJECT_DIR$/MiniProjectMessages/ScannerImportTest.java" />
         <option value="$PROJECT_DIR$/MiniProjectMessages/ActionsToRunTest.java" />
         <option value="$PROJECT_DIR$/MiniProjectMessages/Controller.java" />
-        <option value="$PROJECT_DIR$/MiniProjectMessages/RepositoryInMemoryTest.java" />
         <option value="$PROJECT_DIR$/MiniProjectMessages/RepositoryDb.java" />
         <option value="$PROJECT_DIR$/MiniProjectMessages/RepositoryDbTest.java" />
         <option value="$PROJECT_DIR$/MiniProjectMessages/RepositoryInMemory.java" />
+        <option value="$PROJECT_DIR$/MiniProjectMessages/RepositoryInMemoryTest.java" />
       </list>
     </option>
   </component>
@@ -553,14 +552,34 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="RepositoryDbTest.getLastHourMessagesRequest100" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RepositoryInMemoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="MiniProjectMessages" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="RepositoryDbTest" />
-      <option name="METHOD_NAME" value="getLastHourMessagesRequest100" />
+      <option name="MAIN_CLASS_NAME" value="RepositoryInMemoryTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="RepositoryInMemoryTest.getLastOneDayMessagesRequest100" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="MiniProjectMessages" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="RepositoryInMemoryTest" />
+      <option name="METHOD_NAME" value="getLastOneDayMessagesRequest100" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -573,14 +592,14 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="RepositoryDbTest.getLastHourMessagesTwiceEvent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RepositoryInMemoryTest.getLastThreeHoursMessagesRequested100" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="MiniProjectMessages" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="RepositoryDbTest" />
-      <option name="METHOD_NAME" value="getLastHourMessagesTwiceEvent" />
+      <option name="MAIN_CLASS_NAME" value="RepositoryInMemoryTest" />
+      <option name="METHOD_NAME" value="getLastThreeHoursMessagesRequested100" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -593,34 +612,14 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="RepositoryDbTest.getLatestMessagesRequested100" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RepositoryInMemoryTest.getOldestMessagesRequestedMoreThanExists1000" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="MiniProjectMessages" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="RepositoryDbTest" />
-      <option name="METHOD_NAME" value="getLatestMessagesRequested100" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-    </configuration>
-    <configuration name="RepositoryDbTest.getLatestMessagesTwiceEvent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="MiniProjectMessages" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="RepositoryDbTest" />
-      <option name="METHOD_NAME" value="getLatestMessagesTwiceEvent" />
+      <option name="MAIN_CLASS_NAME" value="RepositoryInMemoryTest" />
+      <option name="METHOD_NAME" value="getOldestMessagesRequestedMoreThanExists1000" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -727,19 +726,19 @@
       <listeners />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.RepositoryDbTest" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.RepositoryDbTest.getLatestMessagesTwiceEvent" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.RepositoryDbTest.getLastHourMessagesTwiceEvent" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.RepositoryDbTest.getLatestMessagesRequested100" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.RepositoryDbTest.getLastHourMessagesRequest100" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.RepositoryInMemoryTest.getLastThreeHoursMessagesRequested100" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.RepositoryInMemoryTest" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.RepositoryInMemoryTest.getLastOneDayMessagesRequest100" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.RepositoryInMemoryTest.getOldestMessagesRequestedMoreThanExists1000" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.RepositoryDbTest" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="JUnit.RepositoryDbTest" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.RepositoryDbTest.getLastHourMessagesRequest100" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.RepositoryDbTest.getLatestMessagesRequested100" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.RepositoryDbTest.getLastHourMessagesTwiceEvent" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.RepositoryDbTest.getLatestMessagesTwiceEvent" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.RepositoryInMemoryTest.getOldestMessagesRequestedMoreThanExists1000" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.RepositoryInMemoryTest" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.RepositoryInMemoryTest.getLastOneDayMessagesRequest100" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.RepositoryInMemoryTest.getLastThreeHoursMessagesRequested100" />
       </list>
     </recent_temporary>
   </component>
@@ -778,7 +777,7 @@
       <workItem from="1511936833419" duration="17335000" />
       <workItem from="1512023022786" duration="26068000" />
       <workItem from="1512109580307" duration="26966000" />
-      <workItem from="1512369958499" duration="20703000" />
+      <workItem from="1512369958499" duration="25383000" />
     </task>
     <task id="LOCAL-00001" summary="Messages mini project version 0.1.0">
       <created>1510728206261</created>
@@ -791,39 +790,39 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="RepositoryDbTest - 2017.12.04 at 14h 27m 54s.xml">
+    <history-entry file="RepositoryDbTest - 2017.12.04 at 15h 44m 20s.xml">
       <configuration name="RepositoryDbTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RepositoryDbTest_getLastHourMessagesRequest100 - 2017.12.04 at 13h 58m 53s.xml">
-      <configuration name="RepositoryDbTest.getLastHourMessagesRequest100" configurationId="JUnit" />
+    <history-entry file="RepositoryInMemoryTest - 2017.12.04 at 15h 36m 58s.xml">
+      <configuration name="RepositoryInMemoryTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RepositoryDbTest_getLastHourMessagesRequest100 - 2017.12.04 at 14h 00m 25s.xml">
-      <configuration name="RepositoryDbTest.getLastHourMessagesRequest100" configurationId="JUnit" />
+    <history-entry file="RepositoryInMemoryTest - 2017.12.04 at 15h 40m 43s.xml">
+      <configuration name="RepositoryInMemoryTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RepositoryDbTest_getLastHourMessagesRequest100 - 2017.12.04 at 14h 01m 11s.xml">
-      <configuration name="RepositoryDbTest.getLastHourMessagesRequest100" configurationId="JUnit" />
+    <history-entry file="RepositoryInMemoryTest_getLastHourMessagesRequested100 - 2017.12.04 at 15h 23m 19s.xml">
+      <configuration name="RepositoryInMemoryTest.getLastHourMessagesRequested100" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RepositoryDbTest_getLastHourMessagesRequest100 - 2017.12.04 at 14h 01m 35s.xml">
-      <configuration name="RepositoryDbTest.getLastHourMessagesRequest100" configurationId="JUnit" />
+    <history-entry file="RepositoryInMemoryTest_getLastOneDayMessagesRequest100 - 2017.12.04 at 15h 39m 00s.xml">
+      <configuration name="RepositoryInMemoryTest.getLastOneDayMessagesRequest100" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RepositoryDbTest_getLastHourMessagesRequest100 - 2017.12.04 at 14h 03m 57s.xml">
-      <configuration name="RepositoryDbTest.getLastHourMessagesRequest100" configurationId="JUnit" />
+    <history-entry file="RepositoryInMemoryTest_getLastOneDayMessagesRequest100 - 2017.12.04 at 15h 39m 15s.xml">
+      <configuration name="RepositoryInMemoryTest.getLastOneDayMessagesRequest100" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RepositoryDbTest_getLastHourMessagesRequest100 - 2017.12.04 at 14h 04m 18s.xml">
-      <configuration name="RepositoryDbTest.getLastHourMessagesRequest100" configurationId="JUnit" />
+    <history-entry file="RepositoryInMemoryTest_getLastOneDayMessagesRequest100 - 2017.12.04 at 15h 39m 27s.xml">
+      <configuration name="RepositoryInMemoryTest.getLastOneDayMessagesRequest100" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RepositoryDbTest_getLastHourMessagesRequest100 - 2017.12.04 at 14h 09m 03s.xml">
-      <configuration name="RepositoryDbTest.getLastHourMessagesRequest100" configurationId="JUnit" />
+    <history-entry file="RepositoryInMemoryTest_getLastThreeHoursMessagesRequested100 - 2017.12.04 at 15h 38m 25s.xml">
+      <configuration name="RepositoryInMemoryTest.getLastThreeHoursMessagesRequested100" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RepositoryDbTest_getLastHourMessagesRequest100 - 2017.12.04 at 14h 10m 22s.xml">
-      <configuration name="RepositoryDbTest.getLastHourMessagesRequest100" configurationId="JUnit" />
+    <history-entry file="RepositoryInMemoryTest_getOldestMessagesRequestedMoreThanExists1000 - 2017.12.04 at 15h 41m 17s.xml">
+      <configuration name="RepositoryInMemoryTest.getOldestMessagesRequestedMoreThanExists1000" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RepositoryDbTest_getLastHourMessagesRequest100 - 2017.12.04 at 14h 18m 12s.xml">
-      <configuration name="RepositoryDbTest.getLastHourMessagesRequest100" configurationId="JUnit" />
+    <history-entry file="RepositoryInMemoryTest_getTempListBasedOnTimeRequested100 - 2017.12.04 at 15h 18m 00s.xml">
+      <configuration name="RepositoryInMemoryTest.getTempListBasedOnTimeRequested100" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="416846000" />
+    <option name="totallyTimeSpent" value="421526000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1300,67 +1299,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MiniProjectMessages/RepositoryDb.java">
+    <entry file="file://$PROJECT_DIR$/MiniProjectMessages/RepositoryInMemoryTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="182" column="28" lean-forward="false" selection-start-line="182" selection-start-column="28" selection-end-line="182" selection-end-column="28" />
+        <state relative-caret-position="323">
+          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1512383821274" expanded="true" signature="1536:1550" ph="SELECT * FRO... event" />
-            <marker date="1512383821274" expanded="true" signature="1536:1566" ph="SELECT * FRO... event" />
-            <marker date="1512383821274" expanded="true" signature="1707:1721" ph="SELECT * FRO... event" />
-            <marker date="1512383821274" expanded="true" signature="1707:1745" ph="SELECT * FRO... event" />
-            <marker date="1512383821274" expanded="true" signature="1965:2073" ph="INSERT INTO event... " />
-            <marker date="1512383821274" expanded="true" signature="2166:2238" ph="INSERT INTO event... " />
-            <marker date="1512383821274" expanded="true" signature="2294:2370" ph="INSERT INTO event... " />
-            <marker date="1512383821274" expanded="true" signature="6284:6346" ph="INSERT INTO event... " />
-            <marker date="1512383821274" expanded="true" signature="6284:6398" ph="INSERT INTO event... " />
-            <marker date="1512383821274" expanded="true" signature="6284:6424" ph="INSERT INTO event... " />
-            <marker date="1512383821274" expanded="true" signature="6284:6427" ph="INSERT INTO eventeventMessage... " />
-            <marker date="1512383821274" expanded="true" signature="6284:6451" ph="INSERT INTO event... " />
-            <marker date="1512383821274" expanded="true" signature="6284:6452" ph="INSERT INTO event... " />
-            <marker date="1512383821274" expanded="true" signature="6284:6453" ph="INSERT INTO event... " />
-            <marker date="1512383821274" expanded="true" signature="7617:7630" ph="SELECT * FRO... " />
-            <marker date="1512383821274" expanded="true" signature="7617:7652" ph="SELECT * FRO... event" />
-            <marker date="1512383821274" expanded="true" signature="7617:7660" ph="SELECT * FRO... event" />
-            <marker date="1512383821274" expanded="true" signature="7617:7661" ph="SELECT * FRO... event" />
-            <marker date="1512383821274" expanded="true" signature="7617:7694" ph="SELECT * FRO... event" />
-            <marker date="1512383821274" expanded="true" signature="7617:7698" ph="SELECT * FRO... eventmissingValue" />
-            <marker date="1512383821274" expanded="true" signature="7617:7699" ph="SELECT * FRO... event" />
-            <marker date="1512383821274" expanded="true" signature="7617:7710" ph="SELECT * FRO... event" />
-            <marker date="1512383821274" expanded="true" signature="7617:7736" ph="SELECT * FRO... event" />
-            <marker date="1512383821274" expanded="true" signature="8427:8504" ph="SELECT * FRO... event" />
-            <marker date="1512383821274" expanded="true" signature="8427:8512" ph="SELECT * FRO... event" />
-            <marker date="1512383821274" expanded="true" signature="8427:8521" ph="SELECT * FRO... event" />
-            <marker date="1512383821274" expanded="true" signature="9273:9314" ph="SELECT * FRO... event" />
-            <marker date="1512383821274" expanded="true" signature="9273:9345" ph="SELECT * FRO... event" />
-            <marker date="1512383821274" expanded="true" signature="9273:9349" ph="SELECT * FRO... event" />
-            <marker date="1512383821274" expanded="true" signature="9273:9350" ph="SELECT * FRO... event" />
-            <marker date="1512383821274" expanded="true" signature="9273:9351" ph="SELECT * FRO... event" />
-            <marker date="1512383821274" expanded="true" signature="9273:9373" ph="SELECT * FRO... event" />
-            <marker date="1512383821274" expanded="true" signature="9273:9389" ph="SELECT * FRO... event" />
-            <marker date="1512383821274" expanded="true" signature="9987:10087" ph="SELECT * FRO... event" />
-            <marker date="1512383821274" expanded="true" signature="9987:10103" ph="SELECT * FRO... event" />
-            <marker date="1512383821274" expanded="true" signature="9987:10105" ph="SELECT * FRO... event" />
-            <marker date="1512383821274" expanded="true" signature="10699:10818" ph="SELECT * FRO... event" />
-            <marker date="1512383821274" expanded="true" signature="11415:11492" ph="SELECT * FRO... event" />
-            <marker date="1512383821274" expanded="true" signature="11415:11534" ph="SELECT * FRO... event" />
-            <marker date="1512383821274" expanded="true" signature="11415:11536" ph="SELECT * FRO... event" />
-            <marker date="1512383821274" expanded="true" signature="12131:12231" ph="SELECT * FRO... event" />
-            <marker date="1512383821274" expanded="true" signature="12131:12250" ph="SELECT * FRO... event" />
-            <marker date="1512383821274" expanded="true" signature="12131:12253" ph="SELECT * FRO... event" />
-            <marker date="1512383821274" expanded="true" signature="12846:12946" ph="SELECT * FRO... event" />
-            <marker date="1512383821274" expanded="true" signature="12846:12968" ph="SELECT * FRO... event" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/MiniProjectMessages/RepositoryDbTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        <state relative-caret-position="51">
+          <caret line="3" column="26" lean-forward="true" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
           <folding>
-            <element signature="imports" expanded="true" />
             <marker date="1512390547891" expanded="true" signature="1945:1958" ph="SELECT * FRO... " />
             <marker date="1512390547891" expanded="true" signature="1945:1959" ph="SELECT * FRO... event" />
             <marker date="1512390547891" expanded="true" signature="4002:4158" ph="DELETE FROM " />
@@ -1483,12 +1436,57 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MiniProjectMessages/RepositoryInMemoryTest.java">
+    <entry file="file://$PROJECT_DIR$/MiniProjectMessages/RepositoryDb.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="120" column="9" lean-forward="false" selection-start-line="120" selection-start-column="9" selection-end-line="120" selection-end-column="9" />
+        <state relative-caret-position="136">
+          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <marker date="1512383821274" expanded="true" signature="1536:1550" ph="SELECT * FRO... event" />
+            <marker date="1512383821274" expanded="true" signature="1536:1566" ph="SELECT * FRO... event" />
+            <marker date="1512383821274" expanded="true" signature="1707:1721" ph="SELECT * FRO... event" />
+            <marker date="1512383821274" expanded="true" signature="1707:1745" ph="SELECT * FRO... event" />
+            <marker date="1512383821274" expanded="true" signature="1965:2073" ph="INSERT INTO event... " />
+            <marker date="1512383821274" expanded="true" signature="2166:2238" ph="INSERT INTO event... " />
+            <marker date="1512383821274" expanded="true" signature="2294:2370" ph="INSERT INTO event... " />
+            <marker date="1512383821274" expanded="true" signature="6284:6346" ph="INSERT INTO event... " />
+            <marker date="1512383821274" expanded="true" signature="6284:6398" ph="INSERT INTO event... " />
+            <marker date="1512383821274" expanded="true" signature="6284:6424" ph="INSERT INTO event... " />
+            <marker date="1512383821274" expanded="true" signature="6284:6427" ph="INSERT INTO eventeventMessage... " />
+            <marker date="1512383821274" expanded="true" signature="6284:6451" ph="INSERT INTO event... " />
+            <marker date="1512383821274" expanded="true" signature="6284:6452" ph="INSERT INTO event... " />
+            <marker date="1512383821274" expanded="true" signature="6284:6453" ph="INSERT INTO event... " />
+            <marker date="1512383821274" expanded="true" signature="7617:7630" ph="SELECT * FRO... " />
+            <marker date="1512383821274" expanded="true" signature="7617:7652" ph="SELECT * FRO... event" />
+            <marker date="1512383821274" expanded="true" signature="7617:7660" ph="SELECT * FRO... event" />
+            <marker date="1512383821274" expanded="true" signature="7617:7661" ph="SELECT * FRO... event" />
+            <marker date="1512383821274" expanded="true" signature="7617:7694" ph="SELECT * FRO... event" />
+            <marker date="1512383821274" expanded="true" signature="7617:7698" ph="SELECT * FRO... eventmissingValue" />
+            <marker date="1512383821274" expanded="true" signature="7617:7699" ph="SELECT * FRO... event" />
+            <marker date="1512383821274" expanded="true" signature="7617:7710" ph="SELECT * FRO... event" />
+            <marker date="1512383821274" expanded="true" signature="7617:7736" ph="SELECT * FRO... event" />
+            <marker date="1512383821274" expanded="true" signature="8427:8504" ph="SELECT * FRO... event" />
+            <marker date="1512383821274" expanded="true" signature="8427:8512" ph="SELECT * FRO... event" />
+            <marker date="1512383821274" expanded="true" signature="8427:8521" ph="SELECT * FRO... event" />
+            <marker date="1512383821274" expanded="true" signature="9273:9314" ph="SELECT * FRO... event" />
+            <marker date="1512383821274" expanded="true" signature="9273:9345" ph="SELECT * FRO... event" />
+            <marker date="1512383821274" expanded="true" signature="9273:9349" ph="SELECT * FRO... event" />
+            <marker date="1512383821274" expanded="true" signature="9273:9350" ph="SELECT * FRO... event" />
+            <marker date="1512383821274" expanded="true" signature="9273:9351" ph="SELECT * FRO... event" />
+            <marker date="1512383821274" expanded="true" signature="9273:9373" ph="SELECT * FRO... event" />
+            <marker date="1512383821274" expanded="true" signature="9273:9389" ph="SELECT * FRO... event" />
+            <marker date="1512383821274" expanded="true" signature="9987:10087" ph="SELECT * FRO... event" />
+            <marker date="1512383821274" expanded="true" signature="9987:10103" ph="SELECT * FRO... event" />
+            <marker date="1512383821274" expanded="true" signature="9987:10105" ph="SELECT * FRO... event" />
+            <marker date="1512383821274" expanded="true" signature="10699:10818" ph="SELECT * FRO... event" />
+            <marker date="1512383821274" expanded="true" signature="11415:11492" ph="SELECT * FRO... event" />
+            <marker date="1512383821274" expanded="true" signature="11415:11534" ph="SELECT * FRO... event" />
+            <marker date="1512383821274" expanded="true" signature="11415:11536" ph="SELECT * FRO... event" />
+            <marker date="1512383821274" expanded="true" signature="12131:12231" ph="SELECT * FRO... event" />
+            <marker date="1512383821274" expanded="true" signature="12131:12250" ph="SELECT * FRO... event" />
+            <marker date="1512383821274" expanded="true" signature="12131:12253" ph="SELECT * FRO... event" />
+            <marker date="1512383821274" expanded="true" signature="12846:12946" ph="SELECT * FRO... event" />
+            <marker date="1512383821274" expanded="true" signature="12846:12968" ph="SELECT * FRO... event" />
           </folding>
         </state>
       </provider>
