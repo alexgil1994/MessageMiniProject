@@ -180,14 +180,15 @@ public class RepositoryDb implements IRepository {
     @Override
     public ArrayList<Event> getOldestMessages(int readNumberOfMessages) {
         repositoryDbList = new ArrayList<>();
+        if (readNumberOfMessages > 0) {
+            try (Statement statement = connection.createStatement();
+                 ResultSet resultSet = statement.executeQuery("SELECT * FROM " + TABLE_EVENTS + " ORDER BY " + COLUMN_EVENT_TIME_MILLIS + " ASC " + " LIMIT " + readNumberOfMessages)) {
 
-        try(Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery("SELECT * FROM " + TABLE_EVENTS + " ORDER BY " + COLUMN_EVENT_TIME_MILLIS + " ASC " + " LIMIT " + readNumberOfMessages )) {
-
-            // Calling the listFromQuery method to store the data from the db in the list.
-            repositoryDbList = listFromQuery(resultSet);
-        }catch (SQLException e){
-            System.out.println("Could not load the latest " + readNumberOfMessages + " messages." + e.getMessage());
+                // Calling the listFromQuery method to store the data from the db in the list.
+                repositoryDbList = listFromQuery(resultSet);
+            } catch (SQLException e) {
+                System.out.println("Could not load the latest " + readNumberOfMessages + " messages." + e.getMessage());
+            }
         }
 
         return repositoryDbList;
@@ -196,14 +197,15 @@ public class RepositoryDb implements IRepository {
     @Override
     public ArrayList<Event> getLatestMessages(int readNumberOfMessages) {
         repositoryDbList = new ArrayList<>();
+        if (readNumberOfMessages > 0) {
+            try (Statement statement = connection.createStatement();
+                 ResultSet resultSet = statement.executeQuery("SELECT * FROM " + TABLE_EVENTS + " ORDER BY " + COLUMN_EVENT_TIME_MILLIS + " DESC " + " LIMIT " + readNumberOfMessages)) {
 
-        try(Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery("SELECT * FROM " + TABLE_EVENTS + " ORDER BY " + COLUMN_EVENT_TIME_MILLIS + " DESC " + " LIMIT " + readNumberOfMessages)) {
-
-            // Calling the listFromQuery method to store the data from the db in the list.
-            repositoryDbList = listFromQuery(resultSet);
-        }catch (SQLException e){
-            System.out.println("Could not load the oldest " + readNumberOfMessages + " messages." + e.getMessage());
+                // Calling the listFromQuery method to store the data from the db in the list.
+                repositoryDbList = listFromQuery(resultSet);
+            } catch (SQLException e) {
+                System.out.println("Could not load the oldest " + readNumberOfMessages + " messages." + e.getMessage());
+            }
         }
 
         return repositoryDbList;

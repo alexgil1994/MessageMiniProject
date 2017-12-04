@@ -4,6 +4,7 @@
     <list default="true" id="0813bfbc-3f02-42ca-8afe-45b61de01cbd" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/repositoryDb.db" afterPath="$PROJECT_DIR$/repositoryDb.db" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniProjectMessages/RepositoryDb.java" afterPath="$PROJECT_DIR$/MiniProjectMessages/RepositoryDb.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniProjectMessages/RepositoryDbTest.java" afterPath="$PROJECT_DIR$/MiniProjectMessages/RepositoryDbTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -39,11 +40,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="RepositoryInMemoryTest.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="RepositoryInMemoryTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/MiniProjectMessages/RepositoryInMemoryTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="240">
-              <caret line="129" column="62" lean-forward="false" selection-start-line="129" selection-start-column="62" selection-end-line="129" selection-end-column="62" />
+              <caret line="120" column="9" lean-forward="false" selection-start-line="120" selection-start-column="9" selection-end-line="120" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -51,42 +52,131 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RepositoryDbTest.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="RepositoryDbTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MiniProjectMessages/RepositoryDbTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="23" column="14" lean-forward="true" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
+            <state relative-caret-position="204">
+              <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1512375306081" expanded="true" signature="1735:1748" ph="SELECT * FRO... " />
-                <marker date="1512375306081" expanded="true" signature="1735:1749" ph="SELECT * FRO... event" />
-                <marker date="1512375306081" expanded="true" signature="3937:4093" ph="DELETE FROM " />
-                <marker date="1512375306081" expanded="true" signature="5252:5334" ph="DELETE FROM " />
-                <marker date="1512375306081" expanded="true" signature="5948:5962" ph="SELECT * FRO... event" />
-                <marker date="1512375306081" expanded="true" signature="8383:8539" ph="DELETE FROM " />
-                <marker date="1512375306081" expanded="true" signature="9179:9193" ph="SELECT * FRO... event" />
-                <marker date="1512375306081" expanded="true" signature="11779:11935" ph="DELETE FROM " />
-                <marker date="1512375306081" expanded="true" signature="12684:12698" ph="SELECT * FRO... event" />
-                <marker date="1512375306081" expanded="true" signature="12684:12714" ph="SELECT * FRO... event" />
-                <marker date="1512375306081" expanded="true" signature="12684:12800" ph="SELECT * FRO... event" />
-                <marker date="1512375306081" expanded="true" signature="16418:16570" ph="DELETE FROM " />
-                <marker date="1512375306081" expanded="true" signature="17326:17340" ph="SELECT * FRO... event" />
-                <marker date="1512375306081" expanded="true" signature="17326:17444" ph="SELECT * FRO... event" />
-                <marker date="1512375306081" expanded="true" signature="21193:21345" ph="DELETE FROM " />
-                <marker date="1512375306081" expanded="true" signature="22103:22117" ph="SELECT * FRO... event" />
-                <marker date="1512375306081" expanded="true" signature="22103:22222" ph="SELECT * FRO... event" />
-                <marker date="1512375306081" expanded="true" signature="25982:26118" ph="DELETE FROM " />
-                <marker date="1512375306081" expanded="true" signature="26876:26890" ph="SELECT * FRO... event" />
-                <marker date="1512375306081" expanded="true" signature="26876:26997" ph="SELECT * FRO... event" />
-                <marker date="1512375306081" expanded="true" signature="30837:30989" ph="DELETE FROM " />
-                <marker date="1512375306081" expanded="true" signature="31748:31762" ph="SELECT * FRO... event" />
-                <marker date="1512375306081" expanded="true" signature="31748:31870" ph="SELECT * FRO... event" />
-                <marker date="1512375306081" expanded="true" signature="35772:35924" ph="DELETE FROM " />
-                <marker date="1512375306081" expanded="true" signature="36679:36693" ph="SELECT * FRO... event" />
-                <marker date="1512375306081" expanded="true" signature="36679:36801" ph="SELECT * FRO... event" />
-                <marker date="1512375306081" expanded="true" signature="40676:40828" ph="DELETE FROM " />
-                <marker date="1512375306081" expanded="true" signature="41472:41486" ph="SELECT * FRO... event" />
-                <marker date="1512375306081" expanded="true" signature="43736:43892" ph="DELETE FROM " />
+                <marker date="1512390547891" expanded="true" signature="1945:1958" ph="SELECT * FRO... " />
+                <marker date="1512390547891" expanded="true" signature="1945:1959" ph="SELECT * FRO... event" />
+                <marker date="1512390547891" expanded="true" signature="4002:4158" ph="DELETE FROM " />
+                <marker date="1512390547891" expanded="true" signature="4791:4805" ph="SELECT * FRO... event" />
+                <marker date="1512390547891" expanded="true" signature="5379:5429" ph="DELETE FROM " />
+                <marker date="1512390547891" expanded="true" signature="6089:6256" ph="INSERT INTO event... " />
+                <marker date="1512390547891" expanded="true" signature="7376:7458" ph="DELETE FROM " />
+                <marker date="1512390547891" expanded="true" signature="8469:8551" ph="DELETE FROM " />
+                <marker date="1512390547891" expanded="true" signature="9454:9536" ph="DELETE FROM " />
+                <marker date="1512390547891" expanded="true" signature="10442:10524" ph="DELETE FROM " />
+                <marker date="1512390547891" expanded="true" signature="11435:11517" ph="DELETE FROM " />
+                <marker date="1512390547891" expanded="true" signature="12135:12149" ph="SELECT * FRO... event" />
+                <marker date="1512390547891" expanded="true" signature="14425:14581" ph="DELETE FROM " />
+                <marker date="1512390547891" expanded="true" signature="15231:15245" ph="SELECT * FRO... event" />
+                <marker date="1512390547891" expanded="true" signature="17670:17826" ph="DELETE FROM " />
+                <marker date="1512390547891" expanded="true" signature="18473:18487" ph="SELECT * FRO... event" />
+                <marker date="1512390547891" expanded="true" signature="19065:19077" ph="DELETE FROM " />
+                <marker date="1512390547891" expanded="true" signature="19065:19103" ph="DELETE FROM " />
+                <marker date="1512390547891" expanded="true" signature="19065:19104" ph="DELETE FROM " />
+                <marker date="1512390547891" expanded="true" signature="19065:19115" ph="DELETE FROM " />
+                <marker date="1512390547891" expanded="true" signature="19783:19950" ph="INSERT INTO event... " />
+                <marker date="1512390547891" expanded="true" signature="20810:20824" ph="SELECT * FRO... event" />
+                <marker date="1512390547891" expanded="true" signature="23279:23435" ph="DELETE FROM " />
+                <marker date="1512390547891" expanded="true" signature="24091:24105" ph="SELECT * FRO... event" />
+                <marker date="1512390547891" expanded="true" signature="26387:26543" ph="DELETE FROM " />
+                <marker date="1512390547891" expanded="true" signature="27213:27227" ph="SELECT * FRO... event" />
+                <marker date="1512390547891" expanded="true" signature="29629:29785" ph="DELETE FROM " />
+                <marker date="1512390547891" expanded="true" signature="30435:30449" ph="SELECT * FRO... event" />
+                <marker date="1512390547891" expanded="true" signature="32664:32820" ph="DELETE FROM " />
+                <marker date="1512390547891" expanded="true" signature="33475:33489" ph="SELECT * FRO... event" />
+                <marker date="1512390547891" expanded="true" signature="35703:35859" ph="DELETE FROM " />
+                <marker date="1512390547891" expanded="true" signature="36499:36513" ph="SELECT * FRO... event" />
+                <marker date="1512390547891" expanded="true" signature="38954:39110" ph="DELETE FROM " />
+                <marker date="1512390547891" expanded="true" signature="39760:39774" ph="SELECT * FRO... event" />
+                <marker date="1512390547891" expanded="true" signature="42350:42506" ph="DELETE FROM " />
+                <marker date="1512390547891" expanded="true" signature="43153:43167" ph="SELECT * FRO... event" />
+                <marker date="1512390547891" expanded="true" signature="43741:43791" ph="DELETE FROM " />
+                <marker date="1512390547891" expanded="true" signature="44459:44626" ph="INSERT INTO event... " />
+                <marker date="1512390547891" expanded="true" signature="45486:45500" ph="SELECT * FRO... event" />
+                <marker date="1512390547891" expanded="true" signature="47857:48013" ph="DELETE FROM " />
+                <marker date="1512390547891" expanded="true" signature="48669:48683" ph="SELECT * FRO... event" />
+                <marker date="1512390547891" expanded="true" signature="51208:51364" ph="DELETE FROM " />
+                <marker date="1512390547891" expanded="true" signature="52034:52048" ph="SELECT * FRO... event" />
+                <marker date="1512390547891" expanded="true" signature="54436:54592" ph="DELETE FROM " />
+                <marker date="1512390547891" expanded="true" signature="55242:55256" ph="SELECT * FRO... event" />
+                <marker date="1512390547891" expanded="true" signature="57534:57690" ph="DELETE FROM " />
+                <marker date="1512390547891" expanded="true" signature="58345:58359" ph="SELECT * FRO... event" />
+                <marker date="1512390547891" expanded="true" signature="60639:60795" ph="DELETE FROM " />
+                <marker date="1512390547891" expanded="true" signature="61544:61558" ph="SELECT * FRO... event" />
+                <marker date="1512390547891" expanded="true" signature="61544:61574" ph="SELECT * FRO... event" />
+                <marker date="1512390547891" expanded="true" signature="61544:61660" ph="SELECT * FRO... event" />
+                <marker date="1512390547891" expanded="true" signature="65133:65285" ph="DELETE FROM " />
+                <marker date="1512390547891" expanded="true" signature="66045:66161" ph="SELECT * FRO... event" />
+                <marker date="1512390547891" expanded="true" signature="69839:69991" ph="DELETE FROM " />
+                <marker date="1512390547891" expanded="true" signature="70751:70867" ph="SELECT * FRO... event" />
+                <marker date="1512390547891" expanded="true" signature="74496:74648" ph="DELETE FROM " />
+                <marker date="1512390547891" expanded="true" signature="75298:75312" ph="SELECT * FRO... event" />
+                <marker date="1512390547891" expanded="true" signature="75886:75936" ph="DELETE FROM " />
+                <marker date="1512390547891" expanded="true" signature="76604:76771" ph="INSERT INTO event... " />
+                <marker date="1512390547891" expanded="true" signature="77735:77749" ph="SELECT * FRO... event" />
+                <marker date="1512390547891" expanded="true" signature="77735:77853" ph="SELECT * FRO... event" />
+                <marker date="1512390547891" expanded="true" signature="81457:81609" ph="DELETE FROM " />
+                <marker date="1512390547891" expanded="true" signature="82381:82499" ph="SELECT * FRO... event" />
+                <marker date="1512390547891" expanded="true" signature="86234:86386" ph="DELETE FROM " />
+                <marker date="1512390547891" expanded="true" signature="87158:87276" ph="SELECT * FRO... event" />
+                <marker date="1512390547891" expanded="true" signature="91036:91188" ph="DELETE FROM " />
+                <marker date="1512390547891" expanded="true" signature="91850:91864" ph="SELECT * FRO... event" />
+                <marker date="1512390547891" expanded="true" signature="92438:92488" ph="DELETE FROM " />
+                <marker date="1512390547891" expanded="true" signature="93162:93329" ph="INSERT INTO event... " />
+                <marker date="1512390547891" expanded="true" signature="94295:94309" ph="SELECT * FRO... event" />
+                <marker date="1512390547891" expanded="true" signature="94295:94414" ph="SELECT * FRO... event" />
+                <marker date="1512390547891" expanded="true" signature="98029:98165" ph="DELETE FROM " />
+                <marker date="1512390547891" expanded="true" signature="98930:99049" ph="SELECT * FRO... event" />
+                <marker date="1512390547891" expanded="true" signature="102795:102931" ph="DELETE FROM " />
+                <marker date="1512390547891" expanded="true" signature="103696:103815" ph="SELECT * FRO... event" />
+                <marker date="1512390547891" expanded="true" signature="107604:107740" ph="DELETE FROM " />
+                <marker date="1512390547891" expanded="true" signature="108395:108409" ph="SELECT * FRO... event" />
+                <marker date="1512390547891" expanded="true" signature="108983:109033" ph="DELETE FROM " />
+                <marker date="1512390547891" expanded="true" signature="109703:109870" ph="INSERT INTO event... " />
+                <marker date="1512390547891" expanded="true" signature="110835:110849" ph="SELECT * FRO... event" />
+                <marker date="1512390547891" expanded="true" signature="110835:110956" ph="SELECT * FRO... event" />
+                <marker date="1512390547891" expanded="true" signature="114651:114803" ph="DELETE FROM " />
+                <marker date="1512390547891" expanded="true" signature="115574:115695" ph="SELECT * FRO... event" />
+                <marker date="1512390547891" expanded="true" signature="119525:119677" ph="DELETE FROM " />
+                <marker date="1512390547891" expanded="true" signature="120448:120569" ph="SELECT * FRO... event" />
+                <marker date="1512390547891" expanded="true" signature="124440:124592" ph="DELETE FROM " />
+                <marker date="1512390547891" expanded="true" signature="125253:125267" ph="SELECT * FRO... event" />
+                <marker date="1512390547891" expanded="true" signature="125841:125891" ph="DELETE FROM " />
+                <marker date="1512390547891" expanded="true" signature="126564:126731" ph="INSERT INTO event... " />
+                <marker date="1512390547891" expanded="true" signature="127697:127711" ph="SELECT * FRO... event" />
+                <marker date="1512390547891" expanded="true" signature="127697:127819" ph="SELECT * FRO... event" />
+                <marker date="1512390547891" expanded="true" signature="131576:131728" ph="DELETE FROM " />
+                <marker date="1512390547891" expanded="true" signature="132495:132617" ph="SELECT * FRO... event" />
+                <marker date="1512390547891" expanded="true" signature="136512:136664" ph="DELETE FROM " />
+                <marker date="1512390547891" expanded="true" signature="137431:137553" ph="SELECT * FRO... event" />
+                <marker date="1512390547891" expanded="true" signature="141490:141642" ph="DELETE FROM " />
+                <marker date="1512390547891" expanded="true" signature="142299:142313" ph="SELECT * FRO... event" />
+                <marker date="1512390547891" expanded="true" signature="142887:142937" ph="DELETE FROM " />
+                <marker date="1512390547891" expanded="true" signature="143608:143775" ph="INSERT INTO event... " />
+                <marker date="1512390547891" expanded="true" signature="144737:144751" ph="SELECT * FRO... event" />
+                <marker date="1512390547891" expanded="true" signature="144737:144859" ph="SELECT * FRO... event" />
+                <marker date="1512390547891" expanded="true" signature="148589:148741" ph="DELETE FROM " />
+                <marker date="1512390547891" expanded="true" signature="149504:149626" ph="SELECT * FRO... event" />
+                <marker date="1512390547891" expanded="true" signature="153496:153648" ph="DELETE FROM " />
+                <marker date="1512390547891" expanded="true" signature="154411:154533" ph="SELECT * FRO... event" />
+                <marker date="1512390547891" expanded="true" signature="158445:158597" ph="DELETE FROM " />
+                <marker date="1512390547891" expanded="true" signature="159250:159264" ph="SELECT * FRO... event" />
+                <marker date="1512390547891" expanded="true" signature="159838:159888" ph="DELETE FROM " />
+                <marker date="1512390547891" expanded="true" signature="160557:160724" ph="INSERT INTO event... " />
+                <marker date="1512390547891" expanded="true" signature="161575:161589" ph="SELECT * FRO... event" />
+                <marker date="1512390547891" expanded="true" signature="163694:163850" ph="DELETE FROM " />
+                <marker date="1512390547891" expanded="true" signature="164501:164515" ph="SELECT * FRO... event" />
+                <marker date="1512390547891" expanded="true" signature="166758:166914" ph="DELETE FROM " />
+                <marker date="1512390547891" expanded="true" signature="167565:167579" ph="SELECT * FRO... event" />
+                <marker date="1512390547891" expanded="true" signature="169862:170018" ph="DELETE FROM " />
+                <marker date="1512390547891" expanded="true" signature="170665:170679" ph="SELECT * FRO... event" />
+                <marker date="1512390547891" expanded="true" signature="171253:171303" ph="DELETE FROM " />
+                <marker date="1512390547891" expanded="true" signature="171969:172136" ph="INSERT INTO event... " />
               </folding>
             </state>
           </provider>
@@ -95,56 +185,66 @@
       <file leaf-file-name="RepositoryDb.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MiniProjectMessages/RepositoryDb.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="192" column="0" lean-forward="false" selection-start-line="192" selection-start-column="0" selection-end-line="192" selection-end-column="0" />
+            <state relative-caret-position="284">
+              <caret line="182" column="28" lean-forward="false" selection-start-line="182" selection-start-column="28" selection-end-line="182" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1512125575125" expanded="true" signature="1536:1550" ph="SELECT * FRO... event" />
-                <marker date="1512125575125" expanded="true" signature="1536:1566" ph="SELECT * FRO... event" />
-                <marker date="1512125575125" expanded="true" signature="1707:1721" ph="SELECT * FRO... event" />
-                <marker date="1512125575125" expanded="true" signature="1707:1745" ph="SELECT * FRO... event" />
-                <marker date="1512125575125" expanded="true" signature="1965:2073" ph="INSERT INTO event... " />
-                <marker date="1512125575125" expanded="true" signature="2166:2238" ph="INSERT INTO event... " />
-                <marker date="1512125575125" expanded="true" signature="2294:2370" ph="INSERT INTO event... " />
-                <marker date="1512125575125" expanded="true" signature="6284:6346" ph="INSERT INTO event... " />
-                <marker date="1512125575125" expanded="true" signature="6284:6398" ph="INSERT INTO event... " />
-                <marker date="1512125575125" expanded="true" signature="6284:6424" ph="INSERT INTO event... " />
-                <marker date="1512125575125" expanded="true" signature="6284:6427" ph="INSERT INTO eventeventMessage... " />
-                <marker date="1512125575125" expanded="true" signature="6284:6451" ph="INSERT INTO event... " />
-                <marker date="1512125575125" expanded="true" signature="6284:6452" ph="INSERT INTO event... " />
-                <marker date="1512125575125" expanded="true" signature="6284:6453" ph="INSERT INTO event... " />
-                <marker date="1512125575125" expanded="true" signature="7568:7581" ph="SELECT * FRO... " />
-                <marker date="1512125575125" expanded="true" signature="7568:7603" ph="SELECT * FRO... event" />
-                <marker date="1512125575125" expanded="true" signature="7568:7611" ph="SELECT * FRO... event" />
-                <marker date="1512125575125" expanded="true" signature="7568:7612" ph="SELECT * FRO... event" />
-                <marker date="1512125575125" expanded="true" signature="7568:7645" ph="SELECT * FRO... event" />
-                <marker date="1512125575125" expanded="true" signature="7568:7649" ph="SELECT * FRO... eventmissingValue" />
-                <marker date="1512125575125" expanded="true" signature="7568:7650" ph="SELECT * FRO... event" />
-                <marker date="1512125575125" expanded="true" signature="7568:7661" ph="SELECT * FRO... event" />
-                <marker date="1512125575125" expanded="true" signature="7568:7688" ph="SELECT * FRO... event" />
-                <marker date="1512125575125" expanded="true" signature="8298:8375" ph="SELECT * FRO... event" />
-                <marker date="1512125575125" expanded="true" signature="8298:8383" ph="SELECT * FRO... event" />
-                <marker date="1512125575125" expanded="true" signature="8298:8392" ph="SELECT * FRO... event" />
-                <marker date="1512125575125" expanded="true" signature="9112:9153" ph="SELECT * FRO... event" />
-                <marker date="1512125575125" expanded="true" signature="9112:9184" ph="SELECT * FRO... event" />
-                <marker date="1512125575125" expanded="true" signature="9112:9188" ph="SELECT * FRO... event" />
-                <marker date="1512125575125" expanded="true" signature="9112:9189" ph="SELECT * FRO... event" />
-                <marker date="1512125575125" expanded="true" signature="9112:9190" ph="SELECT * FRO... event" />
-                <marker date="1512125575125" expanded="true" signature="9112:9212" ph="SELECT * FRO... event" />
-                <marker date="1512125575125" expanded="true" signature="9112:9228" ph="SELECT * FRO... event" />
-                <marker date="1512125575125" expanded="true" signature="9826:9926" ph="SELECT * FRO... event" />
-                <marker date="1512125575125" expanded="true" signature="9826:9942" ph="SELECT * FRO... event" />
-                <marker date="1512125575125" expanded="true" signature="9826:9944" ph="SELECT * FRO... event" />
-                <marker date="1512125575125" expanded="true" signature="10538:10657" ph="SELECT * FRO... event" />
-                <marker date="1512125575125" expanded="true" signature="11254:11331" ph="SELECT * FRO... event" />
-                <marker date="1512125575125" expanded="true" signature="11254:11373" ph="SELECT * FRO... event" />
-                <marker date="1512125575125" expanded="true" signature="11254:11375" ph="SELECT * FRO... event" />
-                <marker date="1512125575125" expanded="true" signature="11970:12070" ph="SELECT * FRO... event" />
-                <marker date="1512125575125" expanded="true" signature="11970:12089" ph="SELECT * FRO... event" />
-                <marker date="1512125575125" expanded="true" signature="11970:12092" ph="SELECT * FRO... event" />
-                <marker date="1512125575125" expanded="true" signature="12685:12785" ph="SELECT * FRO... event" />
-                <marker date="1512125575125" expanded="true" signature="12685:12807" ph="SELECT * FRO... event" />
+                <marker date="1512383821274" expanded="true" signature="1536:1550" ph="SELECT * FRO... event" />
+                <marker date="1512383821274" expanded="true" signature="1536:1566" ph="SELECT * FRO... event" />
+                <marker date="1512383821274" expanded="true" signature="1707:1721" ph="SELECT * FRO... event" />
+                <marker date="1512383821274" expanded="true" signature="1707:1745" ph="SELECT * FRO... event" />
+                <marker date="1512383821274" expanded="true" signature="1965:2073" ph="INSERT INTO event... " />
+                <marker date="1512383821274" expanded="true" signature="2166:2238" ph="INSERT INTO event... " />
+                <marker date="1512383821274" expanded="true" signature="2294:2370" ph="INSERT INTO event... " />
+                <marker date="1512383821274" expanded="true" signature="6284:6346" ph="INSERT INTO event... " />
+                <marker date="1512383821274" expanded="true" signature="6284:6398" ph="INSERT INTO event... " />
+                <marker date="1512383821274" expanded="true" signature="6284:6424" ph="INSERT INTO event... " />
+                <marker date="1512383821274" expanded="true" signature="6284:6427" ph="INSERT INTO eventeventMessage... " />
+                <marker date="1512383821274" expanded="true" signature="6284:6451" ph="INSERT INTO event... " />
+                <marker date="1512383821274" expanded="true" signature="6284:6452" ph="INSERT INTO event... " />
+                <marker date="1512383821274" expanded="true" signature="6284:6453" ph="INSERT INTO event... " />
+                <marker date="1512383821274" expanded="true" signature="7617:7630" ph="SELECT * FRO... " />
+                <marker date="1512383821274" expanded="true" signature="7617:7652" ph="SELECT * FRO... event" />
+                <marker date="1512383821274" expanded="true" signature="7617:7660" ph="SELECT * FRO... event" />
+                <marker date="1512383821274" expanded="true" signature="7617:7661" ph="SELECT * FRO... event" />
+                <marker date="1512383821274" expanded="true" signature="7617:7694" ph="SELECT * FRO... event" />
+                <marker date="1512383821274" expanded="true" signature="7617:7698" ph="SELECT * FRO... eventmissingValue" />
+                <marker date="1512383821274" expanded="true" signature="7617:7699" ph="SELECT * FRO... event" />
+                <marker date="1512383821274" expanded="true" signature="7617:7710" ph="SELECT * FRO... event" />
+                <marker date="1512383821274" expanded="true" signature="7617:7736" ph="SELECT * FRO... event" />
+                <marker date="1512383821274" expanded="true" signature="8427:8504" ph="SELECT * FRO... event" />
+                <marker date="1512383821274" expanded="true" signature="8427:8512" ph="SELECT * FRO... event" />
+                <marker date="1512383821274" expanded="true" signature="8427:8521" ph="SELECT * FRO... event" />
+                <marker date="1512383821274" expanded="true" signature="9273:9314" ph="SELECT * FRO... event" />
+                <marker date="1512383821274" expanded="true" signature="9273:9345" ph="SELECT * FRO... event" />
+                <marker date="1512383821274" expanded="true" signature="9273:9349" ph="SELECT * FRO... event" />
+                <marker date="1512383821274" expanded="true" signature="9273:9350" ph="SELECT * FRO... event" />
+                <marker date="1512383821274" expanded="true" signature="9273:9351" ph="SELECT * FRO... event" />
+                <marker date="1512383821274" expanded="true" signature="9273:9373" ph="SELECT * FRO... event" />
+                <marker date="1512383821274" expanded="true" signature="9273:9389" ph="SELECT * FRO... event" />
+                <marker date="1512383821274" expanded="true" signature="9987:10087" ph="SELECT * FRO... event" />
+                <marker date="1512383821274" expanded="true" signature="9987:10103" ph="SELECT * FRO... event" />
+                <marker date="1512383821274" expanded="true" signature="9987:10105" ph="SELECT * FRO... event" />
+                <marker date="1512383821274" expanded="true" signature="10699:10818" ph="SELECT * FRO... event" />
+                <marker date="1512383821274" expanded="true" signature="11415:11492" ph="SELECT * FRO... event" />
+                <marker date="1512383821274" expanded="true" signature="11415:11534" ph="SELECT * FRO... event" />
+                <marker date="1512383821274" expanded="true" signature="11415:11536" ph="SELECT * FRO... event" />
+                <marker date="1512383821274" expanded="true" signature="12131:12231" ph="SELECT * FRO... event" />
+                <marker date="1512383821274" expanded="true" signature="12131:12250" ph="SELECT * FRO... event" />
+                <marker date="1512383821274" expanded="true" signature="12131:12253" ph="SELECT * FRO... event" />
+                <marker date="1512383821274" expanded="true" signature="12846:12946" ph="SELECT * FRO... event" />
+                <marker date="1512383821274" expanded="true" signature="12846:12968" ph="SELECT * FRO... event" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RepositoryInMemory.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MiniProjectMessages/RepositoryInMemory.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="348">
+              <caret line="53" column="0" lean-forward="true" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -301,15 +401,15 @@
         <option value="$PROJECT_DIR$/MiniProjectMessages/ActionsToRun.java" />
         <option value="$PROJECT_DIR$/MiniProjectMessages/Event.java" />
         <option value="$PROJECT_DIR$/MiniProjectMessages/RepositoryDbTest1.java" />
-        <option value="$PROJECT_DIR$/MiniProjectMessages/RepositoryInMemory.java" />
         <option value="$PROJECT_DIR$/MiniProjectMessages/ScannerImport.java" />
         <option value="$PROJECT_DIR$/MiniProjectMessages/EventTest.java" />
         <option value="$PROJECT_DIR$/MiniProjectMessages/ScannerImportTest.java" />
         <option value="$PROJECT_DIR$/MiniProjectMessages/ActionsToRunTest.java" />
         <option value="$PROJECT_DIR$/MiniProjectMessages/Controller.java" />
-        <option value="$PROJECT_DIR$/MiniProjectMessages/RepositoryDb.java" />
         <option value="$PROJECT_DIR$/MiniProjectMessages/RepositoryInMemoryTest.java" />
+        <option value="$PROJECT_DIR$/MiniProjectMessages/RepositoryDb.java" />
         <option value="$PROJECT_DIR$/MiniProjectMessages/RepositoryDbTest.java" />
+        <option value="$PROJECT_DIR$/MiniProjectMessages/RepositoryInMemory.java" />
       </list>
     </option>
   </component>
@@ -453,14 +553,14 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="RepositoryDbTest.getLastOneDayMessages" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RepositoryDbTest.getLastHourMessagesRequest100" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="MiniProjectMessages" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="RepositoryDbTest" />
-      <option name="METHOD_NAME" value="getLastOneDayMessages" />
+      <option name="METHOD_NAME" value="getLastHourMessagesRequest100" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -473,14 +573,14 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="RepositoryDbTest.getLastTenDaysMessages" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RepositoryDbTest.getLastHourMessagesTwiceEvent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="MiniProjectMessages" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="RepositoryDbTest" />
-      <option name="METHOD_NAME" value="getLastTenDaysMessages" />
+      <option name="METHOD_NAME" value="getLastHourMessagesTwiceEvent" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -493,14 +593,14 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="RepositoryDbTest.getLatestMessages" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RepositoryDbTest.getLatestMessagesRequested100" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="MiniProjectMessages" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="RepositoryDbTest" />
-      <option name="METHOD_NAME" value="getLatestMessages" />
+      <option name="METHOD_NAME" value="getLatestMessagesRequested100" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -513,14 +613,14 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="RepositoryDbTest.getOldestMessages" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RepositoryDbTest.getLatestMessagesTwiceEvent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="MiniProjectMessages" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="RepositoryDbTest" />
-      <option name="METHOD_NAME" value="getOldestMessages" />
+      <option name="METHOD_NAME" value="getLatestMessagesTwiceEvent" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -628,18 +728,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="JUnit.RepositoryDbTest" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.RepositoryDbTest.getLastTenDaysMessages" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.RepositoryDbTest.getLastOneDayMessages" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.RepositoryDbTest.getLatestMessages" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.RepositoryDbTest.getOldestMessages" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.RepositoryDbTest.getLatestMessagesTwiceEvent" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.RepositoryDbTest.getLastHourMessagesTwiceEvent" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.RepositoryDbTest.getLatestMessagesRequested100" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.RepositoryDbTest.getLastHourMessagesRequest100" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="JUnit.RepositoryDbTest" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.RepositoryDbTest.getOldestMessages" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.RepositoryDbTest.getLatestMessages" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.RepositoryDbTest.getLastOneDayMessages" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.RepositoryDbTest.getLastTenDaysMessages" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.RepositoryDbTest.getLastHourMessagesRequest100" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.RepositoryDbTest.getLatestMessagesRequested100" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.RepositoryDbTest.getLastHourMessagesTwiceEvent" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.RepositoryDbTest.getLatestMessagesTwiceEvent" />
       </list>
     </recent_temporary>
   </component>
@@ -678,7 +778,7 @@
       <workItem from="1511936833419" duration="17335000" />
       <workItem from="1512023022786" duration="26068000" />
       <workItem from="1512109580307" duration="26966000" />
-      <workItem from="1512369958499" duration="5321000" />
+      <workItem from="1512369958499" duration="20703000" />
     </task>
     <task id="LOCAL-00001" summary="Messages mini project version 0.1.0">
       <created>1510728206261</created>
@@ -691,39 +791,39 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="RepositoryDbTest - 2017.12.04 at 10h 15m 19s.xml">
+    <history-entry file="RepositoryDbTest - 2017.12.04 at 14h 27m 54s.xml">
       <configuration name="RepositoryDbTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RepositoryDbTest_getLatestMessages - 2017.12.04 at 10h 00m 24s.xml">
-      <configuration name="RepositoryDbTest.getLatestMessages" configurationId="JUnit" />
+    <history-entry file="RepositoryDbTest_getLastHourMessagesRequest100 - 2017.12.04 at 13h 58m 53s.xml">
+      <configuration name="RepositoryDbTest.getLastHourMessagesRequest100" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RepositoryDbTest_getLatestMessages - 2017.12.04 at 10h 04m 03s.xml">
-      <configuration name="RepositoryDbTest.getLatestMessages" configurationId="JUnit" />
+    <history-entry file="RepositoryDbTest_getLastHourMessagesRequest100 - 2017.12.04 at 14h 00m 25s.xml">
+      <configuration name="RepositoryDbTest.getLastHourMessagesRequest100" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RepositoryDbTest_getLatestMessages - 2017.12.04 at 10h 05m 31s.xml">
-      <configuration name="RepositoryDbTest.getLatestMessages" configurationId="JUnit" />
+    <history-entry file="RepositoryDbTest_getLastHourMessagesRequest100 - 2017.12.04 at 14h 01m 11s.xml">
+      <configuration name="RepositoryDbTest.getLastHourMessagesRequest100" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RepositoryDbTest_getLatestMessages - 2017.12.04 at 10h 07m 03s.xml">
-      <configuration name="RepositoryDbTest.getLatestMessages" configurationId="JUnit" />
+    <history-entry file="RepositoryDbTest_getLastHourMessagesRequest100 - 2017.12.04 at 14h 01m 35s.xml">
+      <configuration name="RepositoryDbTest.getLastHourMessagesRequest100" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RepositoryDbTest_getLatestMessages - 2017.12.04 at 10h 07m 17s.xml">
-      <configuration name="RepositoryDbTest.getLatestMessages" configurationId="JUnit" />
+    <history-entry file="RepositoryDbTest_getLastHourMessagesRequest100 - 2017.12.04 at 14h 03m 57s.xml">
+      <configuration name="RepositoryDbTest.getLastHourMessagesRequest100" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RepositoryDbTest_getOldestMessages - 2017.12.04 at 10h 08m 42s.xml">
-      <configuration name="RepositoryDbTest.getOldestMessages" configurationId="JUnit" />
+    <history-entry file="RepositoryDbTest_getLastHourMessagesRequest100 - 2017.12.04 at 14h 04m 18s.xml">
+      <configuration name="RepositoryDbTest.getLastHourMessagesRequest100" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RepositoryDbTest_getOldestMessages - 2017.12.04 at 10h 11m 35s.xml">
-      <configuration name="RepositoryDbTest.getOldestMessages" configurationId="JUnit" />
+    <history-entry file="RepositoryDbTest_getLastHourMessagesRequest100 - 2017.12.04 at 14h 09m 03s.xml">
+      <configuration name="RepositoryDbTest.getLastHourMessagesRequest100" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RepositoryDbTest_getOldestMessages - 2017.12.04 at 10h 12m 07s.xml">
-      <configuration name="RepositoryDbTest.getOldestMessages" configurationId="JUnit" />
+    <history-entry file="RepositoryDbTest_getLastHourMessagesRequest100 - 2017.12.04 at 14h 10m 22s.xml">
+      <configuration name="RepositoryDbTest.getLastHourMessagesRequest100" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RepositoryDbTest_getOldestMessages - 2017.12.04 at 10h 12m 30s.xml">
-      <configuration name="RepositoryDbTest.getOldestMessages" configurationId="JUnit" />
+    <history-entry file="RepositoryDbTest_getLastHourMessagesRequest100 - 2017.12.04 at 14h 18m 12s.xml">
+      <configuration name="RepositoryDbTest.getLastHourMessagesRequest100" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="401464000" />
+    <option name="totallyTimeSpent" value="416846000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -746,12 +846,12 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16012725" sideWeight="0.503125" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4152452" sideWeight="0.49416754" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34434968" sideWeight="0.49416754" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.49791667" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.114605546" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11673774" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.09488273" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -834,12 +934,6 @@
           <line>88</line>
           <properties />
           <option name="timeStamp" value="61" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/MiniProjectMessages/RepositoryDbTest.java</url>
-          <line>123</line>
-          <properties />
-          <option name="timeStamp" value="86" />
         </line-breakpoint>
       </breakpoints>
       <option name="time" value="89" />
@@ -1090,14 +1184,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MiniProjectMessages/RepositoryInMemory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1496">
-          <caret line="92" column="0" lean-forward="false" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_151/src.zip!/java/lang/String.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1275">
@@ -1206,57 +1292,193 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/MiniProjectMessages/RepositoryInMemory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="53" column="0" lean-forward="true" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/MiniProjectMessages/RepositoryDb.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="192" column="0" lean-forward="false" selection-start-line="192" selection-start-column="0" selection-end-line="192" selection-end-column="0" />
+        <state relative-caret-position="284">
+          <caret line="182" column="28" lean-forward="false" selection-start-line="182" selection-start-column="28" selection-end-line="182" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1512125575125" expanded="true" signature="1536:1550" ph="SELECT * FRO... event" />
-            <marker date="1512125575125" expanded="true" signature="1536:1566" ph="SELECT * FRO... event" />
-            <marker date="1512125575125" expanded="true" signature="1707:1721" ph="SELECT * FRO... event" />
-            <marker date="1512125575125" expanded="true" signature="1707:1745" ph="SELECT * FRO... event" />
-            <marker date="1512125575125" expanded="true" signature="1965:2073" ph="INSERT INTO event... " />
-            <marker date="1512125575125" expanded="true" signature="2166:2238" ph="INSERT INTO event... " />
-            <marker date="1512125575125" expanded="true" signature="2294:2370" ph="INSERT INTO event... " />
-            <marker date="1512125575125" expanded="true" signature="6284:6346" ph="INSERT INTO event... " />
-            <marker date="1512125575125" expanded="true" signature="6284:6398" ph="INSERT INTO event... " />
-            <marker date="1512125575125" expanded="true" signature="6284:6424" ph="INSERT INTO event... " />
-            <marker date="1512125575125" expanded="true" signature="6284:6427" ph="INSERT INTO eventeventMessage... " />
-            <marker date="1512125575125" expanded="true" signature="6284:6451" ph="INSERT INTO event... " />
-            <marker date="1512125575125" expanded="true" signature="6284:6452" ph="INSERT INTO event... " />
-            <marker date="1512125575125" expanded="true" signature="6284:6453" ph="INSERT INTO event... " />
-            <marker date="1512125575125" expanded="true" signature="7568:7581" ph="SELECT * FRO... " />
-            <marker date="1512125575125" expanded="true" signature="7568:7603" ph="SELECT * FRO... event" />
-            <marker date="1512125575125" expanded="true" signature="7568:7611" ph="SELECT * FRO... event" />
-            <marker date="1512125575125" expanded="true" signature="7568:7612" ph="SELECT * FRO... event" />
-            <marker date="1512125575125" expanded="true" signature="7568:7645" ph="SELECT * FRO... event" />
-            <marker date="1512125575125" expanded="true" signature="7568:7649" ph="SELECT * FRO... eventmissingValue" />
-            <marker date="1512125575125" expanded="true" signature="7568:7650" ph="SELECT * FRO... event" />
-            <marker date="1512125575125" expanded="true" signature="7568:7661" ph="SELECT * FRO... event" />
-            <marker date="1512125575125" expanded="true" signature="7568:7688" ph="SELECT * FRO... event" />
-            <marker date="1512125575125" expanded="true" signature="8298:8375" ph="SELECT * FRO... event" />
-            <marker date="1512125575125" expanded="true" signature="8298:8383" ph="SELECT * FRO... event" />
-            <marker date="1512125575125" expanded="true" signature="8298:8392" ph="SELECT * FRO... event" />
-            <marker date="1512125575125" expanded="true" signature="9112:9153" ph="SELECT * FRO... event" />
-            <marker date="1512125575125" expanded="true" signature="9112:9184" ph="SELECT * FRO... event" />
-            <marker date="1512125575125" expanded="true" signature="9112:9188" ph="SELECT * FRO... event" />
-            <marker date="1512125575125" expanded="true" signature="9112:9189" ph="SELECT * FRO... event" />
-            <marker date="1512125575125" expanded="true" signature="9112:9190" ph="SELECT * FRO... event" />
-            <marker date="1512125575125" expanded="true" signature="9112:9212" ph="SELECT * FRO... event" />
-            <marker date="1512125575125" expanded="true" signature="9112:9228" ph="SELECT * FRO... event" />
-            <marker date="1512125575125" expanded="true" signature="9826:9926" ph="SELECT * FRO... event" />
-            <marker date="1512125575125" expanded="true" signature="9826:9942" ph="SELECT * FRO... event" />
-            <marker date="1512125575125" expanded="true" signature="9826:9944" ph="SELECT * FRO... event" />
-            <marker date="1512125575125" expanded="true" signature="10538:10657" ph="SELECT * FRO... event" />
-            <marker date="1512125575125" expanded="true" signature="11254:11331" ph="SELECT * FRO... event" />
-            <marker date="1512125575125" expanded="true" signature="11254:11373" ph="SELECT * FRO... event" />
-            <marker date="1512125575125" expanded="true" signature="11254:11375" ph="SELECT * FRO... event" />
-            <marker date="1512125575125" expanded="true" signature="11970:12070" ph="SELECT * FRO... event" />
-            <marker date="1512125575125" expanded="true" signature="11970:12089" ph="SELECT * FRO... event" />
-            <marker date="1512125575125" expanded="true" signature="11970:12092" ph="SELECT * FRO... event" />
-            <marker date="1512125575125" expanded="true" signature="12685:12785" ph="SELECT * FRO... event" />
-            <marker date="1512125575125" expanded="true" signature="12685:12807" ph="SELECT * FRO... event" />
+            <marker date="1512383821274" expanded="true" signature="1536:1550" ph="SELECT * FRO... event" />
+            <marker date="1512383821274" expanded="true" signature="1536:1566" ph="SELECT * FRO... event" />
+            <marker date="1512383821274" expanded="true" signature="1707:1721" ph="SELECT * FRO... event" />
+            <marker date="1512383821274" expanded="true" signature="1707:1745" ph="SELECT * FRO... event" />
+            <marker date="1512383821274" expanded="true" signature="1965:2073" ph="INSERT INTO event... " />
+            <marker date="1512383821274" expanded="true" signature="2166:2238" ph="INSERT INTO event... " />
+            <marker date="1512383821274" expanded="true" signature="2294:2370" ph="INSERT INTO event... " />
+            <marker date="1512383821274" expanded="true" signature="6284:6346" ph="INSERT INTO event... " />
+            <marker date="1512383821274" expanded="true" signature="6284:6398" ph="INSERT INTO event... " />
+            <marker date="1512383821274" expanded="true" signature="6284:6424" ph="INSERT INTO event... " />
+            <marker date="1512383821274" expanded="true" signature="6284:6427" ph="INSERT INTO eventeventMessage... " />
+            <marker date="1512383821274" expanded="true" signature="6284:6451" ph="INSERT INTO event... " />
+            <marker date="1512383821274" expanded="true" signature="6284:6452" ph="INSERT INTO event... " />
+            <marker date="1512383821274" expanded="true" signature="6284:6453" ph="INSERT INTO event... " />
+            <marker date="1512383821274" expanded="true" signature="7617:7630" ph="SELECT * FRO... " />
+            <marker date="1512383821274" expanded="true" signature="7617:7652" ph="SELECT * FRO... event" />
+            <marker date="1512383821274" expanded="true" signature="7617:7660" ph="SELECT * FRO... event" />
+            <marker date="1512383821274" expanded="true" signature="7617:7661" ph="SELECT * FRO... event" />
+            <marker date="1512383821274" expanded="true" signature="7617:7694" ph="SELECT * FRO... event" />
+            <marker date="1512383821274" expanded="true" signature="7617:7698" ph="SELECT * FRO... eventmissingValue" />
+            <marker date="1512383821274" expanded="true" signature="7617:7699" ph="SELECT * FRO... event" />
+            <marker date="1512383821274" expanded="true" signature="7617:7710" ph="SELECT * FRO... event" />
+            <marker date="1512383821274" expanded="true" signature="7617:7736" ph="SELECT * FRO... event" />
+            <marker date="1512383821274" expanded="true" signature="8427:8504" ph="SELECT * FRO... event" />
+            <marker date="1512383821274" expanded="true" signature="8427:8512" ph="SELECT * FRO... event" />
+            <marker date="1512383821274" expanded="true" signature="8427:8521" ph="SELECT * FRO... event" />
+            <marker date="1512383821274" expanded="true" signature="9273:9314" ph="SELECT * FRO... event" />
+            <marker date="1512383821274" expanded="true" signature="9273:9345" ph="SELECT * FRO... event" />
+            <marker date="1512383821274" expanded="true" signature="9273:9349" ph="SELECT * FRO... event" />
+            <marker date="1512383821274" expanded="true" signature="9273:9350" ph="SELECT * FRO... event" />
+            <marker date="1512383821274" expanded="true" signature="9273:9351" ph="SELECT * FRO... event" />
+            <marker date="1512383821274" expanded="true" signature="9273:9373" ph="SELECT * FRO... event" />
+            <marker date="1512383821274" expanded="true" signature="9273:9389" ph="SELECT * FRO... event" />
+            <marker date="1512383821274" expanded="true" signature="9987:10087" ph="SELECT * FRO... event" />
+            <marker date="1512383821274" expanded="true" signature="9987:10103" ph="SELECT * FRO... event" />
+            <marker date="1512383821274" expanded="true" signature="9987:10105" ph="SELECT * FRO... event" />
+            <marker date="1512383821274" expanded="true" signature="10699:10818" ph="SELECT * FRO... event" />
+            <marker date="1512383821274" expanded="true" signature="11415:11492" ph="SELECT * FRO... event" />
+            <marker date="1512383821274" expanded="true" signature="11415:11534" ph="SELECT * FRO... event" />
+            <marker date="1512383821274" expanded="true" signature="11415:11536" ph="SELECT * FRO... event" />
+            <marker date="1512383821274" expanded="true" signature="12131:12231" ph="SELECT * FRO... event" />
+            <marker date="1512383821274" expanded="true" signature="12131:12250" ph="SELECT * FRO... event" />
+            <marker date="1512383821274" expanded="true" signature="12131:12253" ph="SELECT * FRO... event" />
+            <marker date="1512383821274" expanded="true" signature="12846:12946" ph="SELECT * FRO... event" />
+            <marker date="1512383821274" expanded="true" signature="12846:12968" ph="SELECT * FRO... event" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MiniProjectMessages/RepositoryDbTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1512390547891" expanded="true" signature="1945:1958" ph="SELECT * FRO... " />
+            <marker date="1512390547891" expanded="true" signature="1945:1959" ph="SELECT * FRO... event" />
+            <marker date="1512390547891" expanded="true" signature="4002:4158" ph="DELETE FROM " />
+            <marker date="1512390547891" expanded="true" signature="4791:4805" ph="SELECT * FRO... event" />
+            <marker date="1512390547891" expanded="true" signature="5379:5429" ph="DELETE FROM " />
+            <marker date="1512390547891" expanded="true" signature="6089:6256" ph="INSERT INTO event... " />
+            <marker date="1512390547891" expanded="true" signature="7376:7458" ph="DELETE FROM " />
+            <marker date="1512390547891" expanded="true" signature="8469:8551" ph="DELETE FROM " />
+            <marker date="1512390547891" expanded="true" signature="9454:9536" ph="DELETE FROM " />
+            <marker date="1512390547891" expanded="true" signature="10442:10524" ph="DELETE FROM " />
+            <marker date="1512390547891" expanded="true" signature="11435:11517" ph="DELETE FROM " />
+            <marker date="1512390547891" expanded="true" signature="12135:12149" ph="SELECT * FRO... event" />
+            <marker date="1512390547891" expanded="true" signature="14425:14581" ph="DELETE FROM " />
+            <marker date="1512390547891" expanded="true" signature="15231:15245" ph="SELECT * FRO... event" />
+            <marker date="1512390547891" expanded="true" signature="17670:17826" ph="DELETE FROM " />
+            <marker date="1512390547891" expanded="true" signature="18473:18487" ph="SELECT * FRO... event" />
+            <marker date="1512390547891" expanded="true" signature="19065:19077" ph="DELETE FROM " />
+            <marker date="1512390547891" expanded="true" signature="19065:19103" ph="DELETE FROM " />
+            <marker date="1512390547891" expanded="true" signature="19065:19104" ph="DELETE FROM " />
+            <marker date="1512390547891" expanded="true" signature="19065:19115" ph="DELETE FROM " />
+            <marker date="1512390547891" expanded="true" signature="19783:19950" ph="INSERT INTO event... " />
+            <marker date="1512390547891" expanded="true" signature="20810:20824" ph="SELECT * FRO... event" />
+            <marker date="1512390547891" expanded="true" signature="23279:23435" ph="DELETE FROM " />
+            <marker date="1512390547891" expanded="true" signature="24091:24105" ph="SELECT * FRO... event" />
+            <marker date="1512390547891" expanded="true" signature="26387:26543" ph="DELETE FROM " />
+            <marker date="1512390547891" expanded="true" signature="27213:27227" ph="SELECT * FRO... event" />
+            <marker date="1512390547891" expanded="true" signature="29629:29785" ph="DELETE FROM " />
+            <marker date="1512390547891" expanded="true" signature="30435:30449" ph="SELECT * FRO... event" />
+            <marker date="1512390547891" expanded="true" signature="32664:32820" ph="DELETE FROM " />
+            <marker date="1512390547891" expanded="true" signature="33475:33489" ph="SELECT * FRO... event" />
+            <marker date="1512390547891" expanded="true" signature="35703:35859" ph="DELETE FROM " />
+            <marker date="1512390547891" expanded="true" signature="36499:36513" ph="SELECT * FRO... event" />
+            <marker date="1512390547891" expanded="true" signature="38954:39110" ph="DELETE FROM " />
+            <marker date="1512390547891" expanded="true" signature="39760:39774" ph="SELECT * FRO... event" />
+            <marker date="1512390547891" expanded="true" signature="42350:42506" ph="DELETE FROM " />
+            <marker date="1512390547891" expanded="true" signature="43153:43167" ph="SELECT * FRO... event" />
+            <marker date="1512390547891" expanded="true" signature="43741:43791" ph="DELETE FROM " />
+            <marker date="1512390547891" expanded="true" signature="44459:44626" ph="INSERT INTO event... " />
+            <marker date="1512390547891" expanded="true" signature="45486:45500" ph="SELECT * FRO... event" />
+            <marker date="1512390547891" expanded="true" signature="47857:48013" ph="DELETE FROM " />
+            <marker date="1512390547891" expanded="true" signature="48669:48683" ph="SELECT * FRO... event" />
+            <marker date="1512390547891" expanded="true" signature="51208:51364" ph="DELETE FROM " />
+            <marker date="1512390547891" expanded="true" signature="52034:52048" ph="SELECT * FRO... event" />
+            <marker date="1512390547891" expanded="true" signature="54436:54592" ph="DELETE FROM " />
+            <marker date="1512390547891" expanded="true" signature="55242:55256" ph="SELECT * FRO... event" />
+            <marker date="1512390547891" expanded="true" signature="57534:57690" ph="DELETE FROM " />
+            <marker date="1512390547891" expanded="true" signature="58345:58359" ph="SELECT * FRO... event" />
+            <marker date="1512390547891" expanded="true" signature="60639:60795" ph="DELETE FROM " />
+            <marker date="1512390547891" expanded="true" signature="61544:61558" ph="SELECT * FRO... event" />
+            <marker date="1512390547891" expanded="true" signature="61544:61574" ph="SELECT * FRO... event" />
+            <marker date="1512390547891" expanded="true" signature="61544:61660" ph="SELECT * FRO... event" />
+            <marker date="1512390547891" expanded="true" signature="65133:65285" ph="DELETE FROM " />
+            <marker date="1512390547891" expanded="true" signature="66045:66161" ph="SELECT * FRO... event" />
+            <marker date="1512390547891" expanded="true" signature="69839:69991" ph="DELETE FROM " />
+            <marker date="1512390547891" expanded="true" signature="70751:70867" ph="SELECT * FRO... event" />
+            <marker date="1512390547891" expanded="true" signature="74496:74648" ph="DELETE FROM " />
+            <marker date="1512390547891" expanded="true" signature="75298:75312" ph="SELECT * FRO... event" />
+            <marker date="1512390547891" expanded="true" signature="75886:75936" ph="DELETE FROM " />
+            <marker date="1512390547891" expanded="true" signature="76604:76771" ph="INSERT INTO event... " />
+            <marker date="1512390547891" expanded="true" signature="77735:77749" ph="SELECT * FRO... event" />
+            <marker date="1512390547891" expanded="true" signature="77735:77853" ph="SELECT * FRO... event" />
+            <marker date="1512390547891" expanded="true" signature="81457:81609" ph="DELETE FROM " />
+            <marker date="1512390547891" expanded="true" signature="82381:82499" ph="SELECT * FRO... event" />
+            <marker date="1512390547891" expanded="true" signature="86234:86386" ph="DELETE FROM " />
+            <marker date="1512390547891" expanded="true" signature="87158:87276" ph="SELECT * FRO... event" />
+            <marker date="1512390547891" expanded="true" signature="91036:91188" ph="DELETE FROM " />
+            <marker date="1512390547891" expanded="true" signature="91850:91864" ph="SELECT * FRO... event" />
+            <marker date="1512390547891" expanded="true" signature="92438:92488" ph="DELETE FROM " />
+            <marker date="1512390547891" expanded="true" signature="93162:93329" ph="INSERT INTO event... " />
+            <marker date="1512390547891" expanded="true" signature="94295:94309" ph="SELECT * FRO... event" />
+            <marker date="1512390547891" expanded="true" signature="94295:94414" ph="SELECT * FRO... event" />
+            <marker date="1512390547891" expanded="true" signature="98029:98165" ph="DELETE FROM " />
+            <marker date="1512390547891" expanded="true" signature="98930:99049" ph="SELECT * FRO... event" />
+            <marker date="1512390547891" expanded="true" signature="102795:102931" ph="DELETE FROM " />
+            <marker date="1512390547891" expanded="true" signature="103696:103815" ph="SELECT * FRO... event" />
+            <marker date="1512390547891" expanded="true" signature="107604:107740" ph="DELETE FROM " />
+            <marker date="1512390547891" expanded="true" signature="108395:108409" ph="SELECT * FRO... event" />
+            <marker date="1512390547891" expanded="true" signature="108983:109033" ph="DELETE FROM " />
+            <marker date="1512390547891" expanded="true" signature="109703:109870" ph="INSERT INTO event... " />
+            <marker date="1512390547891" expanded="true" signature="110835:110849" ph="SELECT * FRO... event" />
+            <marker date="1512390547891" expanded="true" signature="110835:110956" ph="SELECT * FRO... event" />
+            <marker date="1512390547891" expanded="true" signature="114651:114803" ph="DELETE FROM " />
+            <marker date="1512390547891" expanded="true" signature="115574:115695" ph="SELECT * FRO... event" />
+            <marker date="1512390547891" expanded="true" signature="119525:119677" ph="DELETE FROM " />
+            <marker date="1512390547891" expanded="true" signature="120448:120569" ph="SELECT * FRO... event" />
+            <marker date="1512390547891" expanded="true" signature="124440:124592" ph="DELETE FROM " />
+            <marker date="1512390547891" expanded="true" signature="125253:125267" ph="SELECT * FRO... event" />
+            <marker date="1512390547891" expanded="true" signature="125841:125891" ph="DELETE FROM " />
+            <marker date="1512390547891" expanded="true" signature="126564:126731" ph="INSERT INTO event... " />
+            <marker date="1512390547891" expanded="true" signature="127697:127711" ph="SELECT * FRO... event" />
+            <marker date="1512390547891" expanded="true" signature="127697:127819" ph="SELECT * FRO... event" />
+            <marker date="1512390547891" expanded="true" signature="131576:131728" ph="DELETE FROM " />
+            <marker date="1512390547891" expanded="true" signature="132495:132617" ph="SELECT * FRO... event" />
+            <marker date="1512390547891" expanded="true" signature="136512:136664" ph="DELETE FROM " />
+            <marker date="1512390547891" expanded="true" signature="137431:137553" ph="SELECT * FRO... event" />
+            <marker date="1512390547891" expanded="true" signature="141490:141642" ph="DELETE FROM " />
+            <marker date="1512390547891" expanded="true" signature="142299:142313" ph="SELECT * FRO... event" />
+            <marker date="1512390547891" expanded="true" signature="142887:142937" ph="DELETE FROM " />
+            <marker date="1512390547891" expanded="true" signature="143608:143775" ph="INSERT INTO event... " />
+            <marker date="1512390547891" expanded="true" signature="144737:144751" ph="SELECT * FRO... event" />
+            <marker date="1512390547891" expanded="true" signature="144737:144859" ph="SELECT * FRO... event" />
+            <marker date="1512390547891" expanded="true" signature="148589:148741" ph="DELETE FROM " />
+            <marker date="1512390547891" expanded="true" signature="149504:149626" ph="SELECT * FRO... event" />
+            <marker date="1512390547891" expanded="true" signature="153496:153648" ph="DELETE FROM " />
+            <marker date="1512390547891" expanded="true" signature="154411:154533" ph="SELECT * FRO... event" />
+            <marker date="1512390547891" expanded="true" signature="158445:158597" ph="DELETE FROM " />
+            <marker date="1512390547891" expanded="true" signature="159250:159264" ph="SELECT * FRO... event" />
+            <marker date="1512390547891" expanded="true" signature="159838:159888" ph="DELETE FROM " />
+            <marker date="1512390547891" expanded="true" signature="160557:160724" ph="INSERT INTO event... " />
+            <marker date="1512390547891" expanded="true" signature="161575:161589" ph="SELECT * FRO... event" />
+            <marker date="1512390547891" expanded="true" signature="163694:163850" ph="DELETE FROM " />
+            <marker date="1512390547891" expanded="true" signature="164501:164515" ph="SELECT * FRO... event" />
+            <marker date="1512390547891" expanded="true" signature="166758:166914" ph="DELETE FROM " />
+            <marker date="1512390547891" expanded="true" signature="167565:167579" ph="SELECT * FRO... event" />
+            <marker date="1512390547891" expanded="true" signature="169862:170018" ph="DELETE FROM " />
+            <marker date="1512390547891" expanded="true" signature="170665:170679" ph="SELECT * FRO... event" />
+            <marker date="1512390547891" expanded="true" signature="171253:171303" ph="DELETE FROM " />
+            <marker date="1512390547891" expanded="true" signature="171969:172136" ph="INSERT INTO event... " />
           </folding>
         </state>
       </provider>
@@ -1264,48 +1486,9 @@
     <entry file="file://$PROJECT_DIR$/MiniProjectMessages/RepositoryInMemoryTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
-          <caret line="129" column="62" lean-forward="false" selection-start-line="129" selection-start-column="62" selection-end-line="129" selection-end-column="62" />
+          <caret line="120" column="9" lean-forward="false" selection-start-line="120" selection-start-column="9" selection-end-line="120" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MiniProjectMessages/RepositoryDbTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="14" lean-forward="true" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1512375306081" expanded="true" signature="1735:1748" ph="SELECT * FRO... " />
-            <marker date="1512375306081" expanded="true" signature="1735:1749" ph="SELECT * FRO... event" />
-            <marker date="1512375306081" expanded="true" signature="3937:4093" ph="DELETE FROM " />
-            <marker date="1512375306081" expanded="true" signature="5252:5334" ph="DELETE FROM " />
-            <marker date="1512375306081" expanded="true" signature="5948:5962" ph="SELECT * FRO... event" />
-            <marker date="1512375306081" expanded="true" signature="8383:8539" ph="DELETE FROM " />
-            <marker date="1512375306081" expanded="true" signature="9179:9193" ph="SELECT * FRO... event" />
-            <marker date="1512375306081" expanded="true" signature="11779:11935" ph="DELETE FROM " />
-            <marker date="1512375306081" expanded="true" signature="12684:12698" ph="SELECT * FRO... event" />
-            <marker date="1512375306081" expanded="true" signature="12684:12714" ph="SELECT * FRO... event" />
-            <marker date="1512375306081" expanded="true" signature="12684:12800" ph="SELECT * FRO... event" />
-            <marker date="1512375306081" expanded="true" signature="16418:16570" ph="DELETE FROM " />
-            <marker date="1512375306081" expanded="true" signature="17326:17340" ph="SELECT * FRO... event" />
-            <marker date="1512375306081" expanded="true" signature="17326:17444" ph="SELECT * FRO... event" />
-            <marker date="1512375306081" expanded="true" signature="21193:21345" ph="DELETE FROM " />
-            <marker date="1512375306081" expanded="true" signature="22103:22117" ph="SELECT * FRO... event" />
-            <marker date="1512375306081" expanded="true" signature="22103:22222" ph="SELECT * FRO... event" />
-            <marker date="1512375306081" expanded="true" signature="25982:26118" ph="DELETE FROM " />
-            <marker date="1512375306081" expanded="true" signature="26876:26890" ph="SELECT * FRO... event" />
-            <marker date="1512375306081" expanded="true" signature="26876:26997" ph="SELECT * FRO... event" />
-            <marker date="1512375306081" expanded="true" signature="30837:30989" ph="DELETE FROM " />
-            <marker date="1512375306081" expanded="true" signature="31748:31762" ph="SELECT * FRO... event" />
-            <marker date="1512375306081" expanded="true" signature="31748:31870" ph="SELECT * FRO... event" />
-            <marker date="1512375306081" expanded="true" signature="35772:35924" ph="DELETE FROM " />
-            <marker date="1512375306081" expanded="true" signature="36679:36693" ph="SELECT * FRO... event" />
-            <marker date="1512375306081" expanded="true" signature="36679:36801" ph="SELECT * FRO... event" />
-            <marker date="1512375306081" expanded="true" signature="40676:40828" ph="DELETE FROM " />
-            <marker date="1512375306081" expanded="true" signature="41472:41486" ph="SELECT * FRO... event" />
-            <marker date="1512375306081" expanded="true" signature="43736:43892" ph="DELETE FROM " />
           </folding>
         </state>
       </provider>
