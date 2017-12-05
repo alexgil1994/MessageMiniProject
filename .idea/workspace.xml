@@ -3,13 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="0813bfbc-3f02-42ca-8afe-45b61de01cbd" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/repositoryDb.db" afterPath="$PROJECT_DIR$/repositoryDb.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniProjectMessages/Event.java" afterPath="$PROJECT_DIR$/MiniProjectMessages/Event.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniProjectMessages/EventTest.java" afterPath="$PROJECT_DIR$/MiniProjectMessages/EventTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniProjectMessages/ActionsToRun.java" afterPath="$PROJECT_DIR$/MiniProjectMessages/ActionsToRun.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniProjectMessages/IRepository.java" afterPath="$PROJECT_DIR$/MiniProjectMessages/IRepository.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniProjectMessages/RepositoryDb.java" afterPath="$PROJECT_DIR$/MiniProjectMessages/RepositoryDb.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniProjectMessages/RepositoryDbTest.java" afterPath="$PROJECT_DIR$/MiniProjectMessages/RepositoryDbTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniProjectMessages/RepositoryInMemory.java" afterPath="$PROJECT_DIR$/MiniProjectMessages/RepositoryInMemory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MiniProjectMessages/RepositoryInMemoryTest.java" afterPath="$PROJECT_DIR$/MiniProjectMessages/RepositoryInMemoryTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -54,12 +51,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RepositoryDbTest.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="RepositoryDbTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MiniProjectMessages/RepositoryDbTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="27" lean-forward="true" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
+            <state relative-caret-position="240">
+              <caret line="143" column="9" lean-forward="false" selection-start-line="143" selection-start-column="9" selection-end-line="143" selection-end-column="9" />
               <folding>
+                <element signature="imports" expanded="true" />
                 <marker date="1512458394948" expanded="true" signature="1563:1576" ph="SELECT * FRO... " />
                 <marker date="1512458394948" expanded="true" signature="1563:1577" ph="SELECT * FRO... event" />
                 <marker date="1512458394948" expanded="true" signature="3620:3776" ph="DELETE FROM " />
@@ -186,56 +184,66 @@
       <file leaf-file-name="RepositoryDb.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MiniProjectMessages/RepositoryDb.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1326">
-              <caret line="78" column="0" lean-forward="false" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
+            <state relative-caret-position="442">
+              <caret line="166" column="13" lean-forward="false" selection-start-line="166" selection-start-column="13" selection-end-line="166" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1512457905953" expanded="true" signature="1480:1494" ph="SELECT * FRO... event" />
-                <marker date="1512457905953" expanded="true" signature="1480:1510" ph="SELECT * FRO... event" />
-                <marker date="1512457905953" expanded="true" signature="1651:1665" ph="SELECT * FRO... event" />
-                <marker date="1512457905953" expanded="true" signature="1651:1689" ph="SELECT * FRO... event" />
-                <marker date="1512457905953" expanded="true" signature="1909:2017" ph="INSERT INTO event... " />
-                <marker date="1512457905953" expanded="true" signature="2110:2182" ph="INSERT INTO event... " />
-                <marker date="1512457905953" expanded="true" signature="2238:2314" ph="INSERT INTO event... " />
-                <marker date="1512457905953" expanded="true" signature="6229:6291" ph="INSERT INTO event... " />
-                <marker date="1512457905953" expanded="true" signature="6229:6343" ph="INSERT INTO event... " />
-                <marker date="1512457905953" expanded="true" signature="6229:6369" ph="INSERT INTO event... " />
-                <marker date="1512457905953" expanded="true" signature="6229:6372" ph="INSERT INTO eventeventMessage... " />
-                <marker date="1512457905953" expanded="true" signature="6229:6396" ph="INSERT INTO event... " />
-                <marker date="1512457905953" expanded="true" signature="6229:6397" ph="INSERT INTO event... " />
-                <marker date="1512457905953" expanded="true" signature="6229:6398" ph="INSERT INTO event... " />
-                <marker date="1512457905953" expanded="true" signature="7562:7575" ph="SELECT * FRO... " />
-                <marker date="1512457905953" expanded="true" signature="7562:7597" ph="SELECT * FRO... event" />
-                <marker date="1512457905953" expanded="true" signature="7562:7605" ph="SELECT * FRO... event" />
-                <marker date="1512457905953" expanded="true" signature="7562:7606" ph="SELECT * FRO... event" />
-                <marker date="1512457905953" expanded="true" signature="7562:7639" ph="SELECT * FRO... event" />
-                <marker date="1512457905953" expanded="true" signature="7562:7643" ph="SELECT * FRO... eventmissingValue" />
-                <marker date="1512457905953" expanded="true" signature="7562:7644" ph="SELECT * FRO... event" />
-                <marker date="1512457905953" expanded="true" signature="7562:7655" ph="SELECT * FRO... event" />
-                <marker date="1512457905953" expanded="true" signature="7562:7681" ph="SELECT * FRO... event" />
-                <marker date="1512457905953" expanded="true" signature="8372:8449" ph="SELECT * FRO... event" />
-                <marker date="1512457905953" expanded="true" signature="8372:8457" ph="SELECT * FRO... event" />
-                <marker date="1512457905953" expanded="true" signature="8372:8466" ph="SELECT * FRO... event" />
-                <marker date="1512457905953" expanded="true" signature="9218:9259" ph="SELECT * FRO... event" />
-                <marker date="1512457905953" expanded="true" signature="9218:9290" ph="SELECT * FRO... event" />
-                <marker date="1512457905953" expanded="true" signature="9218:9294" ph="SELECT * FRO... event" />
-                <marker date="1512457905953" expanded="true" signature="9218:9295" ph="SELECT * FRO... event" />
-                <marker date="1512457905953" expanded="true" signature="9218:9296" ph="SELECT * FRO... event" />
-                <marker date="1512457905953" expanded="true" signature="9218:9318" ph="SELECT * FRO... event" />
-                <marker date="1512457905953" expanded="true" signature="9218:9334" ph="SELECT * FRO... event" />
-                <marker date="1512457905953" expanded="true" signature="9932:10032" ph="SELECT * FRO... event" />
-                <marker date="1512457905953" expanded="true" signature="9932:10048" ph="SELECT * FRO... event" />
-                <marker date="1512457905953" expanded="true" signature="9932:10050" ph="SELECT * FRO... event" />
-                <marker date="1512457905953" expanded="true" signature="10644:10763" ph="SELECT * FRO... event" />
-                <marker date="1512457905953" expanded="true" signature="11360:11437" ph="SELECT * FRO... event" />
-                <marker date="1512457905953" expanded="true" signature="11360:11479" ph="SELECT * FRO... event" />
-                <marker date="1512457905953" expanded="true" signature="11360:11481" ph="SELECT * FRO... event" />
-                <marker date="1512457905953" expanded="true" signature="12076:12176" ph="SELECT * FRO... event" />
-                <marker date="1512457905953" expanded="true" signature="12076:12195" ph="SELECT * FRO... event" />
-                <marker date="1512457905953" expanded="true" signature="12076:12198" ph="SELECT * FRO... event" />
-                <marker date="1512457905953" expanded="true" signature="12791:12891" ph="SELECT * FRO... event" />
-                <marker date="1512457905953" expanded="true" signature="12791:12913" ph="SELECT * FRO... event" />
+                <marker date="1512460661907" expanded="true" signature="1480:1494" ph="SELECT * FRO... event" />
+                <marker date="1512460661907" expanded="true" signature="1480:1510" ph="SELECT * FRO... event" />
+                <marker date="1512460661907" expanded="true" signature="1651:1665" ph="SELECT * FRO... event" />
+                <marker date="1512460661907" expanded="true" signature="1651:1689" ph="SELECT * FRO... event" />
+                <marker date="1512460661907" expanded="true" signature="1909:2017" ph="INSERT INTO event... " />
+                <marker date="1512460661907" expanded="true" signature="2110:2182" ph="INSERT INTO event... " />
+                <marker date="1512460661907" expanded="true" signature="2238:2314" ph="INSERT INTO event... " />
+                <marker date="1512460661907" expanded="true" signature="6232:6294" ph="INSERT INTO event... " />
+                <marker date="1512460661907" expanded="true" signature="6232:6346" ph="INSERT INTO event... " />
+                <marker date="1512460661907" expanded="true" signature="6232:6372" ph="INSERT INTO event... " />
+                <marker date="1512460661907" expanded="true" signature="6232:6375" ph="INSERT INTO eventeventMessage... " />
+                <marker date="1512460661907" expanded="true" signature="6232:6399" ph="INSERT INTO event... " />
+                <marker date="1512460661907" expanded="true" signature="6232:6400" ph="INSERT INTO event... " />
+                <marker date="1512460661907" expanded="true" signature="6232:6401" ph="INSERT INTO event... " />
+                <marker date="1512460661907" expanded="true" signature="7619:7632" ph="SELECT * FRO... " />
+                <marker date="1512460661907" expanded="true" signature="7619:7654" ph="SELECT * FRO... event" />
+                <marker date="1512460661907" expanded="true" signature="7619:7662" ph="SELECT * FRO... event" />
+                <marker date="1512460661907" expanded="true" signature="7619:7663" ph="SELECT * FRO... event" />
+                <marker date="1512460661907" expanded="true" signature="7619:7696" ph="SELECT * FRO... event" />
+                <marker date="1512460661907" expanded="true" signature="7619:7700" ph="SELECT * FRO... eventmissingValue" />
+                <marker date="1512460661907" expanded="true" signature="7619:7701" ph="SELECT * FRO... event" />
+                <marker date="1512460661907" expanded="true" signature="7619:7712" ph="SELECT * FRO... event" />
+                <marker date="1512460661907" expanded="true" signature="7619:7738" ph="SELECT * FRO... event" />
+                <marker date="1512460661907" expanded="true" signature="8429:8506" ph="SELECT * FRO... event" />
+                <marker date="1512460661907" expanded="true" signature="8429:8514" ph="SELECT * FRO... event" />
+                <marker date="1512460661907" expanded="true" signature="8429:8523" ph="SELECT * FRO... event" />
+                <marker date="1512460661907" expanded="true" signature="9275:9316" ph="SELECT * FRO... event" />
+                <marker date="1512460661907" expanded="true" signature="9275:9347" ph="SELECT * FRO... event" />
+                <marker date="1512460661907" expanded="true" signature="9275:9351" ph="SELECT * FRO... event" />
+                <marker date="1512460661907" expanded="true" signature="9275:9352" ph="SELECT * FRO... event" />
+                <marker date="1512460661907" expanded="true" signature="9275:9353" ph="SELECT * FRO... event" />
+                <marker date="1512460661907" expanded="true" signature="9275:9375" ph="SELECT * FRO... event" />
+                <marker date="1512460661907" expanded="true" signature="9275:9391" ph="SELECT * FRO... event" />
+                <marker date="1512460661907" expanded="true" signature="9989:10089" ph="SELECT * FRO... event" />
+                <marker date="1512460661907" expanded="true" signature="9989:10105" ph="SELECT * FRO... event" />
+                <marker date="1512460661907" expanded="true" signature="9989:10107" ph="SELECT * FRO... event" />
+                <marker date="1512460661907" expanded="true" signature="10701:10820" ph="SELECT * FRO... event" />
+                <marker date="1512460661907" expanded="true" signature="11417:11494" ph="SELECT * FRO... event" />
+                <marker date="1512460661907" expanded="true" signature="11417:11536" ph="SELECT * FRO... event" />
+                <marker date="1512460661907" expanded="true" signature="11417:11538" ph="SELECT * FRO... event" />
+                <marker date="1512460661907" expanded="true" signature="12133:12233" ph="SELECT * FRO... event" />
+                <marker date="1512460661907" expanded="true" signature="12133:12252" ph="SELECT * FRO... event" />
+                <marker date="1512460661907" expanded="true" signature="12133:12255" ph="SELECT * FRO... event" />
+                <marker date="1512460661907" expanded="true" signature="12848:12948" ph="SELECT * FRO... event" />
+                <marker date="1512460661907" expanded="true" signature="12848:12970" ph="SELECT * FRO... event" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IRepository.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MiniProjectMessages/IRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="18" column="11" lean-forward="false" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -256,8 +264,8 @@
       <file leaf-file-name="RepositoryInMemory.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MiniProjectMessages/RepositoryInMemory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="200" column="52" lean-forward="false" selection-start-line="200" selection-start-column="52" selection-end-line="200" selection-end-column="52" />
+            <state relative-caret-position="466">
+              <caret line="43" column="4" lean-forward="false" selection-start-line="43" selection-start-column="4" selection-end-line="43" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -275,6 +283,16 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="Controller.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MiniProjectMessages/Controller.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="250">
+              <caret line="123" column="9" lean-forward="false" selection-start-line="123" selection-start-column="9" selection-end-line="123" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="ScannerImportTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MiniProjectMessages/ScannerImportTest.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -287,34 +305,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ControllerTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MiniProjectMessages/ControllerTest.java">
+      <file leaf-file-name="ActionsToRun.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/MiniProjectMessages/ActionsToRun.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+            <state relative-caret-position="425">
+              <caret line="52" column="37" lean-forward="true" selection-start-line="52" selection-start-column="37" selection-end-line="52" selection-end-column="37" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#0#5708#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Controller.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MiniProjectMessages/Controller.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2312">
-              <caret line="139" column="83" lean-forward="false" selection-start-line="139" selection-start-column="83" selection-end-line="139" selection-end-column="83" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MiniProjectMessages/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="76" lean-forward="false" selection-start-line="4" selection-start-column="76" selection-end-line="4" selection-end-column="76" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -360,9 +358,9 @@
       <find>arrayList</find>
       <find>sort</find>
       <find>requested100</find>
+      <find>coll</find>
       <find>catch</find>
       <find>colle</find>
-      <find>coll</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -396,22 +394,22 @@
         <option value="$PROJECT_DIR$/MiniProjectMessages/org/junit/Test.java" />
         <option value="$PROJECT_DIR$/MiniProjectMessages/Tests/ScannerImportTest.java" />
         <option value="$PROJECT_DIR$/MiniProjectMessages/Tests/RepositoryInMemoryTest.java" />
-        <option value="$PROJECT_DIR$/MiniProjectMessages/IRepository.java" />
         <option value="$PROJECT_DIR$/MiniProjectMessages/ControllerTest.java" />
         <option value="$PROJECT_DIR$/MiniProjectMessages/ActionTest.java" />
         <option value="$PROJECT_DIR$/MiniProjectMessages/Action.java" />
-        <option value="$PROJECT_DIR$/MiniProjectMessages/ActionsToRun.java" />
         <option value="$PROJECT_DIR$/MiniProjectMessages/RepositoryDbTest1.java" />
         <option value="$PROJECT_DIR$/MiniProjectMessages/ScannerImport.java" />
         <option value="$PROJECT_DIR$/MiniProjectMessages/ScannerImportTest.java" />
         <option value="$PROJECT_DIR$/MiniProjectMessages/ActionsToRunTest.java" />
         <option value="$PROJECT_DIR$/MiniProjectMessages/Controller.java" />
-        <option value="$PROJECT_DIR$/MiniProjectMessages/RepositoryDb.java" />
-        <option value="$PROJECT_DIR$/MiniProjectMessages/RepositoryInMemory.java" />
         <option value="$PROJECT_DIR$/MiniProjectMessages/RepositoryInMemoryTest.java" />
         <option value="$PROJECT_DIR$/MiniProjectMessages/RepositoryDbTest.java" />
         <option value="$PROJECT_DIR$/MiniProjectMessages/EventTest.java" />
         <option value="$PROJECT_DIR$/MiniProjectMessages/Event.java" />
+        <option value="$PROJECT_DIR$/MiniProjectMessages/IRepository.java" />
+        <option value="$PROJECT_DIR$/MiniProjectMessages/RepositoryDb.java" />
+        <option value="$PROJECT_DIR$/MiniProjectMessages/RepositoryInMemory.java" />
+        <option value="$PROJECT_DIR$/MiniProjectMessages/ActionsToRun.java" />
       </list>
     </option>
   </component>
@@ -534,7 +532,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.RepositoryDbTest">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="EventTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="MiniProjectMessages" />
@@ -731,11 +729,11 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.RepositoryDbTest" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.EventTest" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.RepositoryInMemoryTest" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.RepositoryDbTest.getLatestMessagesRequestedMoreThanExists1000" />
-        <item index="4" class="java.lang.String" itemvalue="Application.Main" />
+        <item index="0" class="java.lang.String" itemvalue="Application.Main" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.RepositoryDbTest" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.EventTest" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.RepositoryInMemoryTest" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.RepositoryDbTest.getLatestMessagesRequestedMoreThanExists1000" />
       </list>
     </recent_temporary>
   </component>
@@ -775,7 +773,7 @@
       <workItem from="1512023022786" duration="26068000" />
       <workItem from="1512109580307" duration="26966000" />
       <workItem from="1512369958499" duration="25792000" />
-      <workItem from="1512454940280" duration="3331000" />
+      <workItem from="1512454940280" duration="5395000" />
     </task>
     <task id="LOCAL-00001" summary="Messages mini project version 0.1.0">
       <created>1510728206261</created>
@@ -820,7 +818,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="425266000" />
+    <option name="totallyTimeSpent" value="427330000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -837,14 +835,14 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1326087" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1326087" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16012725" sideWeight="0.503125" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.49791667" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34434968" sideWeight="0.49416754" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29051173" sideWeight="0.49416754" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -910,25 +908,25 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/MiniProjectMessages/RepositoryInMemory.java</url>
-          <line>109</line>
+          <line>115</line>
           <properties />
           <option name="timeStamp" value="23" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/MiniProjectMessages/RepositoryInMemory.java</url>
-          <line>126</line>
+          <line>132</line>
           <properties />
           <option name="timeStamp" value="24" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/MiniProjectMessages/RepositoryInMemory.java</url>
-          <line>92</line>
+          <line>98</line>
           <properties />
           <option name="timeStamp" value="33" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/MiniProjectMessages/ActionsToRun.java</url>
-          <line>88</line>
+          <line>95</line>
           <properties />
           <option name="timeStamp" value="61" />
         </line-breakpoint>
@@ -1197,24 +1195,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MiniProjectMessages/IRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="21" lean-forward="false" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MiniProjectMessages/ActionsToRun.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="49" column="41" lean-forward="false" selection-start-line="49" selection-start-column="41" selection-end-line="49" selection-end-column="41" />
-          <folding>
-            <element signature="e#0#5322#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/MiniProjectMessages/ControllerTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -1222,14 +1202,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MiniProjectMessages/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2312">
-          <caret line="139" column="83" lean-forward="false" selection-start-line="139" selection-start-column="83" selection-end-line="139" selection-end-column="83" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1248,91 +1220,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MiniProjectMessages/ScannerImportTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="17" column="20" lean-forward="false" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_151/src.zip!/java/util/ArrayList.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="250">
           <caret line="656" column="0" lean-forward="false" selection-start-line="656" selection-start-column="0" selection-end-line="656" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MiniProjectMessages/RepositoryDb.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1326">
-          <caret line="78" column="0" lean-forward="false" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1512457905953" expanded="true" signature="1480:1494" ph="SELECT * FRO... event" />
-            <marker date="1512457905953" expanded="true" signature="1480:1510" ph="SELECT * FRO... event" />
-            <marker date="1512457905953" expanded="true" signature="1651:1665" ph="SELECT * FRO... event" />
-            <marker date="1512457905953" expanded="true" signature="1651:1689" ph="SELECT * FRO... event" />
-            <marker date="1512457905953" expanded="true" signature="1909:2017" ph="INSERT INTO event... " />
-            <marker date="1512457905953" expanded="true" signature="2110:2182" ph="INSERT INTO event... " />
-            <marker date="1512457905953" expanded="true" signature="2238:2314" ph="INSERT INTO event... " />
-            <marker date="1512457905953" expanded="true" signature="6229:6291" ph="INSERT INTO event... " />
-            <marker date="1512457905953" expanded="true" signature="6229:6343" ph="INSERT INTO event... " />
-            <marker date="1512457905953" expanded="true" signature="6229:6369" ph="INSERT INTO event... " />
-            <marker date="1512457905953" expanded="true" signature="6229:6372" ph="INSERT INTO eventeventMessage... " />
-            <marker date="1512457905953" expanded="true" signature="6229:6396" ph="INSERT INTO event... " />
-            <marker date="1512457905953" expanded="true" signature="6229:6397" ph="INSERT INTO event... " />
-            <marker date="1512457905953" expanded="true" signature="6229:6398" ph="INSERT INTO event... " />
-            <marker date="1512457905953" expanded="true" signature="7562:7575" ph="SELECT * FRO... " />
-            <marker date="1512457905953" expanded="true" signature="7562:7597" ph="SELECT * FRO... event" />
-            <marker date="1512457905953" expanded="true" signature="7562:7605" ph="SELECT * FRO... event" />
-            <marker date="1512457905953" expanded="true" signature="7562:7606" ph="SELECT * FRO... event" />
-            <marker date="1512457905953" expanded="true" signature="7562:7639" ph="SELECT * FRO... event" />
-            <marker date="1512457905953" expanded="true" signature="7562:7643" ph="SELECT * FRO... eventmissingValue" />
-            <marker date="1512457905953" expanded="true" signature="7562:7644" ph="SELECT * FRO... event" />
-            <marker date="1512457905953" expanded="true" signature="7562:7655" ph="SELECT * FRO... event" />
-            <marker date="1512457905953" expanded="true" signature="7562:7681" ph="SELECT * FRO... event" />
-            <marker date="1512457905953" expanded="true" signature="8372:8449" ph="SELECT * FRO... event" />
-            <marker date="1512457905953" expanded="true" signature="8372:8457" ph="SELECT * FRO... event" />
-            <marker date="1512457905953" expanded="true" signature="8372:8466" ph="SELECT * FRO... event" />
-            <marker date="1512457905953" expanded="true" signature="9218:9259" ph="SELECT * FRO... event" />
-            <marker date="1512457905953" expanded="true" signature="9218:9290" ph="SELECT * FRO... event" />
-            <marker date="1512457905953" expanded="true" signature="9218:9294" ph="SELECT * FRO... event" />
-            <marker date="1512457905953" expanded="true" signature="9218:9295" ph="SELECT * FRO... event" />
-            <marker date="1512457905953" expanded="true" signature="9218:9296" ph="SELECT * FRO... event" />
-            <marker date="1512457905953" expanded="true" signature="9218:9318" ph="SELECT * FRO... event" />
-            <marker date="1512457905953" expanded="true" signature="9218:9334" ph="SELECT * FRO... event" />
-            <marker date="1512457905953" expanded="true" signature="9932:10032" ph="SELECT * FRO... event" />
-            <marker date="1512457905953" expanded="true" signature="9932:10048" ph="SELECT * FRO... event" />
-            <marker date="1512457905953" expanded="true" signature="9932:10050" ph="SELECT * FRO... event" />
-            <marker date="1512457905953" expanded="true" signature="10644:10763" ph="SELECT * FRO... event" />
-            <marker date="1512457905953" expanded="true" signature="11360:11437" ph="SELECT * FRO... event" />
-            <marker date="1512457905953" expanded="true" signature="11360:11479" ph="SELECT * FRO... event" />
-            <marker date="1512457905953" expanded="true" signature="11360:11481" ph="SELECT * FRO... event" />
-            <marker date="1512457905953" expanded="true" signature="12076:12176" ph="SELECT * FRO... event" />
-            <marker date="1512457905953" expanded="true" signature="12076:12195" ph="SELECT * FRO... event" />
-            <marker date="1512457905953" expanded="true" signature="12076:12198" ph="SELECT * FRO... event" />
-            <marker date="1512457905953" expanded="true" signature="12791:12891" ph="SELECT * FRO... event" />
-            <marker date="1512457905953" expanded="true" signature="12791:12913" ph="SELECT * FRO... event" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MiniProjectMessages/RepositoryInMemory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="200" column="52" lean-forward="false" selection-start-line="200" selection-start-column="52" selection-end-line="200" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MiniProjectMessages/RepositoryInMemoryTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1347,22 +1238,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MiniProjectMessages/Event.java">
+    <entry file="file://$PROJECT_DIR$/MiniProjectMessages/RepositoryInMemoryTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding>
-            <element signature="e#911#912#0" expanded="true" />
-            <element signature="e#941#942#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="51">
+          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/MiniProjectMessages/RepositoryDbTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="27" lean-forward="true" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
+        <state relative-caret-position="240">
+          <caret line="143" column="9" lean-forward="false" selection-start-line="143" selection-start-column="9" selection-end-line="143" selection-end-column="9" />
           <folding>
+            <element signature="imports" expanded="true" />
             <marker date="1512458394948" expanded="true" signature="1563:1576" ph="SELECT * FRO... " />
             <marker date="1512458394948" expanded="true" signature="1563:1577" ph="SELECT * FRO... event" />
             <marker date="1512458394948" expanded="true" signature="3620:3776" ph="DELETE FROM " />
@@ -1481,6 +1370,116 @@
             <marker date="1512458394948" expanded="true" signature="170153:170167" ph="SELECT * FRO... event" />
             <marker date="1512458394948" expanded="true" signature="170741:170791" ph="DELETE FROM " />
             <marker date="1512458394948" expanded="true" signature="171457:171624" ph="INSERT INTO event... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MiniProjectMessages/RepositoryDb.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="166" column="13" lean-forward="false" selection-start-line="166" selection-start-column="13" selection-end-line="166" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1512460661907" expanded="true" signature="1480:1494" ph="SELECT * FRO... event" />
+            <marker date="1512460661907" expanded="true" signature="1480:1510" ph="SELECT * FRO... event" />
+            <marker date="1512460661907" expanded="true" signature="1651:1665" ph="SELECT * FRO... event" />
+            <marker date="1512460661907" expanded="true" signature="1651:1689" ph="SELECT * FRO... event" />
+            <marker date="1512460661907" expanded="true" signature="1909:2017" ph="INSERT INTO event... " />
+            <marker date="1512460661907" expanded="true" signature="2110:2182" ph="INSERT INTO event... " />
+            <marker date="1512460661907" expanded="true" signature="2238:2314" ph="INSERT INTO event... " />
+            <marker date="1512460661907" expanded="true" signature="6232:6294" ph="INSERT INTO event... " />
+            <marker date="1512460661907" expanded="true" signature="6232:6346" ph="INSERT INTO event... " />
+            <marker date="1512460661907" expanded="true" signature="6232:6372" ph="INSERT INTO event... " />
+            <marker date="1512460661907" expanded="true" signature="6232:6375" ph="INSERT INTO eventeventMessage... " />
+            <marker date="1512460661907" expanded="true" signature="6232:6399" ph="INSERT INTO event... " />
+            <marker date="1512460661907" expanded="true" signature="6232:6400" ph="INSERT INTO event... " />
+            <marker date="1512460661907" expanded="true" signature="6232:6401" ph="INSERT INTO event... " />
+            <marker date="1512460661907" expanded="true" signature="7619:7632" ph="SELECT * FRO... " />
+            <marker date="1512460661907" expanded="true" signature="7619:7654" ph="SELECT * FRO... event" />
+            <marker date="1512460661907" expanded="true" signature="7619:7662" ph="SELECT * FRO... event" />
+            <marker date="1512460661907" expanded="true" signature="7619:7663" ph="SELECT * FRO... event" />
+            <marker date="1512460661907" expanded="true" signature="7619:7696" ph="SELECT * FRO... event" />
+            <marker date="1512460661907" expanded="true" signature="7619:7700" ph="SELECT * FRO... eventmissingValue" />
+            <marker date="1512460661907" expanded="true" signature="7619:7701" ph="SELECT * FRO... event" />
+            <marker date="1512460661907" expanded="true" signature="7619:7712" ph="SELECT * FRO... event" />
+            <marker date="1512460661907" expanded="true" signature="7619:7738" ph="SELECT * FRO... event" />
+            <marker date="1512460661907" expanded="true" signature="8429:8506" ph="SELECT * FRO... event" />
+            <marker date="1512460661907" expanded="true" signature="8429:8514" ph="SELECT * FRO... event" />
+            <marker date="1512460661907" expanded="true" signature="8429:8523" ph="SELECT * FRO... event" />
+            <marker date="1512460661907" expanded="true" signature="9275:9316" ph="SELECT * FRO... event" />
+            <marker date="1512460661907" expanded="true" signature="9275:9347" ph="SELECT * FRO... event" />
+            <marker date="1512460661907" expanded="true" signature="9275:9351" ph="SELECT * FRO... event" />
+            <marker date="1512460661907" expanded="true" signature="9275:9352" ph="SELECT * FRO... event" />
+            <marker date="1512460661907" expanded="true" signature="9275:9353" ph="SELECT * FRO... event" />
+            <marker date="1512460661907" expanded="true" signature="9275:9375" ph="SELECT * FRO... event" />
+            <marker date="1512460661907" expanded="true" signature="9275:9391" ph="SELECT * FRO... event" />
+            <marker date="1512460661907" expanded="true" signature="9989:10089" ph="SELECT * FRO... event" />
+            <marker date="1512460661907" expanded="true" signature="9989:10105" ph="SELECT * FRO... event" />
+            <marker date="1512460661907" expanded="true" signature="9989:10107" ph="SELECT * FRO... event" />
+            <marker date="1512460661907" expanded="true" signature="10701:10820" ph="SELECT * FRO... event" />
+            <marker date="1512460661907" expanded="true" signature="11417:11494" ph="SELECT * FRO... event" />
+            <marker date="1512460661907" expanded="true" signature="11417:11536" ph="SELECT * FRO... event" />
+            <marker date="1512460661907" expanded="true" signature="11417:11538" ph="SELECT * FRO... event" />
+            <marker date="1512460661907" expanded="true" signature="12133:12233" ph="SELECT * FRO... event" />
+            <marker date="1512460661907" expanded="true" signature="12133:12252" ph="SELECT * FRO... event" />
+            <marker date="1512460661907" expanded="true" signature="12133:12255" ph="SELECT * FRO... event" />
+            <marker date="1512460661907" expanded="true" signature="12848:12948" ph="SELECT * FRO... event" />
+            <marker date="1512460661907" expanded="true" signature="12848:12970" ph="SELECT * FRO... event" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MiniProjectMessages/IRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="11" lean-forward="false" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MiniProjectMessages/Event.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding>
+            <element signature="e#911#912#0" expanded="true" />
+            <element signature="e#941#942#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MiniProjectMessages/RepositoryInMemory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="466">
+          <caret line="43" column="4" lean-forward="false" selection-start-line="43" selection-start-column="4" selection-end-line="43" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MiniProjectMessages/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="123" column="9" lean-forward="false" selection-start-line="123" selection-start-column="9" selection-end-line="123" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MiniProjectMessages/ScannerImportTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="17" column="20" lean-forward="false" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MiniProjectMessages/ActionsToRun.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="52" column="37" lean-forward="true" selection-start-line="52" selection-start-column="37" selection-end-line="52" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#5708#0" expanded="true" />
           </folding>
         </state>
       </provider>

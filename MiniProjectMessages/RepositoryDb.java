@@ -151,15 +151,17 @@ public class RepositoryDb implements IRepository {
 
     // Method to add Events from the user, in the repositoryDbList.
     @Override
-    public void addMessage(Event event) {
+    public boolean addMessage(Event event) {
         Controller controller = new Controller();
 
         // Adding an Event to the DB.
         try(Statement statement = connection.createStatement()){
             statement.executeUpdate("INSERT INTO " + TABLE_EVENTS + "(" + COLUMN_EVENT_MESSAGE + "," + COLUMN_EVENT_TIME_MILLIS + ")" + " VALUES " + "('" + event.getMessage() + "'," + event.getTime() + ")");
 
-            // Showing to the user that the message was successfully added
-            controller.showCongratulations();
+            // Sending back true if the message was added in order to show success towards the user.
+            return true;
+
+//            controller.showCongratulations();
         }catch (SQLException e){
             System.out.println("Could not add the event to the DB" + e.getMessage());
             throw new RuntimeException(e);

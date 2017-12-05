@@ -29,8 +29,14 @@ public class RepositoryInMemory implements IRepository {
     }
 
     @Override
-    public void addMessage(Event event) {
-        repositoryInMemList.add(event);
+    public boolean addMessage(Event event) {
+        try {
+            repositoryInMemList.add(event);
+            return true;
+        }catch (Exception e){
+            System.out.println("There was a problem adding the new message." + e.getMessage());
+            throw new RuntimeException(e);
+        }
     }
 
     public ArrayList<Event> getTempListBasedOnQuantity(int readNumberOfMessages) {

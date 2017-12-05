@@ -47,7 +47,14 @@ public class ActionsToRun {
                 ((RepositoryDb) iRepository).open();
 
                 // Calling for data from the IRepository object that passed as an argument so that both implementations can work.
-                iRepository.addMessage(event);
+                boolean success = iRepository.addMessage(event);
+
+                // Checks if the addMessage was a success or not and prints the appropriate message for the user.
+                if (success == true){
+                    controller.showCongratulations();
+                }else {
+                    System.out.println("We apologize for the problem that occurred, the message could not be added.");
+                }
 
                 // Closes the db connection.
                 ((RepositoryDb) iRepository).close();
