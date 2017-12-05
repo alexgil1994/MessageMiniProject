@@ -47,6 +47,8 @@ public class RepositoryInMemory implements IRepository {
                     tempMessageList.add(event);
                 } catch (Exception e) {
                     System.out.println("There was an error trying to load the messages.");
+                    e.printStackTrace();
+                    throw new RuntimeException(e);
                 }
             }
         }
@@ -90,10 +92,14 @@ public class RepositoryInMemory implements IRepository {
                         tempMessageList.add(event);
                     } catch (Exception e) {
                         System.out.println("There was a problem when we tried to add the message.");
+                        e.printStackTrace();
+                        throw new RuntimeException(e);
                     }
                 }
             } catch (ArithmeticException e) {
                 System.out.println("Something went wrong with the time calculation.");
+                e.printStackTrace();
+                throw new RuntimeException(e);
             }
         }
         return tempMessageList;
@@ -210,6 +216,8 @@ public class RepositoryInMemory implements IRepository {
                 tempMessageList.add(event);
             } catch (Exception e) {
                 System.out.println("There was a problem when we tried to add the message.");
+                e.printStackTrace();
+                throw new RuntimeException(e);
             }
         }
         return tempMessageList;

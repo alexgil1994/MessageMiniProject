@@ -76,8 +76,8 @@ public class RepositoryDb implements IRepository {
             return true;
         } catch (SQLException e) {
             System.out.println("Could not connect with the database " + e.getMessage());
-
-            return false;
+            e.printStackTrace();
+            throw new RuntimeException(e);
         }
     }
 
@@ -109,6 +109,8 @@ public class RepositoryDb implements IRepository {
             }
         } catch (SQLException e) {
             System.out.println("Could not close the database " + e.getMessage());
+            e.printStackTrace();
+            throw new RuntimeException(e);
         }
     }
 
@@ -125,6 +127,8 @@ public class RepositoryDb implements IRepository {
             }
         }catch (SQLException e){
             System.out.println("There was a problem when trying to save the data.");
+            e.printStackTrace();
+            throw new RuntimeException(e);
         }
         return repositoryDbList;
     }
@@ -143,7 +147,8 @@ public class RepositoryDb implements IRepository {
             return repositoryDbList;
         }catch (SQLException e){
             System.out.println("Could not load the events from the DB." + e.getMessage());
-            return null;
+            e.printStackTrace();
+            throw new RuntimeException(e);
         }
     }
 
@@ -164,6 +169,7 @@ public class RepositoryDb implements IRepository {
 //            controller.showCongratulations();
         }catch (SQLException e){
             System.out.println("Could not add the event to the DB" + e.getMessage());
+            e.printStackTrace();
             throw new RuntimeException(e);
         }
     }
@@ -190,6 +196,8 @@ public class RepositoryDb implements IRepository {
                 repositoryDbList = listFromQuery(resultSet);
             } catch (SQLException e) {
                 System.out.println("Could not load the latest " + readNumberOfMessages + " messages." + e.getMessage());
+                e.printStackTrace();
+                throw new RuntimeException(e);
             }
         }
 
@@ -207,6 +215,8 @@ public class RepositoryDb implements IRepository {
                 repositoryDbList = listFromQuery(resultSet);
             } catch (SQLException e) {
                 System.out.println("Could not load the oldest " + readNumberOfMessages + " messages." + e.getMessage());
+                e.printStackTrace();
+                throw new RuntimeException(e);
             }
         }
 
@@ -226,6 +236,8 @@ public class RepositoryDb implements IRepository {
             repositoryDbList = listFromQuery(resultSet);
         }catch (SQLException e){
             System.out.println("Could not get the last hour messages from the db. " + e.getMessage());
+            e.printStackTrace();
+            throw new RuntimeException(e);
         }
 
         return repositoryDbList;
@@ -244,6 +256,8 @@ public class RepositoryDb implements IRepository {
             repositoryDbList = listFromQuery(resultSet);
         }catch (SQLException e){
             System.out.println("Could not get the last hour messages from the db. " + e.getMessage());
+            e.printStackTrace();
+            throw new RuntimeException(e);
         }
 
         return repositoryDbList;
@@ -262,6 +276,8 @@ public class RepositoryDb implements IRepository {
             repositoryDbList = listFromQuery(resultSet);
         }catch (SQLException e){
             System.out.println("Could not get the last hour messages from the db. " + e.getMessage());
+            e.printStackTrace();
+            throw new RuntimeException(e);
         }
 
         return repositoryDbList;
@@ -280,6 +296,8 @@ public class RepositoryDb implements IRepository {
             repositoryDbList = listFromQuery(resultSet);
         }catch (SQLException e){
             System.out.println("Could not get the last hour messages from the db. " + e.getMessage());
+            e.printStackTrace();
+            throw new RuntimeException(e);
         }
 
         return repositoryDbList;
@@ -298,6 +316,8 @@ public class RepositoryDb implements IRepository {
             repositoryDbList = listFromQuery(resultSet);
         }catch (SQLException e){
             System.out.println("Could not get the last hour messages from the db. " + e.getMessage());
+            e.printStackTrace();
+            throw new RuntimeException(e);
         }
 
         return repositoryDbList;
@@ -316,6 +336,8 @@ public class RepositoryDb implements IRepository {
             repositoryDbList = listFromQuery(resultSet);
         }catch (SQLException e){
             System.out.println("Could not get the last hour messages from the db. " + e.getMessage());
+            e.printStackTrace();
+            throw new RuntimeException(e);
         }
 
         return repositoryDbList;

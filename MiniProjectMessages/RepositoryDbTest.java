@@ -51,6 +51,8 @@ class RepositoryDbTest {
             }
         } catch (SQLException e) {
             System.out.println("There was an error when trying t load the db for the queryLoadDb test." + e.getMessage());
+            e.printStackTrace();
+            throw new RuntimeException(e);
         }
 
         // Adding Events for the other db.
@@ -91,6 +93,8 @@ class RepositoryDbTest {
             statement.executeUpdate("DELETE FROM " + TABLE_EVENTS + " WHERE " + COLUMN_EVENT_MESSAGE + " IN ('New message* ','New message1* ','New message2* ','New message3* ','New message4* ')");
         }catch (SQLException e){
             System.out.println("There was an error trying to delete the test values that were inserted. " + e.getMessage());
+            e.printStackTrace();
+            throw new RuntimeException(e);
         }
 
         assertEquals(arrayListCompare , repoList, "queryLoadDb method in RepositoryDb Class didn't work correctly.");
@@ -113,6 +117,10 @@ class RepositoryDbTest {
         // Delete existing data from db. (they will be restored with correct time later in the test).
         try(Statement statement = connection.createStatement()){
             statement.executeUpdate("DELETE FROM " + TABLE_EVENTS + " WHERE _ROWID_ > 0");
+        }catch (SQLException e){
+            System.out.println("There was an error deleting the db data.");
+            e.printStackTrace();
+            throw new RuntimeException(e);
         }
 
         // We dont add anything because we want the Db Empty in this case so the arrayListCompare will be empty as well.
@@ -131,6 +139,7 @@ class RepositoryDbTest {
 
             }catch (SQLException e){
                 System.out.println("Could not add the event to the DB" + e.getMessage());
+                e.printStackTrace();
                 throw new RuntimeException(e);
             }
         }
@@ -158,6 +167,8 @@ class RepositoryDbTest {
             statement.executeUpdate("DELETE FROM " + TABLE_EVENTS + " WHERE " + COLUMN_EVENT_MESSAGE + " IN ('Db Test')");
         }catch (SQLException e){
             System.out.println("There was an error trying to delete the test values that were inserted. " + e.getMessage());
+            e.printStackTrace();
+            throw new RuntimeException(e);
         }
 
         assertEquals(1, count, "addMessage method in RepositoryDb Class didn't work correctly.");
@@ -183,6 +194,8 @@ class RepositoryDbTest {
             statement.executeUpdate("DELETE FROM " + TABLE_EVENTS + " WHERE " + COLUMN_EVENT_MESSAGE + " IN ('Db Test')");
         }catch (SQLException e){
             System.out.println("There was an error trying to delete the test values that were inserted. " + e.getMessage());
+            e.printStackTrace();
+            throw new RuntimeException(e);
         }
 
         assertEquals(2, count, "addMessage method in RepositoryDb Class didn't work correctly.");
@@ -206,6 +219,8 @@ class RepositoryDbTest {
             statement.executeUpdate("DELETE FROM " + TABLE_EVENTS + " WHERE " + COLUMN_EVENT_MESSAGE + " IN ('Db Test')");
         }catch (SQLException e){
             System.out.println("There was an error trying to delete the test values that were inserted. " + e.getMessage());
+            e.printStackTrace();
+            throw new RuntimeException(e);
         }
 
         assertNotEquals(2, count, "addMessage method in RepositoryDb Class didn't work correctly.");
@@ -229,6 +244,8 @@ class RepositoryDbTest {
             statement.executeUpdate("DELETE FROM " + TABLE_EVENTS + " WHERE " + COLUMN_EVENT_MESSAGE + " IN ('Db Test')");
         }catch (SQLException e){
             System.out.println("There was an error trying to delete the test values that were inserted. " + e.getMessage());
+            e.printStackTrace();
+            throw new RuntimeException(e);
         }
 
         assertNotEquals(0, count, "addMessage method in RepositoryDb Class didn't work correctly.");
@@ -252,6 +269,8 @@ class RepositoryDbTest {
             statement.executeUpdate("DELETE FROM " + TABLE_EVENTS + " WHERE " + COLUMN_EVENT_MESSAGE + " IN ('Db Test')");
         }catch (SQLException e){
             System.out.println("There was an error trying to delete the test values that were inserted. " + e.getMessage());
+            e.printStackTrace();
+            throw new RuntimeException(e);
         }
 
         assertNotEquals(-1, count, "addMessage method in RepositoryDb Class didn't work correctly.");
@@ -310,6 +329,8 @@ class RepositoryDbTest {
             statement.executeUpdate("DELETE FROM " + TABLE_EVENTS + " WHERE " + COLUMN_EVENT_MESSAGE + " IN ('New message- ','New message1- ','New message2- ','New message3- ','New message4- ')");
         }catch (SQLException e){
             System.out.println("There was an error trying to delete the test values that were inserted. " + e.getMessage());
+            e.printStackTrace();
+            throw new RuntimeException(e);
         }
 
         assertEquals(arrayListCompare , repoList, "getLatestMessages method in RepositoryDb Class didn't work correctly.");
@@ -327,6 +348,8 @@ class RepositoryDbTest {
             }
         } catch (SQLException e) {
             System.out.println("There was an error when trying t load the db for the queryLoadDb test." + e.getMessage());
+            e.printStackTrace();
+            throw new RuntimeException(e);
         }
 
         // Oi xronoi einai ligo diaforetikoi gt alliws to order by xanei logikh kai taksinomei me to onoma afou exoun idio xrono akrivws.
