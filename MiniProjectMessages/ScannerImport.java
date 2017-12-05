@@ -38,6 +38,7 @@ class ScannerImport {
                     System.out.println("You have typed the parameters wrong. Please try again to continue.\n");
                 }
             }catch (InputMismatchException e){
+                // We dont run a new RuntimeException because we are handling it through the catch.
                 System.out.println("The value you typed is either not a number or there is no command designed for it.\n");
                 scanner.nextLine();
             }
@@ -58,6 +59,7 @@ class ScannerImport {
                     return numOfMessages;
                 }
             }catch (InputMismatchException e){
+                // We dont run a new RuntimeException because we are handling it through the catch.
                 System.out.println("You have typed the parameters wrong. Please try again to continue.\n");
                 scanner.nextLine();
             }

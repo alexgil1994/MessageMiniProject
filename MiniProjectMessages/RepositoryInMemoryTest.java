@@ -1,5 +1,4 @@
 import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.*;
@@ -11,73 +10,6 @@ import static org.junit.jupiter.api.Assertions.assertNotEquals;
 public class RepositoryInMemoryTest {
 
     public RepositoryInMemory repositoryInMemory = new RepositoryInMemory();
-    public RepositoryInMemory repositoryInMemory1 = new RepositoryInMemory();
-
-    @BeforeEach
-    public void setUp(){
-
-        // TODO Needs to be configured so that the Test methods can use the data.
-
-        // --- For quantity Requests.
-        repositoryInMemory = new RepositoryInMemory();
-
-        // --- For time Requests.
-        repositoryInMemory1 = new RepositoryInMemory();
-
-        // --- For quantity Requests.
-        Event eventA = new Event("A", 1000000000);
-        Event eventB = new Event("B", 1000000000);
-        Event eventC = new Event("C", 1000000000);
-        Event eventD = new Event("D", 1000000000);
-        Event eventE = new Event("E", 1000000000);
-
-        // Adding to the list.
-        repositoryInMemory.addMessage(eventA);
-        repositoryInMemory.addMessage(eventB);
-        repositoryInMemory.addMessage(eventC);
-        repositoryInMemory.addMessage(eventD);
-        repositoryInMemory.addMessage(eventE);
-
-
-        // --- For time Requests.
-        Controller controller = new Controller();
-        long timeOfRequest = controller.calcNewTime();
-
-        Event event0 = new Event("A", timeOfRequest - (1000 * 20));
-        Event event1 = new Event("B", timeOfRequest - (1000 * 60 * 30));
-        Event event2 = new Event("B", timeOfRequest - (1000 * 60 * 45));
-        Event event3 = new Event("B", timeOfRequest - (1000 * 60 * 55));
-        Event event4 = new Event("C", timeOfRequest - (1000 * 60 * 65));
-        Event event5 = new Event("D", timeOfRequest - (1000 * 60 * 100));
-        Event event6 = new Event("F", timeOfRequest - (1000 * 60 * 150));
-        Event event7 = new Event("G", timeOfRequest - (1000 * 60 * 170));
-        Event event8 = new Event("H", timeOfRequest - (1000 * 60 * 60 * 18));
-        Event event9 = new Event("I", timeOfRequest - (1000 * 60 * 60 * 26));
-        Event event10 = new Event("J", timeOfRequest - (1000 * 60 * 60 * 70));
-        Event event11 = new Event("K", timeOfRequest - (1000 * 60 * 60 * 80));
-        Event event12 = new Event("L", timeOfRequest - (1000 * 60 * 60 * 220));
-        Event event13 = new Event("M", timeOfRequest - (1000 * 60 * 60 * 260));
-        Event event14 = new Event("N", timeOfRequest - (1000L * 60 * 60 * 24 * 25));
-        Event event15 = new Event("O", timeOfRequest - (1000L * 60 * 60 * 24 * 35));
-
-        // Adding to the list.
-        repositoryInMemory1.addMessage(event0);
-        repositoryInMemory1.addMessage(event1);
-        repositoryInMemory1.addMessage(event2);
-        repositoryInMemory1.addMessage(event3);
-        repositoryInMemory1.addMessage(event4);
-        repositoryInMemory1.addMessage(event5);
-        repositoryInMemory1.addMessage(event6);
-        repositoryInMemory1.addMessage(event7);
-        repositoryInMemory1.addMessage(event8);
-        repositoryInMemory1.addMessage(event9);
-        repositoryInMemory1.addMessage(event10);
-        repositoryInMemory1.addMessage(event11);
-        repositoryInMemory1.addMessage(event12);
-        repositoryInMemory1.addMessage(event13);
-        repositoryInMemory1.addMessage(event14);
-        repositoryInMemory1.addMessage(event15);
-    }
 
     @AfterEach
     void tearDown() {
