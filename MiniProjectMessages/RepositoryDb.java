@@ -15,7 +15,6 @@ public class RepositoryDb implements IRepository {
     public static final String CONNECTION_STRING = "jdbc:sqlite:C:\\Users\\amarkovits\\IdeaProjects\\Test\\" + DB_NAME;
 
     public static final String TABLE_EVENTS = "event";
-    public static final String COLUMN_EVENT_ID = "_id";
     public static final String COLUMN_EVENT_MESSAGE = "eventMessage";
     public static final String COLUMN_EVENT_TIME_MILLIS = "eventTimeMillis";
 
@@ -77,6 +76,7 @@ public class RepositoryDb implements IRepository {
             return true;
         } catch (SQLException e) {
             System.out.println("Could not connect with the database " + e.getMessage());
+
             return false;
         }
     }

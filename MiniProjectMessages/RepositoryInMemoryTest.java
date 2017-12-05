@@ -221,7 +221,7 @@ public class RepositoryInMemoryTest {
         Event event4 = new Event("E", 1000000000);
         ArrayList<Event> arrayList = new ArrayList<>(Arrays.asList(event,event1,event2,event3));
 
-        Collections.sort(arrayList, RepositoryInMemory.EARLIEST_ORDER);
+        Collections.sort(arrayList, Event.EARLIEST_ORDER);
 
         repositoryInMemory.addMessage(event);
         repositoryInMemory.addMessage(event1);
@@ -242,7 +242,7 @@ public class RepositoryInMemoryTest {
         Event event4 = new Event("E", 1000000000);
         ArrayList<Event> arrayList = new ArrayList<>(Arrays.asList(event,event,event1,event2,event3));
 
-        Collections.sort(arrayList, RepositoryInMemory.EARLIEST_ORDER);
+        Collections.sort(arrayList, Event.EARLIEST_ORDER);
 
         repositoryInMemory.addMessage(event);
         repositoryInMemory.addMessage(event);
@@ -272,7 +272,7 @@ public class RepositoryInMemoryTest {
         Event event4 = new Event("E", 1000000000);
         ArrayList<Event> arrayList = new ArrayList<>(Arrays.asList(event,event1,event2,event3,event4));
 
-        Collections.sort(arrayList, RepositoryInMemory.EARLIEST_ORDER);
+        Collections.sort(arrayList, Event.EARLIEST_ORDER);
 
         repositoryInMemory.addMessage(event);
         repositoryInMemory.addMessage(event1);
@@ -293,7 +293,7 @@ public class RepositoryInMemoryTest {
         Event event4 = new Event("E", 1000000000);
         ArrayList<Event> arrayList = new ArrayList<>(Arrays.asList(event,event1,event2));
 
-        Collections.sort(arrayList, RepositoryInMemory.EARLIEST_ORDER);
+        Collections.sort(arrayList, Event.EARLIEST_ORDER);
 
         repositoryInMemory.addMessage(event);
         repositoryInMemory.addMessage(event1);
@@ -314,7 +314,7 @@ public class RepositoryInMemoryTest {
         Event event4 = new Event("E", 1000000000);
         ArrayList<Event> arrayList = new ArrayList<>(Arrays.asList(event,event1,event2,event3,event4));
 
-        Collections.sort(arrayList, RepositoryInMemory.EARLIEST_ORDER);
+        Collections.sort(arrayList, Event.EARLIEST_ORDER);
 
         repositoryInMemory.addMessage(event);
         repositoryInMemory.addMessage(event1);
@@ -335,7 +335,7 @@ public class RepositoryInMemoryTest {
         Event event4 = new Event("E", 1000000000);
         ArrayList<Event> arrayList = new ArrayList<>();
 
-        Collections.sort(arrayList, RepositoryInMemory.EARLIEST_ORDER);
+        Collections.sort(arrayList, Event.EARLIEST_ORDER);
 
         repositoryInMemory.addMessage(event);
         repositoryInMemory.addMessage(event1);
@@ -356,7 +356,7 @@ public class RepositoryInMemoryTest {
         Event event4 = new Event("E", 1000000000);
         ArrayList<Event> arrayList = new ArrayList<>();
 
-        Collections.sort(arrayList, RepositoryInMemory.EARLIEST_ORDER);
+        Collections.sort(arrayList, Event.EARLIEST_ORDER);
 
         repositoryInMemory.addMessage(event);
         repositoryInMemory.addMessage(event1);
@@ -377,7 +377,7 @@ public class RepositoryInMemoryTest {
         Event event4 = new Event("E", 1000000000);
         ArrayList<Event> arrayList = new ArrayList<>(Arrays.asList(event,event1,event2,event3));
 
-        Collections.sort(arrayList, RepositoryInMemory.LATEST_ORDER);
+        Collections.sort(arrayList, Event.LATEST_ORDER);
 
         repositoryInMemory.addMessage(event);
         repositoryInMemory.addMessage(event1);
@@ -398,7 +398,7 @@ public class RepositoryInMemoryTest {
         Event event4 = new Event("E", 1000000000);
         ArrayList<Event> arrayList = new ArrayList<>(Arrays.asList(event,event,event1,event2,event3));
 
-        Collections.sort(arrayList, RepositoryInMemory.LATEST_ORDER);
+        Collections.sort(arrayList, Event.LATEST_ORDER);
 
         repositoryInMemory.addMessage(event);
         repositoryInMemory.addMessage(event);
@@ -428,7 +428,7 @@ public class RepositoryInMemoryTest {
         Event event4 = new Event("E", 1000000000);
         ArrayList<Event> arrayList = new ArrayList<>(Arrays.asList(event,event1,event2,event3,event4));
 
-        Collections.sort(arrayList, RepositoryInMemory.LATEST_ORDER);
+        Collections.sort(arrayList, Event.LATEST_ORDER);
 
         repositoryInMemory.addMessage(event);
         repositoryInMemory.addMessage(event1);
@@ -449,7 +449,7 @@ public class RepositoryInMemoryTest {
         Event event4 = new Event("E", 1000000000);
         ArrayList<Event> arrayList = new ArrayList<>(Arrays.asList(event,event1,event2));
 
-        Collections.sort(arrayList, RepositoryInMemory.LATEST_ORDER);
+        Collections.sort(arrayList, Event.LATEST_ORDER);
 
         repositoryInMemory.addMessage(event);
         repositoryInMemory.addMessage(event1);
@@ -470,7 +470,7 @@ public class RepositoryInMemoryTest {
         Event event4 = new Event("E", 1000000000);
         ArrayList<Event> arrayList = new ArrayList<>(Arrays.asList(event,event1,event2,event3,event4));
 
-        Collections.sort(arrayList, RepositoryInMemory.LATEST_ORDER);
+        Collections.sort(arrayList, Event.LATEST_ORDER);
 
         repositoryInMemory.addMessage(event);
         repositoryInMemory.addMessage(event1);
@@ -491,7 +491,7 @@ public class RepositoryInMemoryTest {
         Event event4 = new Event("E", 1000000000);
         ArrayList<Event> arrayList = new ArrayList<>();
 
-        Collections.sort(arrayList, RepositoryInMemory.LATEST_ORDER);
+        Collections.sort(arrayList, Event.LATEST_ORDER);
 
         repositoryInMemory.addMessage(event);
         repositoryInMemory.addMessage(event1);
@@ -512,7 +512,7 @@ public class RepositoryInMemoryTest {
         Event event4 = new Event("E", 1000000000);
         ArrayList<Event> arrayList = new ArrayList<>();
 
-        Collections.sort(arrayList, RepositoryInMemory.LATEST_ORDER);
+        Collections.sort(arrayList, Event.LATEST_ORDER);
 
         repositoryInMemory.addMessage(event);
         repositoryInMemory.addMessage(event1);
@@ -636,7 +636,7 @@ public class RepositoryInMemoryTest {
         Event event15 = new Event("O", timeOfRequest - (1000L * 60 * 60 * 24 * 35));
         ArrayList<Event> arrayList = new ArrayList<>(Arrays.asList(event0,event1,event2,event3));
 
-        Collections.sort(arrayList,RepositoryInMemory.EARLIEST_ORDER);
+        Collections.sort(arrayList,Event.EARLIEST_ORDER);
 
         repositoryInMemory.addMessage(event0);
         repositoryInMemory.addMessage(event1);
@@ -683,7 +683,7 @@ public class RepositoryInMemoryTest {
         Event event15 = new Event("O", timeOfRequest - (1000L * 60 * 60 * 24 * 35));
         ArrayList<Event> arrayList = new ArrayList<>(Arrays.asList(event0,event0,event1,event2,event3));
 
-        Collections.sort(arrayList,RepositoryInMemory.EARLIEST_ORDER);
+        Collections.sort(arrayList,Event.EARLIEST_ORDER);
 
         repositoryInMemory.addMessage(event0);
         repositoryInMemory.addMessage(event0);
@@ -741,7 +741,7 @@ public class RepositoryInMemoryTest {
         Event event15 = new Event("O", timeOfRequest - (1000L * 60 * 60 * 24 * 35));
         ArrayList<Event> arrayList = new ArrayList<>(Arrays.asList(event0,event1,event2,event3));
 
-        Collections.sort(arrayList,RepositoryInMemory.EARLIEST_ORDER);
+        Collections.sort(arrayList,Event.EARLIEST_ORDER);
 
         repositoryInMemory.addMessage(event0);
         repositoryInMemory.addMessage(event1);
@@ -794,7 +794,7 @@ public class RepositoryInMemoryTest {
 
         ArrayList<Event> arrayList = new ArrayList<>(Arrays.asList(event0,event1,event2,event3,event4,event5,event6,event7));
 
-        Collections.sort(arrayList,RepositoryInMemory.EARLIEST_ORDER);
+        Collections.sort(arrayList,Event.EARLIEST_ORDER);
 
         repositoryInMemory.addMessage(event0);
         repositoryInMemory.addMessage(event1);
@@ -842,7 +842,7 @@ public class RepositoryInMemoryTest {
 
         ArrayList<Event> arrayList = new ArrayList<>(Arrays.asList(event0,event0,event1,event2,event3,event4,event5,event6,event7));
 
-        Collections.sort(arrayList,RepositoryInMemory.EARLIEST_ORDER);
+        Collections.sort(arrayList,Event.EARLIEST_ORDER);
 
         repositoryInMemory.addMessage(event0);
         repositoryInMemory.addMessage(event0);
@@ -900,7 +900,7 @@ public class RepositoryInMemoryTest {
 
         ArrayList<Event> arrayList = new ArrayList<>(Arrays.asList(event0,event1,event2,event3,event4,event5,event6,event7));
 
-        Collections.sort(arrayList,RepositoryInMemory.EARLIEST_ORDER);
+        Collections.sort(arrayList,Event.EARLIEST_ORDER);
 
         repositoryInMemory.addMessage(event0);
         repositoryInMemory.addMessage(event1);
@@ -953,7 +953,7 @@ public class RepositoryInMemoryTest {
 
         ArrayList<Event> arrayList = new ArrayList<>(Arrays.asList(event0,event1,event2,event3,event4,event5,event6,event7,event8));
 
-        Collections.sort(arrayList,RepositoryInMemory.EARLIEST_ORDER);
+        Collections.sort(arrayList,Event.EARLIEST_ORDER);
 
         repositoryInMemory.addMessage(event0);
         repositoryInMemory.addMessage(event1);
@@ -1001,7 +1001,7 @@ public class RepositoryInMemoryTest {
 
         ArrayList<Event> arrayList = new ArrayList<>(Arrays.asList(event0,event0,event1,event2,event3,event4,event5,event6,event7,event8));
 
-        Collections.sort(arrayList,RepositoryInMemory.EARLIEST_ORDER);
+        Collections.sort(arrayList,Event.EARLIEST_ORDER);
 
         repositoryInMemory.addMessage(event0);
         repositoryInMemory.addMessage(event0);
@@ -1080,7 +1080,7 @@ public class RepositoryInMemoryTest {
             arrayList.add(event7);
             repositoryInMemory.addMessage(event7);
         }
-        Collections.sort(arrayList,RepositoryInMemory.EARLIEST_ORDER);
+        Collections.sort(arrayList,Event.EARLIEST_ORDER);
 
         assertEquals(arrayList, repositoryInMemory.getLastOneDayMessages(),"getLastOneDayMessages method in RepositoryInMemory Class didn't work correctly.");
     }
@@ -1111,7 +1111,7 @@ public class RepositoryInMemoryTest {
 
         ArrayList<Event> arrayList = new ArrayList<>(Arrays.asList(event0,event1,event2,event3,event4,event5,event6,event7,event8,event9,event10));
 
-        Collections.sort(arrayList,RepositoryInMemory.EARLIEST_ORDER);
+        Collections.sort(arrayList,Event.EARLIEST_ORDER);
 
         repositoryInMemory.addMessage(event0);
         repositoryInMemory.addMessage(event1);
@@ -1159,7 +1159,7 @@ public class RepositoryInMemoryTest {
 
         ArrayList<Event> arrayList = new ArrayList<>(Arrays.asList(event0,event0,event1,event2,event3,event4,event5,event6,event7,event8,event9,event10));
 
-        Collections.sort(arrayList,RepositoryInMemory.EARLIEST_ORDER);
+        Collections.sort(arrayList,Event.EARLIEST_ORDER);
 
         repositoryInMemory.addMessage(event0);
         repositoryInMemory.addMessage(event0);
@@ -1239,7 +1239,7 @@ public class RepositoryInMemoryTest {
             repositoryInMemory.addMessage(event9);
         }
 
-        Collections.sort(arrayList,RepositoryInMemory.EARLIEST_ORDER);
+        Collections.sort(arrayList,Event.EARLIEST_ORDER);
 
         assertEquals(arrayList, repositoryInMemory.getLastThreeDaysMessages(),"getLastThreeDaysMessages method in RepositoryInMemory Class didn't work correctly.");
     }
@@ -1270,7 +1270,7 @@ public class RepositoryInMemoryTest {
 
         ArrayList<Event> arrayList = new ArrayList<>(Arrays.asList(event0,event1,event2,event3,event4,event5,event6,event7,event8,event9,event10,event11,event12));
 
-        Collections.sort(arrayList,RepositoryInMemory.EARLIEST_ORDER);
+        Collections.sort(arrayList,Event.EARLIEST_ORDER);
 
         repositoryInMemory.addMessage(event0);
         repositoryInMemory.addMessage(event1);
@@ -1318,7 +1318,7 @@ public class RepositoryInMemoryTest {
 
         ArrayList<Event> arrayList = new ArrayList<>(Arrays.asList(event0,event0,event1,event2,event3,event4,event5,event6,event7,event8,event9,event10,event11,event12));
 
-        Collections.sort(arrayList,RepositoryInMemory.EARLIEST_ORDER);
+        Collections.sort(arrayList,Event.EARLIEST_ORDER);
 
         repositoryInMemory.addMessage(event0);
         repositoryInMemory.addMessage(event0);
@@ -1398,7 +1398,7 @@ public class RepositoryInMemoryTest {
             repositoryInMemory.addMessage(event11);
         }
 
-        Collections.sort(arrayList,RepositoryInMemory.EARLIEST_ORDER);
+        Collections.sort(arrayList,Event.EARLIEST_ORDER);
 
         assertEquals(arrayList, repositoryInMemory.getLastTenDaysMessages(),"getLastTenDaysMessages method in RepositoryInMemory Class didn't work correctly.");
     }
@@ -1429,7 +1429,7 @@ public class RepositoryInMemoryTest {
 
         ArrayList<Event> arrayList = new ArrayList<>(Arrays.asList(event0,event1,event2,event3,event4,event5,event6,event7,event8,event9,event10,event11,event12,event13,event14));
 
-        Collections.sort(arrayList,RepositoryInMemory.EARLIEST_ORDER);
+        Collections.sort(arrayList,Event.EARLIEST_ORDER);
 
         repositoryInMemory.addMessage(event0);
         repositoryInMemory.addMessage(event1);
@@ -1477,7 +1477,7 @@ public class RepositoryInMemoryTest {
 
         ArrayList<Event> arrayList = new ArrayList<>(Arrays.asList(event0,event0,event1,event2,event3,event4,event5,event6,event7,event8,event9,event10,event11,event12,event13,event14));
 
-        Collections.sort(arrayList,RepositoryInMemory.EARLIEST_ORDER);
+        Collections.sort(arrayList,Event.EARLIEST_ORDER);
 
         repositoryInMemory.addMessage(event0);
         repositoryInMemory.addMessage(event0);
@@ -1557,7 +1557,7 @@ public class RepositoryInMemoryTest {
             repositoryInMemory.addMessage(event13);
         }
 
-        Collections.sort(arrayList,RepositoryInMemory.EARLIEST_ORDER);
+        Collections.sort(arrayList,Event.EARLIEST_ORDER);
 
         assertEquals(arrayList, repositoryInMemory.getLastMonthMessages(),"getLatMonthMessages method in RepositoryInMemory Class didn't work correctly.");
     }
@@ -1572,7 +1572,7 @@ public class RepositoryInMemoryTest {
         Event event4 = new Event("E", 1000000000);
         ArrayList<Event> arrayList = new ArrayList<>(Arrays.asList(event,event1,event2,event3,event4));
 
-        Collections.sort(arrayList, RepositoryInMemory.LATEST_ORDER);
+        Collections.sort(arrayList, Event.LATEST_ORDER);
 
         repositoryInMemory.addMessage(event);
         repositoryInMemory.addMessage(event1);
@@ -1593,7 +1593,7 @@ public class RepositoryInMemoryTest {
         Event event4 = new Event("E", 1000000000);
         ArrayList<Event> arrayList = new ArrayList<>(Arrays.asList(event,event,event1,event2,event3,event4));
 
-        Collections.sort(arrayList, RepositoryInMemory.LATEST_ORDER);
+        Collections.sort(arrayList, Event.LATEST_ORDER);
 
         repositoryInMemory.addMessage(event);
         repositoryInMemory.addMessage(event);
@@ -1635,7 +1635,7 @@ public class RepositoryInMemoryTest {
             repositoryInMemory.addMessage(event3);
         }
 
-        Collections.sort(arrayList,RepositoryInMemory.EARLIEST_ORDER);
+        Collections.sort(arrayList,Event.EARLIEST_ORDER);
 
         assertEquals(arrayList, repositoryInMemory.getAllTheMessages(),"getAllTheMessages method in RepositoryInMemory Class didn't work correctly.");
     }

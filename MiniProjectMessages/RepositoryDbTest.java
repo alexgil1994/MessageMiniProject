@@ -14,8 +14,6 @@ import static org.junit.jupiter.api.Assertions.assertNotEquals;
 class RepositoryDbTest {
 
     final String TABLE_EVENTS = "event";
-    // TODO Isws anti gia _id na prepei na xw to  _ROWID_ pou mporesa k n to xrhsimopoihsw stis methodous gia emptyDb g diagrafh twn data.
-    final String COLUMN_EVENT_ID = "_id";
     final String COLUMN_EVENT_MESSAGE = "eventMessage";
     final String COLUMN_EVENT_TIME_MILLIS = "eventTimeMillis";
 
@@ -33,21 +31,8 @@ class RepositoryDbTest {
         repositoryDbTest.close();
     }
 
-    @BeforeEach
-    void setUp() {
-        // TODO NA ginei sundesh me tis methodous wste na ellatwthoun ta dedomena ekei.
-    }
-
     @AfterEach
     void tearDown() {
-    }
-
-    @Test
-    void open() {
-    }
-
-    @Test
-    void close() {
     }
 
     // TODO Na sundesw ta queries me string queries g na mikrhnoun.
@@ -590,7 +575,7 @@ class RepositoryDbTest {
         repositoryDbTest.addMessage(event4);
 
         // Sorting the expected list (The test-values have a future time so they should be for sure of the latest ones).
-        Collections.sort(arrayList,RepositoryInMemory.EARLIEST_ORDER);
+        Collections.sort(arrayList,Event.EARLIEST_ORDER);
 
         // Adding all the data in the list since i am testing the case where the user asks for more than the existing data (db + 4 test-values).
         ArrayList<String> arrayListCompare = new ArrayList<>();
@@ -651,7 +636,7 @@ class RepositoryDbTest {
         repositoryDbTest.addMessage(event4);
 
         // Sorting the expected list (The test-values have a future time so they should be for sure of the latest ones).
-        Collections.sort(arrayList,RepositoryInMemory.EARLIEST_ORDER);
+        Collections.sort(arrayList,Event.EARLIEST_ORDER);
 
         // Not adding anything since the user requests for zero.
         ArrayList<String> arrayListCompare = new ArrayList<>();
@@ -709,7 +694,7 @@ class RepositoryDbTest {
         repositoryDbTest.addMessage(event4);
 
         // Sorting the expected list (The test-values have a future time so they should be for sure of the latest ones).
-        Collections.sort(arrayList,RepositoryInMemory.EARLIEST_ORDER);
+        Collections.sort(arrayList,Event.EARLIEST_ORDER);
 
         // Not adding anything since the user requests for -1.
         ArrayList<String> arrayListCompare = new ArrayList<>();
@@ -764,7 +749,7 @@ class RepositoryDbTest {
         repositoryDbTest.addMessage(event4);
 
         // Sorting the list based on a class in the RepositoryInMemory i have in order to make the correct expected list.
-        Collections.sort(arrayList,RepositoryInMemory.EARLIEST_ORDER);
+        Collections.sort(arrayList,Event.EARLIEST_ORDER);
 
         // Taking an array with only the messages from the db in order to compare.
         ArrayList<String> arrayListCompare = new ArrayList<>();
@@ -827,7 +812,7 @@ class RepositoryDbTest {
         repositoryDbTest.addMessage(event4);
 
         // Sorting the list based on a class in the RepositoryInMemory i have in order to make the correct expected list.
-        Collections.sort(arrayList,RepositoryInMemory.EARLIEST_ORDER);
+        Collections.sort(arrayList,Event.EARLIEST_ORDER);
 
         // Taking an array with only the messages from the db in order to compare.
         ArrayList<String> arrayListCompare = new ArrayList<>();
@@ -931,7 +916,7 @@ class RepositoryDbTest {
         repositoryDbTest.addMessage(event4);
 
         // Sorting the list based on a class in the RepositoryInMemory i have in order to make the correct expected list.
-        Collections.sort(arrayList,RepositoryInMemory.EARLIEST_ORDER);
+        Collections.sort(arrayList,Event.EARLIEST_ORDER);
 
         // Taking an array with only the messages from the db in order to compare.
         ArrayList<String> arrayListCompare = new ArrayList<>();
@@ -990,7 +975,7 @@ class RepositoryDbTest {
         repositoryDbTest.addMessage(event4);
 
         // Sorting the list based on a class in the RepositoryInMemory i have in order to make the correct expected list.
-        Collections.sort(arrayList,RepositoryInMemory.EARLIEST_ORDER);
+        Collections.sort(arrayList,Event.EARLIEST_ORDER);
 
         // Taking an array with only the messages from the db in order to compare.
         ArrayList<String> arrayListCompare = new ArrayList<>();
@@ -1054,7 +1039,7 @@ class RepositoryDbTest {
         repositoryDbTest.addMessage(event4);
 
         // Sorting the list based on a class in the RepositoryInMemory i have in order to make the correct expected list.
-        Collections.sort(arrayList,RepositoryInMemory.LATEST_ORDER);
+        Collections.sort(arrayList,Event.LATEST_ORDER);
 
         // Taking an array with only the messages from the db in order to compare.
         ArrayList<String> arrayListCompare = new ArrayList<>();
@@ -1115,7 +1100,7 @@ class RepositoryDbTest {
         repositoryDbTest.addMessage(event4);
 
         // Sorting the list based on a class in the RepositoryInMemory i have in order to make the correct expected list.
-        Collections.sort(arrayList,RepositoryInMemory.LATEST_ORDER);
+        Collections.sort(arrayList,Event.LATEST_ORDER);
 
         // Not adding anything to the expected list since the user asked for 0.
         ArrayList<String> arrayListCompare = new ArrayList<>();
@@ -1173,7 +1158,7 @@ class RepositoryDbTest {
         repositoryDbTest.addMessage(event4);
 
         // Sorting the list based on a class in the RepositoryInMemory i have in order to make the correct expected list.
-        Collections.sort(arrayList,RepositoryInMemory.LATEST_ORDER);
+        Collections.sort(arrayList,Event.LATEST_ORDER);
 
         // Not adding anything to the expected list since the user asked for -1.
         ArrayList<String> arrayListCompare = new ArrayList<>();

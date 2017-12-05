@@ -4,21 +4,21 @@ public class RepositoryInMemory implements IRepository {
 
     ArrayList<Event> repositoryInMemList = new ArrayList<>();
 
-    static final Comparator<Event> EARLIEST_ORDER = new Comparator<Event>() {
-        @Override
-        public int compare(Event e1, Event e2) {
-            // Kanei ta 3 if gia 1 , -1, 0 se mia grammh.
-            return Long.compare(e2.getTime(), e1.getTime());
-        }
-    };
-
-    static final Comparator<Event> LATEST_ORDER = new Comparator<Event>() {
-        @Override
-        public int compare(Event e1, Event e2) {
-            // Kanei ta 3 if gia 1 , -1, 0 se mia grammh.
-            return Long.compare(e1.getTime(), e2.getTime());
-        }
-    };
+//    static final Comparator<Event> EARLIEST_ORDER = new Comparator<Event>() {
+//        @Override
+//        public int compare(Event e1, Event e2) {
+//            // Kanei ta 3 if gia 1 , -1, 0 se mia grammh.
+//            return Long.compare(e2.getTime(), e1.getTime());
+//        }
+//    };
+//
+//    static final Comparator<Event> LATEST_ORDER = new Comparator<Event>() {
+//        @Override
+//        public int compare(Event e1, Event e2) {
+//            // Kanei ta 3 if gia 1 , -1, 0 se mia grammh.
+//            return Long.compare(e1.getTime(), e2.getTime());
+//        }
+//    };
 
     public RepositoryInMemory(ArrayList<Event> repositoryList) {
         this.repositoryInMemList = repositoryList;
@@ -50,7 +50,7 @@ public class RepositoryInMemory implements IRepository {
     @Override
     public ArrayList<Event> getLatestMessages(int readNumberOfMessages) {
         // Kanw sort ths repositoryList me to comparator EARLIEST_ORDER pou exw ftiaksei.
-        Collections.sort(repositoryInMemList , RepositoryInMemory.EARLIEST_ORDER);
+        Collections.sort(repositoryInMemList , Event.EARLIEST_ORDER);
 
         // Arxikopoihsh new tempMessageList, einai auth pou tha epistrepsw gia print.
         ArrayList<Event> tempMessageList = new ArrayList<>();
@@ -62,7 +62,7 @@ public class RepositoryInMemory implements IRepository {
     @Override
     public ArrayList<Event> getOldestMessages(int readNumberOfMessages) {
         // Kanw sort ths repositoryList me to comparator EARLIEST_ORDER pou exw ftiaksei.
-        Collections.sort(repositoryInMemList , RepositoryInMemory.LATEST_ORDER);
+        Collections.sort(repositoryInMemList , Event.LATEST_ORDER);
 
         // Arxikopoihsh new tempMessageList einai auth pou tha epistrepsw gia print.
         ArrayList<Event> tempMessageList = new ArrayList<>();
@@ -96,7 +96,7 @@ public class RepositoryInMemory implements IRepository {
     @Override
     public ArrayList<Event> getLastHourMessages() {
         ArrayList<Event> tempMessageList = new ArrayList<>();
-        Collections.sort(repositoryInMemList , RepositoryInMemory.EARLIEST_ORDER);
+        Collections.sort(repositoryInMemList , Event.EARLIEST_ORDER);
 
         Controller controller = new Controller();
         long timeOfRequest = controller.calcNewTime();
@@ -113,7 +113,7 @@ public class RepositoryInMemory implements IRepository {
     @Override
     public ArrayList<Event> getLastThreeHoursMessages() {
         ArrayList<Event> tempMessageList = new ArrayList<>();
-        Collections.sort(repositoryInMemList , RepositoryInMemory.EARLIEST_ORDER);
+        Collections.sort(repositoryInMemList , Event.EARLIEST_ORDER);
 
         Controller controller = new Controller();
         long timeOfRequest = controller.calcNewTime();
@@ -130,7 +130,7 @@ public class RepositoryInMemory implements IRepository {
     @Override
     public ArrayList<Event> getLastOneDayMessages() {
         ArrayList<Event> tempMessageList = new ArrayList<>();
-        Collections.sort(repositoryInMemList , RepositoryInMemory.EARLIEST_ORDER);
+        Collections.sort(repositoryInMemList , Event.EARLIEST_ORDER);
 
         Controller controller = new Controller();
         long timeOfRequest = controller.calcNewTime();
@@ -147,7 +147,7 @@ public class RepositoryInMemory implements IRepository {
     @Override
     public ArrayList<Event> getLastThreeDaysMessages() {
         ArrayList<Event> tempMessageList = new ArrayList<>();
-        Collections.sort(repositoryInMemList , RepositoryInMemory.EARLIEST_ORDER);
+        Collections.sort(repositoryInMemList , Event.EARLIEST_ORDER);
 
         Controller controller = new Controller();
         long timeOfRequest = controller.calcNewTime();
@@ -164,7 +164,7 @@ public class RepositoryInMemory implements IRepository {
     @Override
     public ArrayList<Event> getLastTenDaysMessages() {
         ArrayList<Event> tempMessageList = new ArrayList<>();
-        Collections.sort(repositoryInMemList , RepositoryInMemory.EARLIEST_ORDER);
+        Collections.sort(repositoryInMemList , Event.EARLIEST_ORDER);
 
         Controller controller = new Controller();
         long timeOfRequest = controller.calcNewTime();
@@ -181,7 +181,7 @@ public class RepositoryInMemory implements IRepository {
     @Override
     public ArrayList<Event> getLastMonthMessages() {
         ArrayList<Event> tempMessageList = new ArrayList<>();
-        Collections.sort(repositoryInMemList , RepositoryInMemory.EARLIEST_ORDER);
+        Collections.sort(repositoryInMemList , Event.EARLIEST_ORDER);
 
         Controller controller = new Controller();
         long timeOfRequest = controller.calcNewTime();
@@ -198,7 +198,7 @@ public class RepositoryInMemory implements IRepository {
     @Override
     public ArrayList<Event> getAllTheMessages() {
         ArrayList<Event> tempMessageList = new ArrayList<>();
-        Collections.sort(repositoryInMemList , RepositoryInMemory.EARLIEST_ORDER);
+        Collections.sort(repositoryInMemList , Event.EARLIEST_ORDER);
         for (Event event: repositoryInMemList) {
             try {
                 tempMessageList.add(event);
